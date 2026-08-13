@@ -7,9 +7,10 @@
 <title>Gyanivo - ज्ञान से विकास की ओर</title>
 
 <meta name="description"
-content="Gyanivo बच्चों, विद्यार्थियों और शिक्षकों के लिए शिक्षा सामग्री, Worksheets, PDF और ऑनलाइन परीक्षा का डिजिटल मंच है.">
+content="Gyanivo बच्चों, विद्यार्थियों और शिक्षकों के लिए शिक्षा सामग्री, Worksheets, Online Tests और शिक्षक संसाधनों का डिजिटल मंच है।">
 
 <style>
+
 *{
     margin:0;
     padding:0;
@@ -22,15 +23,20 @@ html{
 
 body{
     font-family:Arial,"Noto Sans Devanagari",sans-serif;
-    background:#f5f8ff;
+    background:#f4f8ff;
     color:#222;
 }
+
+/* HEADER */
 
 header{
     background:linear-gradient(135deg,#1565c0,#42a5f5);
     color:white;
-    padding:18px 6%;
     text-align:center;
+    padding:20px 15px;
+    position:sticky;
+    top:0;
+    z-index:1000;
 }
 
 .logo{
@@ -43,20 +49,22 @@ header{
 }
 
 nav{
-    margin-top:18px;
+    margin-top:15px;
 }
 
 nav a{
     color:white;
     text-decoration:none;
-    margin:5px 8px;
-    font-size:15px;
     display:inline-block;
+    margin:5px 7px;
+    font-size:15px;
 }
 
 nav a:hover{
     text-decoration:underline;
 }
+
+/* HERO */
 
 .hero{
     background:white;
@@ -71,32 +79,51 @@ nav a:hover{
 }
 
 .hero p{
-    color:#555;
-    font-size:18px;
     max-width:700px;
     margin:auto;
+    color:#555;
+    font-size:18px;
     line-height:1.7;
 }
 
 .btn{
     display:inline-block;
-    margin-top:25px;
+    border:none;
+    margin-top:20px;
     padding:12px 25px;
     background:#1565c0;
     color:white;
-    text-decoration:none;
     border-radius:25px;
-    border:none;
     cursor:pointer;
-    font-size:16px;
+    text-decoration:none;
+    font-size:15px;
 }
 
 .btn:hover{
     background:#0d47a1;
 }
 
+/* SEARCH */
+
+.search-box{
+    text-align:center;
+    padding:20px;
+    background:#e3f2fd;
+}
+
+.search-box input{
+    width:90%;
+    max-width:500px;
+    padding:13px 18px;
+    border:1px solid #ccc;
+    border-radius:25px;
+    font-size:16px;
+}
+
+/* SECTIONS */
+
 section{
-    padding:45px 7%;
+    padding:50px 6%;
 }
 
 section h2{
@@ -106,22 +133,32 @@ section h2{
     font-size:28px;
 }
 
+/* CARDS */
+
 .cards{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
-    gap:20px;
+    grid-template-columns:
+    repeat(auto-fit,minmax(210px,1fr));
+    gap:22px;
+    max-width:1100px;
+    margin:auto;
 }
 
 .card{
     background:white;
     padding:25px 18px;
-    border-radius:15px;
+    border-radius:18px;
     text-align:center;
-    box-shadow:0 4px 15px rgba(0,0,0,.08);
+    box-shadow:0 5px 18px rgba(0,0,0,.09);
+    transition:.3s;
 }
 
-.card .icon{
-    font-size:42px;
+.card:hover{
+    transform:translateY(-5px);
+}
+
+.icon{
+    font-size:45px;
     margin-bottom:10px;
 }
 
@@ -136,77 +173,94 @@ section h2{
     line-height:1.6;
 }
 
-.card button{
-    margin-top:15px;
-}
+/* CLASS 1 */
 
-.hidden{
-    display:none;
+.class1{
+    background:#eaf3ff;
 }
 
 .subject-area{
-    background:#e8f2ff;
+    max-width:1000px;
+    margin:auto;
 }
 
-.subject-box{
-    max-width:900px;
-    margin:auto;
+.subject{
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 4px 15px rgba(0,0,0,.08);
+    text-align:center;
+}
+
+.subject-icon{
+    font-size:50px;
+}
+
+.subject h3{
+    color:#1565c0;
+    margin:10px 0;
+}
+
+.subject button{
+    border:none;
+    margin-top:15px;
+    padding:10px 20px;
+    border-radius:20px;
+    background:#1565c0;
+    color:white;
+    cursor:pointer;
+}
+
+/* CONTENT BOX */
+
+.content-box{
+    max-width:850px;
+    margin:30px auto 0;
     background:white;
     padding:25px;
     border-radius:15px;
     box-shadow:0 4px 15px rgba(0,0,0,.08);
 }
 
-.subject-box h3{
-    color:#1565c0;
-    margin-bottom:15px;
-}
-
-.subject-list{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-    gap:15px;
-}
-
-.subject-btn{
+.lesson{
+    background:#f5f9ff;
+    border-left:5px solid #42a5f5;
     padding:15px;
-    border:none;
-    border-radius:10px;
-    background:#e3f2fd;
-    color:#1565c0;
-    font-size:16px;
-    cursor:pointer;
+    margin:12px 0;
+    border-radius:8px;
+    line-height:1.7;
 }
 
-.subject-btn:hover{
-    background:#bbdefb;
+/* QUIZ */
+
+.quiz-section{
+    background:#fff;
 }
 
 .quiz{
     max-width:750px;
     margin:auto;
-    background:white;
-    padding:25px;
-    border-radius:15px;
-    box-shadow:0 4px 15px rgba(0,0,0,.08);
+    background:#f8fbff;
+    padding:28px;
+    border-radius:18px;
+    box-shadow:0 5px 18px rgba(0,0,0,.09);
 }
 
 .question{
     font-size:19px;
     font-weight:bold;
-    margin-bottom:20px;
     line-height:1.6;
+    margin-bottom:20px;
 }
 
 .option{
-    display:block;
     width:100%;
     text-align:left;
-    margin:10px 0;
-    padding:13px;
+    padding:14px;
+    margin:8px 0;
     border:1px solid #ddd;
-    border-radius:8px;
-    background:#fafafa;
+    background:white;
+    border-radius:10px;
     cursor:pointer;
     font-size:16px;
 }
@@ -215,26 +269,53 @@ section h2{
     background:#e3f2fd;
 }
 
+.next{
+    margin-top:15px;
+    padding:12px 25px;
+    border:none;
+    border-radius:25px;
+    background:#1565c0;
+    color:white;
+    cursor:pointer;
+}
+
 .result{
-    margin-top:20px;
-    padding:15px;
-    border-radius:10px;
     background:#e8f5e9;
     color:#1b5e20;
+    padding:20px;
     text-align:center;
+    border-radius:12px;
+    font-size:19px;
     font-weight:bold;
 }
 
-.about{
+.restart{
+    border:none;
+    padding:11px 22px;
+    border-radius:25px;
+    background:#1565c0;
+    color:white;
+    cursor:pointer;
+}
+
+.hidden{
+    display:none;
+}
+
+/* ABOUT */
+
+.teacher{
     background:#e8f2ff;
     text-align:center;
 }
 
-.about p{
+.teacher p{
     max-width:750px;
     margin:auto;
     line-height:1.8;
 }
+
+/* FOOTER */
 
 footer{
     background:#12304a;
@@ -248,10 +329,12 @@ footer p{
     font-size:14px;
 }
 
+/* MOBILE */
+
 @media(max-width:600px){
 
     .logo{
-        font-size:30px;
+        font-size:29px;
     }
 
     .hero h1{
@@ -263,30 +346,46 @@ footer p{
     }
 
     section{
-        padding:35px 5%;
+        padding:40px 5%;
     }
 
-    nav a{
-        margin:5px 3px;
+    header{
+        position:relative;
     }
+
 }
+
 </style>
 </head>
 
+
 <body>
+
+
+<!-- HEADER -->
 
 <header>
 
-<div class="logo">📚 Gyanivo</div>
+<div class="logo">
+📚 Gyanivo
+</div>
 
-<div class="tagline">ज्ञान से विकास की ओर</div>
+<div class="tagline">
+ज्ञान से विकास की ओर
+</div>
 
 <nav>
+
 <a href="#home">होम</a>
+
 <a href="#classes">कक्षाएँ</a>
+
 <a href="#worksheets">वर्कशीट</a>
+
 <a href="#exams">परीक्षा</a>
+
 <a href="#teacher">शिक्षक कॉर्नर</a>
+
 </nav>
 
 </header>
@@ -296,55 +395,113 @@ footer p{
 
 <section class="hero" id="home">
 
-<h1>Gyanivo में आपका स्वागत है</h1>
+<h1>
+🎓 Gyanivo में आपका स्वागत है
+</h1>
 
 <p>
 बच्चों, विद्यार्थियों और शिक्षकों के लिए
 आसान, उपयोगी और गुणवत्तापूर्ण शिक्षा सामग्री।
 </p>
 
-<a class="btn" href="#classes">
-पढ़ाई शुरू करें →
+<a href="#classes" class="btn">
+📚 पढ़ाई शुरू करें
 </a>
 
 </section>
+
+
+<!-- SEARCH -->
+
+<div class="search-box">
+
+<input
+type="text"
+id="search"
+placeholder="🔍 विषय या सामग्री खोजें..."
+onkeyup="searchContent()">
+
+</div>
 
 
 <!-- CLASSES -->
 
 <section id="classes">
 
-<h2>📚 कक्षा के अनुसार पढ़ाई</h2>
+<h2>
+📚 कक्षा के अनुसार पढ़ाई
+</h2>
 
 <div class="cards">
 
+
 <div class="card">
+
 <div class="icon">👦</div>
+
 <h3>कक्षा 1</h3>
-<p>हिन्दी, English, गणित और सामान्य ज्ञान।</p>
-<button class="btn" onclick="showClass1()">पढ़ना शुरू करें</button>
+
+<p>
+हिन्दी, English, गणित और सामान्य ज्ञान।
+</p>
+
+<a href="#class1" class="btn">
+पढ़ना शुरू करें
+</a>
+
 </div>
 
+
 <div class="card">
+
 <div class="icon">📖</div>
+
 <h3>कक्षा 2</h3>
-<p>बुनियादी शिक्षा और अभ्यास सामग्री।</p>
-<button class="btn" onclick="comingSoon()">जल्द आएगा</button>
+
+<p>
+बुनियादी शिक्षा और अभ्यास सामग्री।
+</p>
+
+<button class="btn" onclick="comingSoon()">
+जल्द आएगा
+</button>
+
 </div>
 
+
 <div class="card">
+
 <div class="icon">✏️</div>
+
 <h3>कक्षा 3–5</h3>
-<p>विषयवार प्रश्न और अभ्यास Worksheets।</p>
-<button class="btn" onclick="comingSoon()">जल्द आएगा</button>
+
+<p>
+विषयवार प्रश्न और अभ्यास Worksheets।
+</p>
+
+<button class="btn" onclick="comingSoon()">
+जल्द आएगा
+</button>
+
 </div>
 
+
 <div class="card">
+
 <div class="icon">🎓</div>
+
 <h3>कक्षा 6–8</h3>
-<p>विषयवार अध्ययन और परीक्षा तैयारी।</p>
-<button class="btn" onclick="comingSoon()">जल्द आएगा</button>
+
+<p>
+विषयवार अध्ययन और परीक्षा तैयारी।
+</p>
+
+<button class="btn" onclick="comingSoon()">
+जल्द आएगा
+</button>
+
 </div>
+
 
 </div>
 
@@ -353,33 +510,115 @@ footer p{
 
 <!-- CLASS 1 -->
 
-<section class="subject-area hidden" id="class1">
+<section class="class1" id="class1">
 
-<h2>🎒 कक्षा 1</h2>
+<h2>
+🎒 कक्षा 1
+</h2>
 
-<div class="subject-box">
+<div class="cards">
 
-<h3>विषय चुनें</h3>
 
-<div class="subject-list">
+<div class="subject">
 
-<button class="subject-btn" onclick="subjectMessage('हिन्दी')">
-📖 हिन्दी
-</button>
+<div class="subject-icon">
+📖
+</div>
 
-<button class="subject-btn" onclick="subjectMessage('English')">
-🔤 English
-</button>
+<h3>
+हिन्दी
+</h3>
 
-<button class="subject-btn" onclick="subjectMessage('गणित')">
-➕ गणित
-</button>
+<p>
+स्वर, व्यंजन, मात्राएँ,
+शब्द और वाक्य।
+</p>
 
-<button class="subject-btn" onclick="subjectMessage('सामान्य ज्ञान')">
-🌎 GK
+<button onclick="showHindi()">
+अध्ययन करें
 </button>
 
 </div>
+
+
+<div class="subject">
+
+<div class="subject-icon">
+🔤
+</div>
+
+<h3>
+English
+</h3>
+
+<p>
+A-Z, Words, Colours,
+Numbers और Grammar।
+</p>
+
+<button onclick="showEnglish()">
+Learn
+</button>
+
+</div>
+
+
+<div class="subject">
+
+<div class="subject-icon">
+➕
+</div>
+
+<h3>
+गणित
+</h3>
+
+<p>
+संख्या, जोड़, घटाव
+और गणितीय अभ्यास।
+</p>
+
+<button onclick="showMath()">
+अध्ययन करें
+</button>
+
+</div>
+
+
+<div class="subject">
+
+<div class="subject-icon">
+🌎
+</div>
+
+<h3>
+सामान्य ज्ञान
+</h3>
+
+<p>
+बच्चों के लिए आसान
+और रोचक GK।
+</p>
+
+<button onclick="showGK()">
+GK सीखें
+</button>
+
+</div>
+
+
+</div>
+
+
+<div class="content-box" id="subjectContent">
+
+<h3>
+👋 नमस्ते बच्चों!
+</h3>
+
+<p>
+ऊपर से अपना विषय चुनें और पढ़ाई शुरू करें।
+</p>
 
 </div>
 
@@ -390,45 +629,92 @@ footer p{
 
 <section id="worksheets">
 
-<h2>📝 Worksheets और PDF</h2>
+<h2>
+📝 Worksheets और PDF
+</h2>
 
 <div class="cards">
 
+
 <div class="card">
+
 <div class="icon">📄</div>
-<h3>हिन्दी Worksheet</h3>
-<p>बच्चों के अभ्यास के लिए हिन्दी Worksheet।</p>
-<button class="btn" onclick="pdfMessage()">
-PDF देखें
+
+<h3>
+हिन्दी Worksheet
+</h3>
+
+<p>
+कक्षा 1 हिन्दी अभ्यास।
+</p>
+
+<button class="btn"
+onclick="pdfMessage('हिन्दी')">
+PDF
 </button>
+
 </div>
 
+
 <div class="card">
+
 <div class="icon">🔤</div>
-<h3>English Worksheet</h3>
-<p>Basic English अभ्यास सामग्री।</p>
-<button class="btn" onclick="pdfMessage()">
-PDF देखें
+
+<h3>
+English Worksheet
+</h3>
+
+<p>
+Basic English अभ्यास।
+</p>
+
+<button class="btn"
+onclick="pdfMessage('English')">
+PDF
 </button>
+
 </div>
 
+
 <div class="card">
+
 <div class="icon">➕</div>
-<h3>गणित Worksheet</h3>
-<p>जोड़, घटाव और अन्य गणितीय अभ्यास।</p>
-<button class="btn" onclick="pdfMessage()">
-PDF देखें
+
+<h3>
+गणित Worksheet
+</h3>
+
+<p>
+जोड़, घटाव और संख्या अभ्यास।
+</p>
+
+<button class="btn"
+onclick="pdfMessage('गणित')">
+PDF
 </button>
+
 </div>
 
+
 <div class="card">
+
 <div class="icon">🌎</div>
-<h3>GK Worksheet</h3>
-<p>सामान्य ज्ञान के महत्वपूर्ण प्रश्न।</p>
-<button class="btn" onclick="pdfMessage()">
-PDF देखें
+
+<h3>
+GK Worksheet
+</h3>
+
+<p>
+सामान्य ज्ञान अभ्यास।
+</p>
+
+<button class="btn"
+onclick="pdfMessage('GK')">
+PDF
 </button>
+
 </div>
+
 
 </div>
 
@@ -437,27 +723,35 @@ PDF देखें
 
 <!-- EXAMS -->
 
-<section id="exams">
+<section class="quiz-section" id="exams">
 
-<h2>🎯 ऑनलाइन MCQ परीक्षा</h2>
+<h2>
+🎯 ऑनलाइन MCQ परीक्षा
+</h2>
 
 <div class="quiz">
 
-<div id="quizContent">
+<div id="quizArea">
 
-<div class="question" id="question">
+<div class="question"
+id="question">
 प्रश्न लोड हो रहा है...
 </div>
 
-<div id="options"></div>
+<div id="options">
+</div>
 
-<button class="btn" onclick="nextQuestion()">
+<button class="next"
+onclick="nextQuestion()">
 अगला प्रश्न →
 </button>
 
 </div>
 
-<div id="quizResult" class="result hidden"></div>
+
+<div id="result"
+class="result hidden">
+</div>
 
 </div>
 
@@ -468,36 +762,72 @@ PDF देखें
 
 <section>
 
-<h2>🎓 UPTET / CTET Practice</h2>
+<h2>
+🎓 UPTET / CTET Practice
+</h2>
 
 <div class="cards">
 
+
 <div class="card">
+
 <div class="icon">📘</div>
-<h3>UPTET</h3>
-<p>UPTET के लिए अभ्यास प्रश्न और अध्ययन सामग्री।</p>
-<button class="btn" onclick="examMessage('UPTET')">
-Practice शुरू करें
+
+<h3>
+UPTET
+</h3>
+
+<p>
+बाल विकास, हिन्दी, गणित और EVS।
+</p>
+
+<button class="btn"
+onclick="examMessage('UPTET')">
+Practice
 </button>
+
 </div>
 
+
 <div class="card">
+
 <div class="icon">📗</div>
-<h3>CTET</h3>
-<p>CTET की तैयारी के लिए उपयोगी सामग्री।</p>
-<button class="btn" onclick="examMessage('CTET')">
-Practice शुरू करें
+
+<h3>
+CTET
+</h3>
+
+<p>
+CTET की तैयारी के लिए MCQ।
+</p>
+
+<button class="btn"
+onclick="examMessage('CTET')">
+Practice
 </button>
+
 </div>
 
+
 <div class="card">
+
 <div class="icon">🧠</div>
-<h3>सामान्य ज्ञान</h3>
-<p>GK के महत्वपूर्ण प्रश्न और उत्तर।</p>
-<button class="btn" onclick="examMessage('GK')">
-Practice शुरू करें
+
+<h3>
+GK Test
+</h3>
+
+<p>
+सामान्य ज्ञान के महत्वपूर्ण प्रश्न।
+</p>
+
+<button class="btn"
+onclick="document.getElementById('exams').scrollIntoView({behavior:'smooth'})">
+Test दें
 </button>
+
 </div>
+
 
 </div>
 
@@ -506,279 +836,462 @@ Practice शुरू करें
 
 <!-- TEACHER -->
 
-<section class="about" id="teacher">
+<section class="teacher" id="teacher">
 
-<h2>👨‍🏫 शिक्षक कॉर्नर</h2>
+<h2>
+👨‍🏫 शिक्षक कॉर्नर
+</h2>
 
 <p>
-Gyanivo शिक्षकों और विद्यार्थियों के लिए
-Lesson Plan, Worksheets, प्रश्न-पत्र,
-शिक्षण सामग्री और उपयोगी अध्ययन संसाधन
-उपलब्ध कराने का एक सरल डिजिटल मंच है।
+Gyanivo शिक्षकों के लिए Lesson Plan,
+Worksheets, प्रश्न-पत्र, PTM सामग्री,
+शिक्षण गतिविधियाँ और उपयोगी संसाधन
+उपलब्ध कराने का डिजिटल मंच है।
 </p>
 
-<br>
-
-<button class="btn" onclick="teacherMessage()">
-Lesson Plan देखें
+<button class="btn"
+onclick="teacherMessage()">
+Lesson Plan
 </button>
 
 </section>
 
 
+<!-- FOOTER -->
+
 <footer>
 
-<h3>📚 Gyanivo</h3>
+<h3>
+📚 Gyanivo
+</h3>
 
-<p>ज्ञान से विकास की ओर</p>
+<p>
+ज्ञान से विकास की ओर
+</p>
 
-<p>© 2026 Gyanivo | सभी अधिकार सुरक्षित</p>
+<p>
+© 2026 Gyanivo | सभी अधिकार सुरक्षित
+</p>
 
 </footer>
 
 
 <script>
 
-/* CLASS 1 */
 
-function showClass1(){
+/* ==========================
+   SUBJECT CONTENT
+========================== */
 
-    const box = document.getElementById("class1");
 
-    box.classList.remove("hidden");
+function showHindi(){
 
-    box.scrollIntoView({
-        behavior:"smooth"
-    });
+document.getElementById("subjectContent").innerHTML=`
+
+<h3>📖 हिन्दी</h3>
+
+<div class="lesson">
+<strong>पाठ 1 — स्वर</strong><br>
+अ, आ, इ, ई, उ, ऊ
+</div>
+
+<div class="lesson">
+<strong>पाठ 2 — व्यंजन</strong><br>
+क, ख, ग, घ, च, छ, ज, झ
+</div>
+
+<div class="lesson">
+<strong>पाठ 3 — शब्द</strong><br>
+कमल, कलम, घर, जल, फल
+</div>
+
+<div class="lesson">
+<strong>अभ्यास</strong><br>
+कमल शब्द में कितने अक्षर हैं?
+</div>
+
+`;
+
+scrollSubject();
+
 }
 
 
-/* SUBJECT */
+function showEnglish(){
 
-function subjectMessage(subject){
+document.getElementById("subjectContent").innerHTML=`
 
-    alert(
-        subject +
-        " की अध्ययन सामग्री जल्द यहाँ उपलब्ध होगी।"
-    );
+<h3>🔤 English</h3>
+
+<div class="lesson">
+<strong>Lesson 1 — Alphabet</strong><br>
+A B C D E F G
+</div>
+
+<div class="lesson">
+<strong>Lesson 2 — Words</strong><br>
+Apple, Ball, Cat, Dog
+</div>
+
+<div class="lesson">
+<strong>Lesson 3 — Colours</strong><br>
+Red, Blue, Green, Yellow
+</div>
+
+<div class="lesson">
+<strong>Practice</strong><br>
+A for ______
+</div>
+
+`;
+
+scrollSubject();
+
 }
 
 
-/* PDF */
+function showMath(){
 
-function pdfMessage(){
+document.getElementById("subjectContent").innerHTML=`
 
-    alert(
-        "PDF सामग्री जल्द उपलब्ध होगी।"
-    );
+<h3>➕ गणित</h3>
+
+<div class="lesson">
+<strong>पाठ 1 — संख्याएँ</strong><br>
+1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+</div>
+
+<div class="lesson">
+<strong>पाठ 2 — जोड़</strong><br>
+2 + 3 = 5
+</div>
+
+<div class="lesson">
+<strong>पाठ 3 — घटाव</strong><br>
+5 - 2 = 3
+</div>
+
+<div class="lesson">
+<strong>अभ्यास</strong><br>
+4 + 3 = ?
+</div>
+
+`;
+
+scrollSubject();
+
 }
 
 
-/* OTHER CLASSES */
+function showGK(){
 
-function comingSoon(){
+document.getElementById("subjectContent").innerHTML=`
 
-    alert(
-        "इस कक्षा की सामग्री जल्द उपलब्ध होगी।"
-    );
+<h3>🌎 सामान्य ज्ञान</h3>
+
+<div class="lesson">
+<strong>प्रश्न 1:</strong>
+भारत की राजधानी क्या है?<br>
+<strong>उत्तर:</strong> नई दिल्ली
+</div>
+
+<div class="lesson">
+<strong>प्रश्न 2:</strong>
+सप्ताह में कितने दिन होते हैं?<br>
+<strong>उत्तर:</strong> 7 दिन
+</div>
+
+<div class="lesson">
+<strong>प्रश्न 3:</strong>
+सूर्य किस दिशा से निकलता है?<br>
+<strong>उत्तर:</strong> पूर्व
+</div>
+
+`;
+
+scrollSubject();
+
 }
 
 
-/* UPTET / CTET */
+function scrollSubject(){
 
-function examMessage(exam){
+document.getElementById("subjectContent")
+.scrollIntoView({
+behavior:"smooth",
+block:"center"
+});
 
-    alert(
-        exam +
-        " Practice Section जल्द उपलब्ध होगा।"
-    );
 }
 
 
-/* TEACHER */
-
-function teacherMessage(){
-
-    alert(
-        "Lesson Plan और शिक्षक सामग्री जल्द उपलब्ध होगी।"
-    );
-}
+/* ==========================
+   QUIZ
+========================== */
 
 
-/* QUIZ */
-
-const questions = [
+const questions=[
 
 {
-    question:"भारत की राजधानी क्या है?",
-    options:[
-        "मुंबई",
-        "नई दिल्ली",
-        "लखनऊ",
-        "जयपुर"
-    ],
-    answer:1
+q:"2 + 3 कितना होगा?",
+o:["4","5","6","7"],
+a:1
 },
 
 {
-    question:"2 + 3 = ?",
-    options:[
-        "4",
-        "5",
-        "6",
-        "7"
-    ],
-    answer:1
+q:"A for क्या होता है?",
+o:["Ball","Apple","Cat","Dog"],
+a:1
 },
 
 {
-    question:"A से कौन-सा शब्द शुरू होता है?",
-    options:[
-        "Apple",
-        "Ball",
-        "Cat",
-        "Dog"
-    ],
-    answer:0
+q:"भारत की राजधानी क्या है?",
+o:["मुंबई","लखनऊ","नई दिल्ली","जयपुर"],
+a:2
 },
 
 {
-    question:"हिन्दी वर्णमाला में 'क' क्या है?",
-    options:[
-        "स्वर",
-        "व्यंजन",
-        "मात्रा",
-        "अंक"
-    ],
-    answer:1
+q:"हिन्दी में 'अ' क्या है?",
+o:["स्वर","व्यंजन","मात्रा","अंक"],
+a:0
 },
 
 {
-    question:"सूर्य किस दिशा से निकलता है?",
-    options:[
-        "उत्तर",
-        "दक्षिण",
-        "पूर्व",
-        "पश्चिम"
-    ],
-    answer:2
+q:"सप्ताह में कितने दिन होते हैं?",
+o:["5","6","7","8"],
+a:2
+},
+
+{
+q:"5 - 2 कितना होगा?",
+o:["2","3","4","5"],
+a:1
+},
+
+{
+q:"B for क्या होता है?",
+o:["Apple","Ball","Cat","Dog"],
+a:1
+},
+
+{
+q:"सूर्य किस दिशा से निकलता है?",
+o:["पश्चिम","उत्तर","दक्षिण","पूर्व"],
+a:3
+},
+
+{
+q:"10 के बाद कौन-सी संख्या आती है?",
+o:["9","11","12","8"],
+a:1
+},
+
+{
+q:"'कमल' क्या है?",
+o:["फल","फूल","सब्जी","पक्षी"],
+a:1
 }
 
 ];
 
-let currentQuestion = 0;
-let score = 0;
-let selected = false;
+
+let current=0;
+
+let score=0;
+
+let answered=false;
 
 
 function loadQuestion(){
 
-    selected = false;
+answered=false;
 
-    const q = questions[currentQuestion];
+const q=questions[current];
 
-    document.getElementById("question").innerText =
-        (currentQuestion + 1) +
-        ". " +
-        q.question;
+document.getElementById("question").innerText=
+"प्रश्न "+(current+1)+" / "+
+questions.length+
+" : "+q.q;
 
-    const optionsBox =
-        document.getElementById("options");
+const box=document.getElementById("options");
 
-    optionsBox.innerHTML = "";
+box.innerHTML="";
 
-    q.options.forEach(function(option,index){
 
-        const button =
-            document.createElement("button");
+q.o.forEach(function(option,index){
 
-        button.className = "option";
+const button=document.createElement("button");
 
-        button.innerText = option;
+button.className="option";
 
-        button.onclick = function(){
+button.innerText=option;
 
-            if(selected) return;
+button.onclick=function(){
 
-            selected = true;
+if(answered)return;
 
-            if(index === q.answer){
+answered=true;
 
-                score++;
+if(index===q.a){
 
-                button.style.background =
-                    "#c8e6c9";
+score++;
 
-            }else{
+button.style.background="#c8e6c9";
 
-                button.style.background =
-                    "#ffcdd2";
+}else{
 
-            }
+button.style.background="#ffcdd2";
 
-        };
+}
 
-        optionsBox.appendChild(button);
+};
 
-    });
+box.appendChild(button);
+
+});
 
 }
 
 
 function nextQuestion(){
 
-    if(!selected){
+if(!answered){
 
-        alert("कृपया पहले एक उत्तर चुनें।");
+alert("कृपया पहले उत्तर चुनें।");
 
-        return;
-    }
+return;
 
-    currentQuestion++;
+}
 
-    if(currentQuestion < questions.length){
+current++;
 
-        loadQuestion();
+if(current<questions.length){
 
-    }else{
+loadQuestion();
 
-        document.getElementById("quizContent")
-            .classList.add("hidden");
+}else{
 
-        const result =
-            document.getElementById("quizResult");
+document.getElementById("quizArea")
+.classList.add("hidden");
 
-        result.classList.remove("hidden");
+const result=document.getElementById("result");
 
-        result.innerHTML =
-            "🎉 परीक्षा पूरी हुई!<br><br>" +
-            "आपका Score: " +
-            score +
-            " / " +
-            questions.length +
-            "<br><br>" +
-            "<button class='btn' onclick='restartQuiz()'>" +
-            "फिर से परीक्षा दें" +
-            "</button>";
+result.classList.remove("hidden");
 
-    }
+const percentage=
+Math.round((score/questions.length)*100);
+
+result.innerHTML=
+"🎉 परीक्षा पूरी हुई!<br><br>"+
+"आपका Score: "+
+score+
+" / "+
+questions.length+
+"<br>"+
+"प्रतिशत: "+
+percentage+
+"%<br><br>"+
+"<button class='restart' onclick='restartQuiz()'>"+
+"🔄 फिर से टेस्ट दें"+
+"</button>";
+
+}
 
 }
 
 
 function restartQuiz(){
 
-    currentQuestion = 0;
+current=0;
 
-    score = 0;
+score=0;
 
-    document.getElementById("quizContent")
-        .classList.remove("hidden");
+document.getElementById("quizArea")
+.classList.remove("hidden");
 
-    document.getElementById("quizResult")
-        .classList.add("hidden");
+document.getElementById("result")
+.classList.add("hidden");
 
-    loadQuestion();
+loadQuestion();
+
+}
+
+
+/* ==========================
+   OTHER BUTTONS
+========================== */
+
+
+function comingSoon(){
+
+alert(
+"इस कक्षा की सामग्री जल्द उपलब्ध होगी।"
+);
+
+}
+
+
+function pdfMessage(subject){
+
+alert(
+subject+
+" की PDF Worksheet जल्द उपलब्ध होगी।"
+);
+
+}
+
+
+function examMessage(exam){
+
+alert(
+exam+
+" Practice Section जल्द उपलब्ध होगा।"
+);
+
+}
+
+
+function teacherMessage(){
+
+alert(
+"Lesson Plan और शिक्षक सामग्री जल्द उपलब्ध होगी।"
+);
+
+}
+
+
+/* ==========================
+   SEARCH
+========================== */
+
+
+function searchContent(){
+
+const value=
+document.getElementById("search")
+.value
+.toLowerCase()
+.trim();
+
+const cards=
+document.querySelectorAll(".card,.subject");
+
+cards.forEach(function(card){
+
+const text=
+card.innerText.toLowerCase();
+
+if(value==="" || text.includes(value)){
+
+card.style.display="block";
+
+}else{
+
+card.style.display="none";
+
+}
+
+});
 
 }
 
