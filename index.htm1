@@ -1,360 +1,334 @@
 <!DOCTYPE html>
 <html lang="hi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Gyanivo | ज्ञान से विकास की ओर</title>
+<title>Gyanivo - ज्ञान से विकास की ओर</title>
 
-  <meta name="description"
-        content="Gyanivo पर बच्चों, विद्यार्थियों और शिक्षकों के लिए शिक्षा सामग्री, Worksheets, PDF और परीक्षा तैयारी सामग्री।">
+<meta name="description" content="Gyanivo बच्चों, विद्यार्थियों और शिक्षकों के लिए शिक्षा सामग्री, Worksheets, PDF और परीक्षा तैयारी का डिजिटल मंच है।">
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, "Noto Sans Devanagari", sans-serif;
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial, "Noto Sans Devanagari", sans-serif;
+    background:#f5f8ff;
+    color:#222;
+}
+
+/* Header */
+header{
+    background:linear-gradient(135deg,#1565c0,#42a5f5);
+    color:white;
+    padding:18px 6%;
+    text-align:center;
+}
+
+.logo{
+    font-size:34px;
+    font-weight:bold;
+}
+
+.tagline{
+    font-size:16px;
+    margin-top:4px;
+}
+
+nav{
+    margin-top:18px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:5px 8px;
+    font-size:15px;
+}
+
+/* Hero */
+.hero{
+    background:white;
+    text-align:center;
+    padding:60px 20px;
+}
+
+.hero h1{
+    color:#1565c0;
+    font-size:38px;
+    margin-bottom:15px;
+}
+
+.hero p{
+    color:#555;
+    font-size:18px;
+    max-width:700px;
+    margin:auto;
+}
+
+.btn{
+    display:inline-block;
+    margin-top:25px;
+    padding:12px 25px;
+    background:#1565c0;
+    color:white;
+    text-decoration:none;
+    border-radius:25px;
+}
+
+/* Sections */
+section{
+    padding:45px 7%;
+}
+
+section h2{
+    text-align:center;
+    color:#1565c0;
+    margin-bottom:30px;
+    font-size:28px;
+}
+
+/* Cards */
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:white;
+    padding:25px 18px;
+    border-radius:15px;
+    text-align:center;
+    box-shadow:0 4px 15px rgba(0,0,0,0.08);
+}
+
+.card .icon{
+    font-size:42px;
+    margin-bottom:10px;
+}
+
+.card h3{
+    color:#1565c0;
+    margin-bottom:8px;
+}
+
+.card p{
+    color:#666;
+    font-size:14px;
+}
+
+/* About */
+.about{
+    background:#e8f2ff;
+    text-align:center;
+}
+
+.about p{
+    max-width:750px;
+    margin:auto;
+    line-height:1.8;
+}
+
+/* Footer */
+footer{
+    background:#12304a;
+    color:white;
+    text-align:center;
+    padding:30px 15px;
+}
+
+footer p{
+    margin-top:7px;
+    font-size:14px;
+}
+
+/* Mobile */
+@media(max-width:600px){
+
+    .logo{
+        font-size:30px;
     }
 
-    body {
-      background: #f5f7fb;
-      color: #222;
-      line-height: 1.6;
+    .hero h1{
+        font-size:30px;
     }
 
-    header {
-      background: linear-gradient(135deg, #1565c0, #42a5f5);
-      color: white;
-      padding: 18px 7%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
+    .hero p{
+        font-size:16px;
     }
 
-    .logo {
-      font-size: 30px;
-      font-weight: bold;
+    nav a{
+        display:inline-block;
+        margin:5px;
     }
-
-    .tagline {
-      font-size: 13px;
-      opacity: 0.95;
-    }
-
-    nav {
-      margin-top: 8px;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin: 0 7px;
-      font-size: 15px;
-    }
-
-    nav a:hover {
-      text-decoration: underline;
-    }
-
-    .hero {
-      text-align: center;
-      padding: 65px 20px;
-      background: white;
-    }
-
-    .hero h1 {
-      font-size: 42px;
-      color: #1565c0;
-      margin-bottom: 12px;
-    }
-
-    .hero p {
-      font-size: 19px;
-      color: #555;
-      max-width: 700px;
-      margin: auto;
-    }
-
-    .button {
-      display: inline-block;
-      margin-top: 25px;
-      padding: 12px 25px;
-      background: #1565c0;
-      color: white;
-      text-decoration: none;
-      border-radius: 25px;
-      font-weight: bold;
-    }
-
-    .section {
-      padding: 45px 7%;
-    }
-
-    .section h2 {
-      text-align: center;
-      color: #1565c0;
-      margin-bottom: 30px;
-      font-size: 30px;
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-      gap: 20px;
-    }
-
-    .card {
-      background: white;
-      padding: 25px 18px;
-      text-align: center;
-      border-radius: 15px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-      transition: 0.3s;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-    }
-
-    .icon {
-      font-size: 42px;
-      margin-bottom: 10px;
-    }
-
-    .card h3 {
-      color: #1565c0;
-      margin-bottom: 8px;
-    }
-
-    .card p {
-      color: #666;
-      font-size: 14px;
-    }
-
-    .about {
-      background: #eaf3ff;
-      text-align: center;
-      padding: 45px 8%;
-    }
-
-    .about h2 {
-      color: #1565c0;
-      margin-bottom: 15px;
-    }
-
-    .about p {
-      max-width: 800px;
-      margin: auto;
-      color: #444;
-    }
-
-    footer {
-      background: #12304a;
-      color: white;
-      text-align: center;
-      padding: 25px;
-      margin-top: 20px;
-    }
-
-    footer p {
-      margin: 5px;
-      font-size: 14px;
-    }
-
-    @media (max-width: 650px) {
-
-      header {
-        text-align: center;
-        justify-content: center;
-      }
-
-      .logo {
-        width: 100%;
-        margin-bottom: 5px;
-      }
-
-      nav a {
-        display: inline-block;
-        margin: 5px;
-      }
-
-      .hero h1 {
-        font-size: 32px;
-      }
-
-      .hero p {
-        font-size: 16px;
-      }
-    }
-  </style>
+}
+</style>
 </head>
 
 <body>
 
-  <!-- Header -->
-  <header>
+<header>
 
-    <div>
-      <div class="logo">📚 Gyanivo</div>
-      <div class="tagline">ज्ञान से विकास की ओर</div>
-    </div>
+<div class="logo">📚 Gyanivo</div>
 
-    <nav>
-      <a href="#">होम</a>
-      <a href="#classes">कक्षाएँ</a>
-      <a href="#worksheets">वर्कशीट</a>
-      <a href="#exams">परीक्षा</a>
-      <a href="#teacher">शिक्षक कॉर्नर</a>
-    </nav>
+<div class="tagline">
+ज्ञान से विकास की ओर
+</div>
 
-  </header>
+<nav>
+<a href="#home">होम</a>
+<a href="#classes">कक्षाएँ</a>
+<a href="#worksheets">वर्कशीट</a>
+<a href="#exams">परीक्षा</a>
+<a href="#teacher">शिक्षक कॉर्नर</a>
+</nav>
 
-
-  <!-- Hero Section -->
-  <section class="hero">
-
-    <h1>Gyanivo में आपका स्वागत है</h1>
-
-    <p>
-      बच्चों, विद्यार्थियों और शिक्षकों के लिए
-      आसान, उपयोगी और गुणवत्तापूर्ण शिक्षा सामग्री।
-    </p>
-
-    <a href="#classes" class="button">
-      पढ़ाई शुरू करें →
-    </a>
-
-  </section>
+</header>
 
 
-  <!-- Classes -->
-  <section class="section" id="classes">
+<section class="hero" id="home">
 
-    <h2>📚 कक्षा के अनुसार पढ़ाई</h2>
+<h1>Gyanivo में आपका स्वागत है</h1>
 
-    <div class="cards">
+<p>
+बच्चों, विद्यार्थियों और शिक्षकों के लिए
+आसान, उपयोगी और गुणवत्तापूर्ण शिक्षा सामग्री।
+</p>
 
-      <div class="card">
-        <div class="icon">👦</div>
-        <h3>कक्षा 1</h3>
-        <p>हिन्दी, English, गणित और सामान्य ज्ञान।</p>
-      </div>
+<a class="btn" href="#classes">
+पढ़ाई शुरू करें →
+</a>
 
-      <div class="card">
-        <div class="icon">📖</div>
-        <h3>कक्षा 2</h3>
-        <p>बुनियादी शिक्षा और अभ्यास सामग्री।</p>
-      </div>
-
-      <div class="card">
-        <div class="icon">✏️</div>
-        <h3>कक्षा 3–5</h3>
-        <p>विषयवार प्रश्न और Worksheets।</p>
-      </div>
-
-      <div class="card">
-        <div class="icon">🎓</div>
-        <h3>कक्षा 6–8</h3>
-        <p>विषयवार अध्ययन एवं परीक्षा तैयारी।</p>
-      </div>
-
-    </div>
-
-  </section>
+</section>
 
 
-  <!-- Worksheets -->
-  <section class="section" id="worksheets">
+<section id="classes">
 
-    <h2>📝 Worksheets और PDF</h2>
+<h2>📚 कक्षा के अनुसार पढ़ाई</h2>
 
-    <div class="cards">
+<div class="cards">
 
-      <div class="card">
-        <div class="icon">📄</div>
-        <h3>वर्कशीट</h3>
-        <p>बच्चों के अभ्यास के लिए उपयोगी Worksheets।</p>
-      </div>
+<div class="card">
+<div class="icon">👦</div>
+<h3>कक्षा 1</h3>
+<p>हिन्दी, English, गणित और सामान्य ज्ञान।</p>
+</div>
 
-      <div class="card">
-        <div class="icon">📕</div>
-        <h3>PDF सामग्री</h3>
-        <p>पढ़ाई और अभ्यास के लिए PDF सामग्री।</p>
-      </div>
+<div class="card">
+<div class="icon">📖</div>
+<h3>कक्षा 2</h3>
+<p>बुनियादी शिक्षा और अभ्यास सामग्री।</p>
+</div>
 
-      <div class="card">
-        <div class="icon">🧮</div>
-        <h3>गणित अभ्यास</h3>
-        <p>सरल से कठिन प्रश्नों का अभ्यास।</p>
-      </div>
+<div class="card">
+<div class="icon">✏️</div>
+<h3>कक्षा 3–5</h3>
+<p>विषयवार प्रश्न और अभ्यास Worksheets।</p>
+</div>
 
-      <div class="card">
-        <div class="icon">🔤</div>
-        <h3>English Grammar</h3>
-        <p>हिन्दी के साथ आसान English Grammar।</p>
-      </div>
+<div class="card">
+<div class="icon">🎓</div>
+<h3>कक्षा 6–8</h3>
+<p>विषयवार अध्ययन और परीक्षा तैयारी।</p>
+</div>
 
-    </div>
+</div>
 
-  </section>
-
-
-  <!-- Exams -->
-  <section class="section" id="exams">
-
-    <h2>🎓 प्रतियोगी परीक्षा तैयारी</h2>
-
-    <div class="cards">
-
-      <div class="card">
-        <div class="icon">📘</div>
-        <h3>UPTET</h3>
-        <p>UPTET के लिए अभ्यास प्रश्न और अध्ययन सामग्री।</p>
-      </div>
-
-      <div class="card">
-        <div class="icon">📚</div>
-        <h3>CTET</h3>
-        <p>CTET की तैयारी के लिए उपयोगी सामग्री।</p>
-      </div>
-
-      <div class="card">
-        <div class="icon">🧠</div>
-        <h3>GK</h3>
-        <p>सामान्य ज्ञान के महत्वपूर्ण प्रश्न।</p>
-      </div>
-
-    </div>
-
-  </section>
+</section>
 
 
-  <!-- Teacher Corner -->
-  <section class="about" id="teacher">
+<section id="worksheets">
 
-    <h2>👨‍🏫 शिक्षक कॉर्नर</h2>
+<h2>📝 Worksheets और PDF</h2>
 
-    <p>
-      Gyanivo शिक्षकों के लिए Lesson Plan, शिक्षण सामग्री,
-      Worksheets, प्रश्न-पत्र, गतिविधियाँ और उपयोगी संसाधन
-      उपलब्ध कराने का प्रयास है।
-    </p>
+<div class="cards">
 
-  </section>
+<div class="card">
+<div class="icon">📄</div>
+<h3>वर्कशीट</h3>
+<p>बच्चों के अभ्यास के लिए उपयोगी Worksheets।</p>
+</div>
+
+<div class="card">
+<div class="icon">📚</div>
+<h3>PDF सामग्री</h3>
+<p>पढ़ाई और अभ्यास के लिए उपयोगी PDF।</p>
+</div>
+
+<div class="card">
+<div class="icon">➕</div>
+<h3>गणित</h3>
+<p>सरल से कठिन गणित प्रश्नों का अभ्यास।</p>
+</div>
+
+<div class="card">
+<div class="icon">🔤</div>
+<h3>English Grammar</h3>
+<p>हिन्दी के साथ आसान English Grammar।</p>
+</div>
+
+</div>
+
+</section>
 
 
-  <!-- Footer -->
-  <footer>
+<section id="exams">
 
-    <h3>📚 Gyanivo</h3>
+<h2>🎓 परीक्षा तैयारी</h2>
 
-    <p>ज्ञान से विकास की ओर</p>
+<div class="cards">
 
-    <p>© 2026 Gyanivo. सभी अधिकार सुरक्षित।</p>
+<div class="card">
+<div class="icon">📘</div>
+<h3>UPTET</h3>
+<p>UPTET के लिए अभ्यास प्रश्न और अध्ययन सामग्री।</p>
+</div>
 
-  </footer>
+<div class="card">
+<div class="icon">📗</div>
+<h3>CTET</h3>
+<p>CTET की तैयारी के लिए उपयोगी सामग्री।</p>
+</div>
+
+<div class="card">
+<div class="icon">🧠</div>
+<h3>सामान्य ज्ञान</h3>
+<p>GK के महत्वपूर्ण प्रश्न और उत्तर।</p>
+</div>
+
+</div>
+
+</section>
+
+
+<section class="about" id="teacher">
+
+<h2>👨‍🏫 शिक्षक कॉर्नर</h2>
+
+<p>
+Gyanivo शिक्षकों और विद्यार्थियों के लिए
+Lesson Plan, Worksheets, प्रश्न-पत्र,
+शिक्षण सामग्री और उपयोगी अध्ययन संसाधन
+उपलब्ध कराने का एक सरल डिजिटल मंच है।
+</p>
+
+</section>
+
+
+<footer>
+
+<h3>📚 Gyanivo</h3>
+
+<p>ज्ञान से विकास की ओर</p>
+
+<p>© 2026 Gyanivo | सभी अधिकार सुरक्षित</p>
+
+</footer>
 
 </body>
 </html>
