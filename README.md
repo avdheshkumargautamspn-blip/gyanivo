@@ -1,2 +1,2 @@
 # gyanivo
-Gyanivo - Gyan Se Vikas Ki Or. Shiksha Samgree Worksheets Aur Shikshak Sansadhan.
+Gyanivo - Shiksha Se Hee Har Sapana Sach Hota Hain.
