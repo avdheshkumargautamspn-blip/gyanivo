@@ -6,6 +6,48 @@
 
 <title>Gyanivo - ज्ञान से विकास की ओर</title>
 
+/* HINDI TEST RESULT CARD */
+
+.result-card{
+    background:white;
+    max-width:500px;
+    margin:30px auto;
+    padding:30px 20px;
+    border-radius:20px;
+    text-align:center;
+    box-shadow:0 8px 25px rgba(0,0,0,0.12);
+    border-top:6px solid #1565c0;
+}
+
+.result-card h2{
+    color:#1565c0;
+    margin-bottom:15px;
+    font-size:28px;
+}
+
+.result-score{
+    font-size:22px;
+    font-weight:bold;
+    margin:12px 0;
+}
+
+.result-message{
+    font-size:18px;
+    color:#555;
+    margin:15px 0;
+}
+
+.restart-btn{
+    display:inline-block;
+    margin-top:15px;
+    padding:12px 25px;
+    background:#1565c0;
+    color:white;
+    border:none;
+    border-radius:25px;
+    font-size:16px;
+    cursor:pointer;
+}
 <style>
 *{
 margin:0;
@@ -1025,6 +1067,33 @@ Lesson Plan
 
 <script>
 
+</section>
+
+<!-- HINDI TEST RESULT -->
+
+<div id="hindiResultCard" class="result-card" style="display:none;">
+
+    <h2>🎉 टेस्ट पूरा हुआ!</h2>
+
+    <div class="result-score" id="hindiResultScore">
+        सही उत्तर: 0 / 10
+    </div>
+
+    <div class="result-message" id="hindiResultMessage">
+        बहुत बढ़िया प्रयास!
+    </div>
+
+    <button class="restart-btn" onclick="location.reload()">
+        🔄 फिर से टेस्ट दें
+    </button>
+
+</div>
+
+
+<!-- FOOTER -->
+
+<footer>
+  
 /* =========================
 CLASS 1
 ========================= */
@@ -1564,13 +1633,31 @@ function showHindiResult(){
         return;
     }
 
-    alert(
-        "🎉 हिन्दी टेस्ट पूरा हुआ!\n\n"+
-        "सही उत्तर: "+hindiScore+" / 10\n"+
-        "गलत उत्तर: "+(10-hindiScore)+"\n"+
-        "प्रतिशत: "+(hindiScore*10)+"%"
-    );
+    document.getElementById("hindiResultCard").style.display = "block";
 
+    document.getElementById("hindiResultScore").innerHTML =
+        "सही उत्तर: " + hindiScore + " / 10<br>" +
+        "गलत उत्तर: " + (10 - hindiScore) + " / 10<br>" +
+        "प्रतिशत: " + (hindiScore * 10) + "%";
+
+    let message = "";
+
+    if(hindiScore >= 9){
+        message = "🏆 शानदार! आपकी तैयारी बहुत अच्छी है।";
+    }else if(hindiScore >= 7){
+        message = "👏 बहुत बढ़िया! थोड़ा और अभ्यास करें।";
+    }else if(hindiScore >= 5){
+        message = "👍 अच्छा प्रयास! और अभ्यास करें।";
+    }else{
+        message = "📚 दोबारा अभ्यास करके फिर टेस्ट दें।";
+    }
+
+    document.getElementById("hindiResultMessage").innerText = message;
+
+    document.getElementById("hindiResultCard")
+        .scrollIntoView({
+            behavior: "smooth",
+            block: "center"
+        });
 }
-  
 </script>
