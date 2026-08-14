@@ -893,216 +893,8 @@ document.getElementById("class1Content").innerHTML=`
 scrollToBox("class1Content");
 
 }
-let englishQuizQuestions = [];
-let englishCurrentQuestion = 0;
-let englishScore = 0;
-
-
-/* =====================================
-   ENGLISH SHUFFLE
-===================================== */
-
-function shuffleEnglish(array) {
-
-    let arr = [...array];
-
-    for (let i = arr.length - 1; i > 0; i--) {
-
-        let j = Math.floor(Math.random() * (i + 1));
-
-        [arr[i], arr[j]] = [arr[j], arr[i]];
-
-    }
-
-    return arr;
-}
-/* =====================================
-   START ENGLISH TEST
-===================================== */
-
-function startEnglishTest() {
-
-    englishCurrentQuestion = 0;
-    englishScore = 0;
-
-    englishQuizQuestions =
-        shuffleEnglish(englishQuestions).map(function(q) {
-
-            return {
-                question: q.question,
-                options: shuffleEnglish(q.options)
-            };
-
-        });
-
-    showEnglishQuestion();
-}
-  /* =====================================
-   START ENGLISH TEST
-===================================== */
-
-function startEnglishTest() {
-
-    englishCurrentQuestion = 0;
-    englishScore = 0;
-
-    englishQuizQuestions =
-        shuffleEnglish(englishQuestions).map(function(q) {
-
-            return {
-                question: q.question,
-                options: shuffleEnglish(q.options)
-            };
-
-        });
-
-    showEnglishQuestion();
-}
-
-  /* =====================================
-   SHOW ENGLISH QUESTION
-===================================== */
-
-function showEnglishQuestion() {
-/* =====================================
-   ENGLISH ANSWER
-===================================== */
-
-function answerEnglish(button, correct) {
-
-    const buttons =
-        document.querySelectorAll(
-            "#englishOptions .option"
-        );
-
-    buttons.forEach(function(btn) {
-        btn.disabled = true;
-    });
-
-    if (correct) {
-
-        englishScore++;
-
-        button.style.background = "#c8e6c9";
-        button.style.color = "#1b5e20";
-
-        button.innerText =
-            "✅ " + button.innerText;
-
-    } else {
-
-        button.style.background = "#ffcdd2";
-        button.style.color = "#b71c1c";
-
-        button.innerText =
-            "❌ " + button.innerText;
-
-        const current =
-            englishQuizQuestions[englishCurrentQuestion];
-
-        const rightAnswer =
-            current.options.find(function(option) {
-                return option.correct === true;
-            });
-
-        buttons.forEach(function(btn) {
-
-            if (btn.innerText === rightAnswer.text) {
-
-                btn.style.background = "#c8e6c9";
-                btn.style.color = "#1b5e20";
-
-            }
-
-        });
-
-    }
-
-}
-    const current =
-        englishQuizQuestions[englishCurrentQuestion];
-
-    document.getElementById("englishQuestion").innerText =
-        current.question;
-
-    const optionsBox =
-        document.getElementById("englishOptions");
-
-    optionsBox.innerHTML = "";
-
-    current.options.forEach(function(option) {
-
-        const button =
-            document.createElement("button");
-
-        button.className = "option";
-
-        button.type = "button";
-
-        button.innerText = option.text;
-
-        button.onclick = function() {
-
-            answerEnglish(button, option.correct);
-
-        };
-
-        optionsBox.appendChild(button);
-
-    });
-
-}
-  /* =====================================
-   NEXT ENGLISH QUESTION
-===================================== */
-
-function nextEnglishQuestion() {
-
-    englishCurrentQuestion++;
-
-    if (
-        englishCurrentQuestion >=
-        englishQuizQuestions.length
-    ) {
-
-        showEnglishResult();
-
-        return;
-
-    }
-
-    showEnglishQuestion();
-}
-  /* =====================================
-   RESTART ENGLISH TEST
-===================================== */
-
-function restartEnglishTest() {
-
-    document.getElementById("englishQuizBox").innerHTML =
-
-        '<div class="lesson">' +
-
-        '<p id="englishQuestion"></p>' +
-
-        '<div id="englishOptions"></div>' +
-
-        '</div>' +
-
-        '<button id="englishNextBtn" ' +
-        'class="btn" ' +
-        'type="button" ' +
-        'onclick="nextEnglishQuestion()" ' +
-        'style="display:none;">' +
-
-        'Next Question →' +
-
-        '</button>';
-
-    startEnglishTest();
-
-}
 function showEnglish1(){
+  
 /* =====================================
    CLASS 1 ENGLISH QUESTION BANK
 ===================================== */
@@ -1290,95 +1082,457 @@ const englishQuestions = [
     }
 
 ];
-document.getElementById("class1Content").innerHTML=`
 
-<h3>🔤 Class 1 — English</h3>
 
-<div class="lesson">
-<strong>Lesson 1 — Alphabet</strong><br>
-A B C D E F G
-</div>
+/* =====================================
+   ENGLISH TEST VARIABLES
+===================================== */
 
-<div class="lesson">
-<strong>Lesson 2 — Words</strong><br>
-Apple, Ball, Cat, Dog
-</div>
+let englishQuizQuestions = [];
+let englishCurrentQuestion = 0;
+let englishScore = 0;
 
-<div class="lesson">
-<strong>Lesson 3 — Colours</strong><br>
-Red, Blue, Green, Yellow
-</div>
 
-<h3>📝 English Practice Test</h3>
+/* =====================================
+   SHUFFLE
+===================================== */
 
-<p>
-Every time the questions and options will be shuffled.
-</p>
+function shuffleEnglish(array) {
 
-<div id="englishQuizBox">
+    let arr = [...array];
 
-    <div class="lesson">
+    for (let i = arr.length - 1; i > 0; i--) {
 
-        <p id="englishQuestion"></p>
+        let j = Math.floor(Math.random() * (i + 1));
 
-        <div id="englishOptions"></div>
+        [arr[i], arr[j]] = [arr[j], arr[i]];
 
-    </div>
+    }
 
-    <button
-        id="englishNextBtn"
-        class="btn"
-        type="button"
-        onclick="nextEnglishQuestion()"
-        style="display:none;">
-        Next Question →
-    </button>
+    return arr;
+}
 
-</div>
 
-<button
-    class="btn"
-    type="button"
-    onclick="startEnglishTest()">
-    ▶️ Start English Test
-</button>
-`;
+/* =====================================
+   START ENGLISH TEST
+===================================== */
 
-scrollToBox("class1Content");
+function startEnglishTest() {
+
+    englishCurrentQuestion = 0;
+    englishScore = 0;
+
+    /* 10 random questions */
+    englishQuizQuestions =
+        shuffleEnglish(englishQuestions)
+        .slice(0, 10)
+        .map(function(q) {
+
+            return {
+                question: q.question,
+                options: shuffleEnglish(q.options)
+            };
+
+        });
+
+    showEnglishQuestion();
+}
+
+
+/* =====================================
+   SHOW QUESTION
+===================================== */
+
+function showEnglishQuestion() {
+
+    const current =
+        englishQuizQuestions[englishCurrentQuestion];
+
+    const questionBox =
+        document.getElementById("englishQuestion");
+
+    const optionsBox =
+        document.getElementById("englishOptions");
+
+    if (!questionBox || !optionsBox) {
+        return;
+    }
+
+    questionBox.innerText =
+        (englishCurrentQuestion + 1) +
+        ". " +
+        current.question;
+
+    optionsBox.innerHTML = "";
+
+    current.options.forEach(function(option) {
+
+        const button =
+            document.createElement("button");
+
+        button.className = "option";
+        button.type = "button";
+        button.innerText = option.text;
+
+        button.onclick = function() {
+
+            answerEnglish(
+                button,
+                option.correct
+            );
+
+        };
+
+        optionsBox.appendChild(button);
+
+    });
+
+    const nextButton =
+        document.getElementById("englishNextBtn");
+
+    if (nextButton) {
+
+        nextButton.style.display = "none";
+
+        if (
+            englishCurrentQuestion ===
+            englishQuizQuestions.length - 1
+        ) {
+
+            nextButton.innerText =
+                "🏆 Result देखें";
+
+        } else {
+
+            nextButton.innerText =
+                "अगला प्रश्न →";
+
+        }
+
+    }
 
 }
+
+
 /* =====================================
-   ENGLISH RESULT
+   ANSWER
+===================================== */
+
+function answerEnglish(button, correct) {
+
+    const buttons =
+        document.querySelectorAll(
+            "#englishOptions .option"
+        );
+
+    buttons.forEach(function(btn) {
+
+        btn.disabled = true;
+
+    });
+
+    if (correct) {
+
+        englishScore++;
+
+        button.style.background =
+            "#c8e6c9";
+
+        button.style.color =
+            "#1b5e20";
+
+        button.innerText =
+            "✅ " + button.innerText;
+
+    } else {
+
+        button.style.background =
+            "#ffcdd2";
+
+        button.style.color =
+            "#b71c1c";
+
+        button.innerText =
+            "❌ " + button.innerText;
+
+        const current =
+            englishQuizQuestions[
+                englishCurrentQuestion
+            ];
+
+        const rightAnswer =
+            current.options.find(function(option) {
+
+                return option.correct === true;
+
+            });
+
+        buttons.forEach(function(btn) {
+
+            if (
+                btn.innerText ===
+                rightAnswer.text
+            ) {
+
+                btn.style.background =
+                    "#c8e6c9";
+
+                btn.style.color =
+                    "#1b5e20";
+
+            }
+
+        });
+
+    }
+
+    const nextButton =
+        document.getElementById(
+            "englishNextBtn"
+        );
+
+    if (nextButton) {
+
+        nextButton.style.display =
+            "inline-block";
+
+    }
+
+}
+
+
+/* =====================================
+   NEXT QUESTION
+===================================== */
+
+function nextEnglishQuestion() {
+
+    englishCurrentQuestion++;
+
+    if (
+        englishCurrentQuestion >=
+        englishQuizQuestions.length
+    ) {
+
+        showEnglishResult();
+
+        return;
+
+    }
+
+    showEnglishQuestion();
+
+}
+
+
+/* =====================================
+   RESULT
 ===================================== */
 
 function showEnglishResult() {
 
     const quizBox =
-        document.getElementById("englishQuizBox");
+        document.getElementById(
+            "englishQuizBox"
+        );
+
+    if (!quizBox) {
+        return;
+    }
+
+    const total =
+        englishQuizQuestions.length;
+
+    const percentage =
+        Math.round(
+            (englishScore / total) * 100
+        );
+
+    let message = "";
+
+    if (englishScore >= 9) {
+
+        message =
+            "🏆 Excellent! Very good work.";
+
+    } else if (englishScore >= 7) {
+
+        message =
+            "👏 Very good! Keep practising.";
+
+    } else if (englishScore >= 5) {
+
+        message =
+            "👍 Good effort! Practise more.";
+
+    } else {
+
+        message =
+            "📚 Keep practising and try again.";
+
+    }
 
     quizBox.innerHTML =
+
+        "<div class='lesson'>" +
 
         "<h3>🎉 English Test Complete!</h3>" +
 
         "<p>Correct Answers: <strong>" +
         englishScore +
-        " / " + englishQuizQuestions.length +
+        " / " +
+        total +
         "</strong></p>" +
 
         "<p>Wrong Answers: <strong>" +
-        (englishQuizQuestions.length - englishScore) +
+        (total - englishScore) +
+        " / " +
+        total +
         "</strong></p>" +
 
         "<p>Percentage: <strong>" +
-        Math.round(
-            (englishScore / englishQuizQuestions.length) * 100
-        ) +
+        percentage +
         "%</strong></p>" +
 
-        "<button class='btn' type='button' " +
+        "<p><strong>" +
+        message +
+        "</strong></p>" +
+
+        "<button class='btn' " +
+        "type='button' " +
         "onclick='restartEnglishTest()'>" +
-        "🔄 Take English Test Again" +
+
+        "🔄 फिर से English Test दें" +
+
+        "</button>" +
+
+        "</div>";
+
+}
+
+
+/* =====================================
+   RESTART
+===================================== */
+
+function restartEnglishTest() {
+
+    const quizBox =
+        document.getElementById(
+            "englishQuizBox"
+        );
+
+    if (!quizBox) {
+        return;
+    }
+
+    quizBox.innerHTML =
+
+        "<div class='lesson'>" +
+
+        "<p id='englishQuestion'></p>" +
+
+        "<div id='englishOptions'></div>" +
+
+        "</div>" +
+
+        "<button " +
+        "id='englishNextBtn' " +
+        "class='btn' " +
+        "type='button' " +
+        "onclick='nextEnglishQuestion()' " +
+        "style='display:none;'>" +
+
+        "अगला प्रश्न →" +
+
         "</button>";
+
+    startEnglishTest();
+
+}
+
+
+/* =====================================
+   CLASS 1 ENGLISH
+===================================== */
+
+function showEnglish1() {
+
+    document.getElementById(
+        "class1Content"
+    ).innerHTML = `
+
+    <h3>🔤 Class 1 — English</h3>
+
+    <div class="lesson">
+
+        <strong>Lesson 1 — Alphabet</strong><br>
+
+        A B C D E F G
+
+    </div>
+
+    <div class="lesson">
+
+        <strong>Lesson 2 — Words</strong><br>
+
+        Apple, Ball, Cat, Dog
+
+    </div>
+
+    <div class="lesson">
+
+        <strong>Lesson 3 — Colours</strong><br>
+
+        Red, Blue, Green, Yellow
+
+    </div>
+
+
+    <h3>📝 English Practice Test</h3>
+
+    <p>
+        हर बार 10 प्रश्न और विकल्पों का क्रम बदलेगा।
+    </p>
+
+
+    <div id="englishQuizBox">
+
+        <div class="lesson">
+
+            <p id="englishQuestion"></p>
+
+            <div id="englishOptions"></div>
+
+        </div>
+
+
+        <button
+            id="englishNextBtn"
+            class="btn"
+            type="button"
+            onclick="nextEnglishQuestion()"
+            style="display:none;">
+
+            अगला प्रश्न →
+
+        </button>
+
+    </div>
+
+
+    <button
+        class="btn"
+        type="button"
+        onclick="startEnglishTest()">
+
+        ▶️ Start English Test
+
+    </button>
+
+    `;
+
+    scrollToBox("class1Content");
 
 }
 
