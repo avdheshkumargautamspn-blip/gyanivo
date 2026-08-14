@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>किस्साफन — किस्से, ठहाके, ज्ञान और शिक्षा</title>
+<meta name="description" content="किस्साफन पर पढ़िए मजेदार किस्से-कहानियाँ, चुटकुले, रोचक तथ्य और बच्चों की शैक्षिक सामग्री।">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:Arial,"Noto Sans Devanagari",sans-serif;background:#f7f9fc;color:#222;line-height:1.6}
+header{background:linear-gradient(135deg,#6a1b9a,#8e24aa,#3949ab);color:#fff;padding:16px 5%;position:sticky;top:0;z-index:1000;box-shadow:0 3px 15px rgba(0,0,0,.15)}
+.header-inner{max-width:1200px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.logo{font-size:29px;font-weight:bold}.logo small{display:block;font-size:12px;font-weight:normal}
+nav{display:flex;flex-wrap:wrap;justify-content:center;gap:5px}
+nav a{color:#fff;text-decoration:none;padding:7px 11px;border-radius:20px;font-size:14px}
+nav a:hover{background:rgba(255,255,255,.2)}
+.hero{min-height:500px;display:flex;align-items:center;justify-content:center;text-align:center;padding:65px 20px;background:linear-gradient(135deg,#fff3e0,#f3e5f5,#e3f2fd)}
+.hero-content{max-width:850px}.hero-icon{font-size:72px}.hero h1{font-size:48px;color:#6a1b9a}.hero h2{font-size:24px;color:#3949ab}.hero p{max-width:700px;margin:12px auto;color:#555;font-size:18px}
+.hero-buttons{margin-top:24px;display:flex;justify-content:center;flex-wrap:wrap;gap:12px}
+.btn{display:inline-block;border:0;padding:11px 22px;border-radius:30px;background:#6a1b9a;color:#fff;text-decoration:none;cursor:pointer;font-size:15px;transition:.25s}
+.btn:hover{background:#4a148c;transform:translateY(-2px)}.btn-orange{background:#ff8f00}.btn-orange:hover{background:#ef6c00}
+section{padding:60px 5%}.section-title{text-align:center;margin-bottom:35px}.section-title .emoji{font-size:45px}.section-title h2{color:#6a1b9a;font-size:31px}.section-title p{color:#666}
+.search-section{background:#fff;padding:28px 5%}.search-box{max-width:720px;margin:auto;display:flex;gap:10px}.search-box input{flex:1;padding:13px 17px;border:2px solid #ddd;border-radius:30px;outline:0;font-size:16px}
+.search-box input:focus{border-color:#6a1b9a}.search-result{max-width:900px;margin:20px auto 0}
+.category-grid,.content-grid,.video-grid{max-width:1150px;margin:auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+.category-card,.content-card,.education-card,.video-card{background:#fff;padding:25px 20px;border-radius:20px;text-align:center;box-shadow:0 6px 20px rgba(0,0,0,.08);transition:.25s;border:1px solid #eee}
+.category-card:hover,.content-card:hover,.education-card:hover,.video-card:hover{transform:translateY(-6px);box-shadow:0 12px 27px rgba(0,0,0,.13)}
+.category-icon,.icon{font-size:52px}.category-card h3,.content-card h3,.education-card h3,.video-info h3{color:#6a1b9a;margin:8px 0}.category-card p,.content-card p,.education-card p,.video-info p{color:#666;font-size:14px}
+.content-viewer{max-width:900px;margin:30px auto 0;background:#fff;padding:28px;border-radius:20px;box-shadow:0 6px 22px rgba(0,0,0,.08)}
+.content-viewer h3{color:#6a1b9a;margin-bottom:12px}.story{background:#fafafa;border-left:5px solid #8e24aa;padding:17px;margin:12px 0;border-radius:8px}
+.featured{background:linear-gradient(135deg,#fff8e1,#fce4ec)}.featured-box{max-width:1050px;margin:auto;background:#fff;border-radius:24px;padding:30px;display:flex;align-items:center;gap:28px;box-shadow:0 8px 25px rgba(0,0,0,.1)}
+.featured-icon{font-size:80px;min-width:120px;text-align:center}.featured-content{flex:1}.badge{display:inline-block;background:#ff9800;color:#fff;padding:5px 13px;border-radius:20px;font-size:13px}.featured-content h3{color:#6a1b9a;font-size:26px;margin:8px 0}
+.video-section{background:#eef4ff}.video-thumb{height:160px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#6a1b9a,#3949ab);color:#fff;font-size:60px;border-radius:15px 15px 0 0}.video-info{padding:20px}
+.education{background:#f1f8e9}.education-card h3{color:#2e7d32}.quiz-section{background:#fff}.quiz-box{max-width:760px;margin:auto;background:#f8fbff;padding:28px;border-radius:20px;box-shadow:0 7px 22px rgba(0,0,0,.08)}
+.question{font-size:20px;font-weight:bold;margin-bottom:18px}.option{width:100%;text-align:left;padding:12px;margin:6px 0;border:1px solid #ddd;background:#fff;border-radius:10px;cursor:pointer;font-size:16px}.option:hover{background:#ede7f6}.result{padding:20px;background:#e8f5e9;color:#1b5e20;border-radius:15px;text-align:center;font-weight:bold}
+.teacher{background:#e8eaf6;text-align:center}.teacher p{max-width:750px;margin:auto;color:#555}
+.step17-section{background:linear-gradient(135deg,#fff8e1,#f3e5f5)}.step17-title{text-align:center;margin-bottom:30px}.step17-title .big-icon{font-size:55px}.step17-title h2{color:#6a1b9a;font-size:31px}.step17-title p{color:#666}
+.step17-search{max-width:700px;margin:0 auto 30px;display:flex;gap:10px}.step17-search input{flex:1;padding:13px 16px;border:2px solid #ddd;border-radius:25px;outline:0;font-size:15px}
+.step17-grid{max-width:1100px;margin:auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}.step17-card{background:#fff;padding:25px 20px;border-radius:20px;text-align:center;box-shadow:0 6px 20px rgba(0,0,0,.09);transition:.25s}.step17-card:hover{transform:translateY(-6px)}
+.step17-icon{font-size:52px}.step17-card h3{color:#6a1b9a;margin:8px}.step17-card p{color:#666;font-size:14px}.step17-btn{border:0;padding:10px 20px;margin-top:13px;border-radius:25px;background:#6a1b9a;color:#fff;cursor:pointer}
+.step17-content{max-width:900px;margin:30px auto 0;background:#fff;padding:28px;border-radius:20px;box-shadow:0 7px 22px rgba(0,0,0,.1)}.step17-item{background:#fafafa;border-left:5px solid #ff9800;padding:17px;margin:12px 0;border-radius:8px}.step17-item h3{color:#6a1b9a}.step17-empty{text-align:center;color:#777;padding:15px}
+.hidden{display:none!important}
+footer{background:#20243a;color:#fff;padding:38px 20px;text-align:center}footer h3{font-size:25px}footer p{font-size:14px;opacity:.85;margin-top:5px}
+@media(max-width:700px){header{position:relative}.header-inner{flex-direction:column}.logo{font-size:27px}.hero h1{font-size:35px}.hero h2{font-size:21px}.hero p{font-size:16px}.search-box,.step17-search{flex-direction:column}.search-box .btn,.step17-search button{width:100%}.featured-box{flex-direction:column;text-align:center;padding:25px 18px}.featured-icon{font-size:65px}section{padding:48px 5%}}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="header-inner">
+<div class="logo">🎭 किस्साफन <small>किस्से • कहानियाँ • ठहाके • ज्ञान</small></div>
+<nav>
+<a href="#home">🏠 होम</a>
+<a href="#categories">📚 कैटेगरी</a>
+<a href="#featured">⭐ आज का खास</a>
+<a href="#videos">🎬 वीडियो</a>
+<a href="#education">🎓 शिक्षा</a>
+<a href="#quiz">🎯 क्विज</a>
+<a href="#latest">✨ खास संसार</a>
+</nav>
+</div>
+</header>
+
+<section class="hero" id="home">
+<div class="hero-content">
+<div class="hero-icon">🎭📖😂</div>
+<h1>किस्साफन</h1>
+<h2>जहाँ हर किस्सा चेहरे पर मुस्कान लाए</h2>
+<p>मजेदार चुटकुले, दिलचस्प किस्से-कहानियाँ, ठहाके, रहस्य, रोचक तथ्य और बच्चों की शिक्षा — सब एक ही जगह।</p>
+<div class="hero-buttons">
+<a href="#categories" class="btn">🚀 अभी शुरू करें</a>
+<a href="#latest" class="btn btn-orange">✨ खास संसार</a>
+</div>
+</div>
+</section>
+
+<section class="search-section">
+<div class="search-box">
+<input id="searchInput" type="search" placeholder="🔍 कहानी, चुटकुला, रहस्य, तथ्य खोजें...">
+<button class="btn" onclick="searchKissa()">🔍 खोजें</button>
+</div>
+<div id="searchResult" class="search-result"></div>
+</section>
+
+<section id="categories">
+<div class="section-title"><div class="emoji">🌟</div><h2>किस्साफन की दुनिया</h2><p>अपनी पसंद की दुनिया चुनिए</p></div>
+<div class="category-grid">
+<div class="category-card"><div class="category-icon">😂</div><h3>चुटकुले</h3><p>मजेदार चुटकुले पढ़िए और हँसते-हँसते लोटपोट हो जाइए।</p><button class="btn" onclick="showCategory('jokes')">😂 पढ़ें</button></div>
+<div class="category-card"><div class="category-icon">📖</div><h3>किस्से-कहानियाँ</h3><p>दिलचस्प, मजेदार और सीख देने वाली कहानियाँ पढ़िए।</p><button class="btn" onclick="showCategory('stories')">📖 पढ़ें</button></div>
+<div class="category-card"><div class="category-icon">🤣</div><h3>ठहाके</h3><p>ऐसे मजेदार किस्से जिन्हें पढ़कर हँसी रोकना मुश्किल हो जाए।</p><button class="btn" onclick="showCategory('laughs')">🤣 ठहाका</button></div>
+<div class="category-card"><div class="category-icon">😱</div><h3>रहस्य</h3><p>रहस्यमयी और रोमांचक किस्सों की दुनिया।</p><button class="btn" onclick="showCategory('mystery')">😱 पढ़ें</button></div>
+<div class="category-card"><div class="category-icon">🧠</div><h3>रोचक तथ्य</h3><p>दुनिया के अनोखे और हैरान करने वाले तथ्य।</p><button class="btn" onclick="showCategory('facts')">🧠 देखें</button></div>
+<div class="category-card"><div class="category-icon">📰</div><h3>जानकारी</h3><p>महत्वपूर्ण और उपयोगी जानकारी सरल भाषा में।</p><button class="btn" onclick="showCategory('news')">📰 देखें</button></div>
+</div>
+<div id="mainContent" class="content-viewer"><h3>👋 किस्साफन में आपका स्वागत है!</h3><p>ऊपर से अपनी पसंद की कैटेगरी चुनिए। यहाँ शानदार कंटेंट दिखाई देगा।</p></div>
+</section>
+
+<section class="featured" id="featured">
+<div class="section-title"><div class="emoji">⭐</div><h2>आज का खास कंटेंट</h2><p>आज का सबसे मजेदार किस्सा</p></div>
+<div class="featured-box">
+<div class="featured-icon">😂</div>
+<div class="featured-content"><span class="badge">🔥 आज का खास</span><h3>मास्टर जी का मजेदार सवाल</h3><p>मास्टर जी ने बच्चे से ऐसा सवाल पूछा कि पूरी कक्षा हँसते-हँसते लोटपोट हो गई।</p><button class="btn" onclick="showFeatured()">पूरा पढ़ें →</button></div>
+</div>
+<div id="featuredContent" class="content-viewer hidden"></div>
+</section>
+
+<section class="video-section" id="videos">
+<div class="section-title"><div class="emoji">🎬</div><h2>किस्साफन वीडियो कॉर्नर</h2><p>मजेदार वीडियो के लिए अपना वीडियो लिंक बाद में जोड़ सकते हैं।</p></div>
+<div class="video-grid">
+<div class="video-card"><div class="video-thumb">😂</div><div class="video-info"><span>मजेदार</span><h3>मास्टर जी का सवाल</h3><p>हँसी से भरपूर मजेदार सामग्री।</p><button class="btn" onclick="videoMessage()">▶️ देखें</button></div></div>
+<div class="video-card"><div class="video-thumb">📖</div><div class="video-info"><span>कहानी</span><h3>ईमानदार बच्चे की कहानी</h3><p>बच्चों के लिए सुंदर सीख।</p><button class="btn" onclick="videoMessage()">▶️ देखें</button></div></div>
+<div class="video-card"><div class="video-thumb">🤣</div><div class="video-info"><span>ठहाके</span><h3>आज का मजेदार चुटकुला</h3><p>आपका दिन मुस्कान से भर दे।</p><button class="btn" onclick="videoMessage()">▶️ देखें</button></div></div>
+<div class="video-card"><div class="video-thumb">🧠</div><div class="video-info"><span>ज्ञान</span><h3>क्या आप यह तथ्य जानते हैं?</h3><p>ज्ञान बढ़ाने वाली जानकारी।</p><button class="btn" onclick="videoMessage()">▶️ देखें</button></div></div>
+</div>
+</section>
+
+<section class="education" id="education">
+<div class="section-title"><div class="emoji">🎓</div><h2>बच्चों की शिक्षा</h2><p>मनोरंजन के साथ ज्ञान भी</p></div>
+<div class="category-grid">
+<div class="education-card"><div class="icon">📖</div><h3>कक्षा 1 हिन्दी</h3><p>स्वर, व्यंजन, मात्राएँ और सरल शब्द।</p><button class="btn" onclick="showEducation('hindi1')">पढ़ें</button></div>
+<div class="education-card"><div class="icon">🔤</div><h3>Class 1 English</h3><p>Alphabet, Words और Basic Grammar।</p><button class="btn" onclick="showEducation('english1')">Learn</button></div>
+<div class="education-card"><div class="icon">➕</div><h3>कक्षा 1 गणित</h3><p>संख्या, जोड़ और घटाव।</p><button class="btn" onclick="showEducation('math1')">पढ़ें</button></div>
+<div class="education-card"><div class="icon">🌎</div><h3>कक्षा 1 GK</h3><p>बच्चों के लिए आसान सामान्य ज्ञान।</p><button class="btn" onclick="showEducation('gk1')">सीखें</button></div>
+</div>
+<div id="educationContent" class="content-viewer"><h3>🎓 शिक्षा अनुभाग</h3><p>कोई विषय चुनिए और पढ़ाई शुरू कीजिए।</p></div>
+</section>
+
+<section class="quiz-section" id="quiz">
+<div class="section-title"><div class="emoji">🎯</div><h2>ऑनलाइन मजेदार क्विज</h2><p>ज्ञान बढ़ाएँ और अपना Score देखें।</p></div>
+<div class="quiz-box">
+<div id="quizArea"><div id="question" class="question">प्रश्न लोड हो रहा है...</div><div id="options"></div><button id="nextBtn" class="btn" onclick="nextQuestion()">अगला प्रश्न →</button></div>
+<div id="quizResult" class="result hidden"></div>
+</div>
+</section>
+
+<section class="teacher" id="teacher">
+<div class="section-title"><div class="emoji">👨‍🏫</div><h2>शिक्षक कॉर्नर</h2><p>शिक्षकों के लिए उपयोगी सामग्री</p></div>
+<p>Lesson Plan, Worksheets, प्रश्न-पत्र, PTM सामग्री, शिक्षण गतिविधियाँ और अन्य उपयोगी संसाधन यहाँ उपलब्ध होंगे।</p><br>
+<button class="btn" onclick="teacherMessage()">📚 शिक्षक सामग्री</button>
+</section>
+
+<section class="step17-section" id="latest">
+<div class="step17-title"><div class="big-icon">✨</div><h2>किस्साफन का खास संसार</h2><p>खबरें, किस्से, कहानियाँ और ठहाके — सब एक ही जगह।</p></div>
+<div class="step17-search">
+<input id="step17Search" type="text" placeholder="🔍 खबर, कहानी या चुटकुला खोजें...">
+<button class="btn" onclick="searchStep17()">🔍 खोजें</button>
+</div>
+<div class="step17-grid">
+<div class="step17-card"><div class="step17-icon">📰</div><h3>जानकारी</h3><p>महत्वपूर्ण और उपयोगी जानकारी सरल भाषा में।</p><button class="step17-btn" onclick="showStep17News()">पढ़ें</button></div>
+<div class="step17-card"><div class="step17-icon">📖</div><h3>किस्से-कहानियाँ</h3><p>रोचक, मजेदार और सीख देने वाली कहानियाँ।</p><button class="step17-btn" onclick="showStep17Stories()">कहानी पढ़ें</button></div>
+<div class="step17-card"><div class="step17-icon">🤣</div><h3>ठहाके</h3><p>हँसी से भरपूर छोटे-छोटे मजेदार किस्से।</p><button class="step17-btn" onclick="showStep17Jokes()">हँसिए</button></div>
+<div class="step17-card"><div class="step17-icon">😄</div><h3>मजेदार चुटकुले</h3><p>बच्चों और बड़ों के लिए साफ-सुथरे चुटकुले।</p><button class="step17-btn" onclick="showStep17Chutkule()">देखें</button></div>
+</div>
+<div class="step17-content" id="step17Content"><div class="step17-empty"><div style="font-size:50px">🌟</div><h3>किस्साफन में आपका स्वागत है!</h3><p>ऊपर किसी भी श्रेणी पर क्लिक करके सामग्री पढ़ना शुरू करें।</p></div></div>
+</section>
+
+<footer>
+<h3>🎭 किस्साफन</h3>
+<p>किस्से • कहानियाँ • ठहाके • ज्ञान • शिक्षा</p>
+<p>© 2026 किस्साफन | सभी अधिकार सुरक्षित</p>
+</footer>
+
+<script>
+const categoryData={
+jokes:{title:"😂 मजेदार चुटकुले",items:[
+["मास्टर जी का सवाल","मास्टर जी — बताओ सबसे समझदार कौन होता है? बच्चा — सर, जो आपकी बात समझ जाए!"],
+["पापा का सवाल","पापा — पढ़ाई कैसी चल रही है? बेटा — मोबाइल जैसी, चार्जर लगाओ तो चलती है! 😂"],
+["स्कूल की छुट्टी","शिक्षक — होमवर्क क्यों नहीं किया? बच्चा — सर, छुट्टी के दिन मैंने छुट्टी ही की थी! 😄"]]},
+stories:{title:"📖 किस्से-कहानियाँ",items:[
+["ईमानदारी का फल","मोहन को रास्ते में एक बटुआ मिला। उसने मालिक को खोजकर बटुआ लौटा दिया। मालिक ने उसकी ईमानदारी की प्रशंसा की।"],
+["मेहनती चिड़िया","एक छोटी चिड़िया रोज मेहनत करके अपने बच्चों के लिए दाना जुटाती थी। वह कभी हार नहीं मानती थी। सीख — मेहनत करने वालों की हार नहीं होती।"]]},
+laughs:{title:"🤣 आज के ठहाके",items:[
+["मास्टर जी और बच्चा","मास्टर जी — बताओ पढ़ाई क्यों जरूरी है? बच्चा — ताकि बड़े होकर बच्चों को पढ़ाने से बच सकूँ! 😂"],
+["मोबाइल की पढ़ाई","माँ — बेटा किताब खोलो। बेटा — माँ, मोबाइल में PDF खोल दूँ? पढ़ाई तो वही है! 😆"]]},
+mystery:{title:"😱 रहस्यमयी किस्से",items:[
+["पुरानी घड़ी","एक पुराने घर में बंद पड़ी घड़ी हर रात ठीक बारह बजे एक बार चलती थी। घर के लोग इसका कारण जानने के लिए उत्सुक थे।"],
+["अजीब आवाज","गाँव के पुराने कुएँ के पास रात में घंटी जैसी आवाज सुनाई देती थी। सुबह वहाँ कुछ भी असामान्य नहीं मिलता था।"]]},
+facts:{title:"🧠 रोचक तथ्य",items:[
+["पृथ्वी","पृथ्वी अपनी धुरी पर घूमती है और इसी कारण दिन और रात होते हैं।"],
+["इंद्रधनुष","इंद्रधनुष सूर्य के प्रकाश और पानी की बूंदों के कारण दिखाई देता है।"],
+["पेड़","पेड़ हमें ऑक्सीजन, छाया और अनेक उपयोगी चीजें देते हैं।"]]},
+news:{title:"📰 आज की उपयोगी जानकारी",items:[
+["शिक्षा","विद्यार्थियों के लिए नियमित पढ़ाई, अभ्यास और पुनरावृत्ति बहुत उपयोगी आदतें हैं।"],
+["स्वच्छता","अपने आसपास सफाई रखना स्वास्थ्य और अच्छे वातावरण के लिए महत्वपूर्ण है।"],
+["ज्ञान","रोज एक नई बात सीखना ज्ञान को लगातार बढ़ाने का सरल तरीका है।"]]}
+};
+
+function renderItems(target,title,items){
+let html="<h2>"+title+"</h2>";
+items.forEach(x=>html+=`<div class="story"><h3>${x[0]}</h3><p>${x[1]}</p></div>`);
+document.getElementById(target).innerHTML=html;
+document.getElementById(target).scrollIntoView({behavior:"smooth",block:"start"});
+}
+
+function showCategory(key){renderItems("mainContent",categoryData[key].title,categoryData[key].items)}
+
+function showFeatured(){
+const el=document.getElementById("featuredContent");
+el.classList.remove("hidden");
+el.innerHTML=`<h3>😂 मास्टर जी का मजेदार सवाल</h3>
+<div class="story"><p><b>मास्टर जी:</b> बताओ, सबसे ज्यादा समझदार कौन होता है?</p>
+<p><b>बच्चा:</b> सर, जो आपकी बात समझ जाए!</p>
+<p><b>मास्टर जी:</b> और जो न समझे?</p><p><b>बच्चा:</b> वह आपसे दोबारा पूछता है! 😂</p></div>`;
+el.scrollIntoView({behavior:"smooth",block:"center"});
+}
+
+function searchKissa(){
+const q=document.getElementById("searchInput").value.toLowerCase().trim();
+if(!q){document.getElementById("searchResult").innerHTML="<div class='content-viewer'><p>कृपया कुछ खोजें।</p></div>";return}
+let key=null;
+if(q.includes("चुटकुल")||q.includes("joke"))key="jokes";
+else if(q.includes("कहानी")||q.includes("किस्सा")||q.includes("story"))key="stories";
+else if(q.includes("ठहाका")||q.includes("laugh"))key="laughs";
+else if(q.includes("रहस्य")||q.includes("mystery"))key="mystery";
+else if(q.includes("तथ्य")||q.includes("fact"))key="facts";
+else if(q.includes("खबर")||q.includes("news")||q.includes("जानकारी"))key="news";
+if(key)renderItems("searchResult",categoryData[key].title,categoryData[key].items);
+else document.getElementById("searchResult").innerHTML="<div class='content-viewer'><h3>🔍 कुछ नहीं मिला</h3><p>कहानी, चुटकुला, ठहाका, रहस्य, तथ्य या जानकारी खोजकर देखें।</p></div>";
+}
+
+function showEducation(key){
+const data={
+hindi1:["📖 कक्षा 1 हिन्दी",["स्वर — अ, आ, इ, ई, उ, ऊ","व्यंजन — क, ख, ग, घ, च, छ","मात्राएँ — ा, ि, ी, ु, ू","सरल शब्द — कमल, गगन, घर, जल","अभ्यास — रोज पाँच नए शब्द पढ़ें और लिखें।"]],
+english1:["🔤 Class 1 English",["Alphabet — A to Z","Vowels — A, E, I, O, U","Simple Words — cat, bat, sun, pen","Colours — red, blue, green, yellow","Practice — Read and write five words daily."]],
+math1:["➕ कक्षा 1 गणित",["संख्याएँ — 1 से 100","जोड़ — 2 + 3 = 5","घटाव — 7 - 2 = 5","तुलना — बड़ा, छोटा, बराबर","अभ्यास — रोज 10 सरल सवाल हल करें।"]],
+gk1:["🌎 कक्षा 1 GK",["भारत की राजधानी — नई दिल्ली","राष्ट्रीय पशु — बाघ","राष्ट्रीय पक्षी — मोर","राष्ट्रीय फूल — कमल","अभ्यास — रोज एक नया सामान्य ज्ञान तथ्य सीखें।"]]
+};
+let d=data[key],html="<h3>"+d[0]+"</h3>";
+d[1].forEach(v=>html+=`<div class="story"><p>📌 ${v}</p></div>`);
+document.getElementById("educationContent").innerHTML=html;
+document.getElementById("educationContent").scrollIntoView({behavior:"smooth",block:"center"});
+}
+
+function videoMessage(){alert("🎬 यहाँ आप अपने YouTube वीडियो का लिंक जोड़ सकते हैं।")}
+
+function teacherMessage(){
+document.getElementById("teacher").scrollIntoView({behavior:"smooth"});
+alert("📚 शिक्षक कॉर्नर तैयार है। आगे इसमें Lesson Plan, Worksheet और PTM सामग्री जोड़ी जा सकती है।");
+}
+
+function showStep17News(){renderItems("step17Content",categoryData.news.title,categoryData.news.items)}
+function showStep17Stories(){renderItems("step17Content",categoryData.stories.title,categoryData.stories.items)}
+function showStep17Jokes(){renderItems("step17Content",categoryData.laughs.title,categoryData.laughs.items)}
+function showStep17Chutkule(){renderItems("step17Content",categoryData.jokes.title,categoryData.jokes.items)}
+
+function searchStep17(){
+const q=document.getElementById("step17Search").value.toLowerCase().trim();
+if(!q){alert("कृपया कुछ खोजें।");return}
+if(q.includes("खबर")||q.includes("जानकारी")||q.includes("news"))return showStep17News();
+if(q.includes("कहानी")||q.includes("किस्सा")||q.includes("story"))return showStep17Stories();
+if(q.includes("ठहाका")||q.includes("joke")||q.includes("laugh"))return showStep17Jokes();
+if(q.includes("चुटकुला")||q.includes("चुटकुले"))return showStep17Chutkule();
+document.getElementById("step17Content").innerHTML="<div class='step17-empty'><div style='font-size:50px'>🔍</div><h3>कुछ नहीं मिला</h3><p>खबर, कहानी, ठहाका या चुटकुला खोजकर देखें।</p></div>";
+}
+
+const quizQuestions=[
+{q:"A के बाद कौन-सा अक्षर आता है?",o:["B","C","D","E"],a:"B"},
+{q:"2 + 3 = ?",o:["4","5","6","7"],a:"5"},
+{q:"भारत का राष्ट्रीय पक्षी कौन है?",o:["तोता","मोर","कबूतर","हंस"],a:"मोर"},
+{q:"‘Cat’ का अर्थ क्या है?",o:["कुत्ता","बिल्ली","गाय","घोड़ा"],a:"बिल्ली"},
+{q:"सूरज किस दिशा से निकलता है?",o:["उत्तर","दक्षिण","पूर्व","पश्चिम"],a:"पूर्व"}
+];
+let quizIndex=0,score=0,answered=false;
+
+function loadQuiz(){
+if(quizIndex>=quizQuestions.length){finishQuiz();return}
+answered=false;
+const q=quizQuestions[quizIndex];
+document.getElementById("question").textContent=(quizIndex+1)+". "+q.q;
+document.getElementById("options").innerHTML=q.o.map(x=>`<button class="option" onclick="selectAnswer(this,'${x.replace(/'/g,"\\'")}')">${x}</button>`).join("");
+}
+function selectAnswer(btn,answer){
+if(answered)return;answered=true;
+const q=quizQuestions[quizIndex];
+document.querySelectorAll("#options .option").forEach(b=>b.disabled=true);
+if(answer===q.a){score++;btn.style.background="#c8e6c9";}else{btn.style.background="#ffcdd2";}
+}
+function nextQuestion(){if(!answered){alert("पहले एक उत्तर चुनिए।");return}quizIndex++;loadQuiz()}
+function finishQuiz(){
+document.getElementById("quizArea").classList.add("hidden");
+const r=document.getElementById("quizResult");r.classList.remove("hidden");
+r.innerHTML=`🎉 क्विज पूरा हुआ!<br><br>आपका Score: <strong>${score} / ${quizQuestions.length}</strong><br><br><button class="btn" onclick="restartQuiz()">🔄 फिर से खेलें</button>`;
+}
+function restartQuiz(){quizIndex=0;score=0;document.getElementById("quizArea").classList.remove("hidden");document.getElementById("quizResult").classList.add("hidden");loadQuiz()}
+
+document.getElementById("searchInput").addEventListener("keydown",e=>{if(e.key==="Enter")searchKissa()});
+document.getElementById("step17Search").addEventListener("keydown",e=>{if(e.key==="Enter")searchStep17()});
+loadQuiz();
+</script>
+</body>
+</html>
