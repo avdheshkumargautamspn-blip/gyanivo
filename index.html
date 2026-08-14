@@ -1520,6 +1520,10 @@ loadQuestion();
 
 
 loadQuestion();
+
+  let  hindiScore = 0;
+  let  hindiAnswered = 0;
+  
 function answerHindi(button, correct){
 
 if(button.dataset.clicked === "yes"){
@@ -1528,6 +1532,17 @@ return;
 
 button.dataset.clicked = "yes";
 
+  hindiAnswered++;
+
+if(correct){
+hindiScore++;
+}
+
+if(hindiAnswered === 10){
+setTimeout(showHindiResult, 300);
+  
+}
+  
 if(correct){
 
 button.style.background = "#c8e6c9";
@@ -1541,6 +1556,18 @@ button.style.color = "#b71c1c";
 button.innerText = "❌ गलत उत्तर";
 
 }
+function showHindiResult(){
+
+if(hindiAnswered < 10){
+return;
+}
+
+alert(
+"🎉 हिन्दी टेस्ट पूरा हुआ!\n\n"+
+"सही उत्तर: "+hindiScore+" / 10\n"+
+"गलत उत्तर: "+(10-hindiScore)+"\n"+
+"प्रतिशत: "+(hindiScore*10)+"%"
+);
 
 }
   
