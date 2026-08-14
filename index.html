@@ -1,15 +1,177 @@
 <!DOCTYPE html>
 <html lang="hi">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>किस्साफन - किस्से भी, हँसी भी, खबरें भी!</title>
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>किस्साफन — किस्से, ठहाके और ताज़ा खबरें</title>
 
 <meta name="description"
-content="किस्साफन पर पढ़िए मजेदार कहानियाँ, चुटकुले, ठहाके, ताजा खबरें, रोचक जानकारी और वीडियो।">
+      content="किस्साफन पर पढ़िए मजेदार किस्से-कहानियाँ, चुटकुले, ठहाके, रोचक तथ्य, रहस्य और ताज़ा खबरें।">
+/* =====================================
+   KISSAFAN STEP 17
+   NEWS + STORIES + JOKES
+===================================== */
 
+.step17-section{
+    padding:60px 6%;
+    background:linear-gradient(135deg,#fff8e1,#f3e5f5);
+}
+
+.step17-title{
+    text-align:center;
+    margin-bottom:35px;
+}
+
+.step17-title .big-icon{
+    font-size:55px;
+}
+
+.step17-title h2{
+    color:#6a1b9a;
+    font-size:32px;
+    margin:8px 0;
+}
+
+.step17-title p{
+    color:#666;
+    font-size:16px;
+}
+
+.step17-grid{
+    max-width:1100px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:22px;
+}
+
+.step17-card{
+    background:white;
+    padding:25px 20px;
+    border-radius:20px;
+    text-align:center;
+    box-shadow:0 6px 20px rgba(0,0,0,.10);
+    transition:.3s;
+}
+
+.step17-card:hover{
+    transform:translateY(-7px);
+    box-shadow:0 12px 28px rgba(0,0,0,.15);
+}
+
+.step17-icon{
+    font-size:52px;
+}
+
+.step17-card h3{
+    color:#6a1b9a;
+    margin:10px 0;
+}
+
+.step17-card p{
+    color:#666;
+    line-height:1.7;
+    font-size:14px;
+}
+
+.step17-btn{
+    border:none;
+    padding:11px 22px;
+    margin-top:15px;
+    border-radius:25px;
+    background:#6a1b9a;
+    color:white;
+    cursor:pointer;
+    font-size:15px;
+}
+
+.step17-btn:hover{
+    background:#4a148c;
+}
+
+.step17-content{
+    max-width:900px;
+    margin:35px auto 0;
+    background:white;
+    padding:30px;
+    border-radius:22px;
+    box-shadow:0 7px 22px rgba(0,0,0,.10);
+}
+
+.step17-item{
+    background:#fafafa;
+    border-left:5px solid #ff9800;
+    padding:18px;
+    margin:14px 0;
+    border-radius:10px;
+    line-height:1.8;
+}
+
+.step17-item h3{
+    color:#6a1b9a;
+    margin-bottom:8px;
+}
+
+.step17-search{
+    max-width:650px;
+    margin:0 auto 30px;
+    display:flex;
+    gap:10px;
+}
+
+.step17-search input{
+    flex:1;
+    padding:13px 16px;
+    border:1px solid #ddd;
+    border-radius:25px;
+    outline:none;
+    font-size:15px;
+}
+
+.step17-search button{
+    border:none;
+    padding:12px 20px;
+    border-radius:25px;
+    background:#6a1b9a;
+    color:white;
+    cursor:pointer;
+}
+
+.step17-empty{
+    text-align:center;
+    color:#777;
+    padding:20px;
+}
+
+@media(max-width:600px){
+
+    .step17-section{
+        padding:45px 5%;
+    }
+
+    .step17-title h2{
+        font-size:25px;
+    }
+
+    .step17-search{
+        flex-direction:column;
+    }
+
+    .step17-search button{
+        width:100%;
+    }
+}
 <style>
+
+/* =====================================
+   KISSAFAN 2.0
+   COMPLETE WEBSITE DESIGN
+===================================== */
 
 *{
     margin:0;
@@ -22,28 +184,45 @@ html{
 }
 
 body{
-    font-family:Arial,"Noto Sans Devanagari",sans-serif;
-    background:#f7f8fc;
+    font-family:
+        Arial,
+        "Noto Sans Devanagari",
+        sans-serif;
+
+    background:#f7f9fc;
     color:#222;
+    line-height:1.6;
 }
 
-/* =========================
-HEADER
-========================= */
+
+/* =====================================
+   HEADER
+===================================== */
 
 header{
-    background:linear-gradient(135deg,#7b1fa2,#e91e63);
+    background:
+        linear-gradient(
+            135deg,
+            #6a1b9a,
+            #8e24aa,
+            #3949ab
+        );
+
     color:white;
     padding:18px 5%;
+
     position:sticky;
     top:0;
     z-index:1000;
-    box-shadow:0 3px 15px rgba(0,0,0,.15);
+
+    box-shadow:
+        0 3px 15px rgba(0,0,0,.15);
 }
 
-.header-top{
+.header-inner{
     max-width:1200px;
     margin:auto;
+
     display:flex;
     align-items:center;
     justify-content:space-between;
@@ -51,463 +230,303 @@ header{
 }
 
 .logo{
-    font-size:34px;
+    font-size:30px;
     font-weight:bold;
     white-space:nowrap;
 }
 
-.tagline{
-    font-size:14px;
-    margin-top:4px;
-}
-
-.search-box{
-    display:flex;
-    background:white;
-    border-radius:30px;
-    overflow:hidden;
-    max-width:300px;
-    width:100%;
-}
-
-.search-box input{
-    border:none;
-    outline:none;
-    padding:11px 15px;
-    width:100%;
-    font-size:14px;
-}
-
-.search-box button{
-    border:none;
-    background:#ffca28;
-    padding:0 16px;
-    cursor:pointer;
-    font-size:18px;
+.logo small{
+    display:block;
+    font-size:12px;
+    font-weight:normal;
+    opacity:.9;
 }
 
 nav{
-    max-width:1200px;
-    margin:15px auto 0;
-    text-align:center;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:6px;
 }
 
 nav a{
     color:white;
     text-decoration:none;
-    display:inline-block;
-    margin:5px 9px;
-    font-size:15px;
-    font-weight:bold;
+
+    padding:8px 12px;
+    border-radius:20px;
+
+    font-size:14px;
+
+    transition:.3s;
 }
 
 nav a:hover{
-    color:#ffeb3b;
+    background:rgba(255,255,255,.2);
 }
 
-/* =========================
-HERO
-========================= */
+
+/* =====================================
+   HERO
+===================================== */
 
 .hero{
-    background:
-    linear-gradient(135deg,rgba(123,31,162,.92),rgba(233,30,99,.88)),
-    radial-gradient(circle at top right,#ffca28,transparent 30%);
-    color:white;
+    min-height:520px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
     text-align:center;
-    padding:75px 20px;
+
+    padding:70px 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff3e0,
+            #f3e5f5,
+            #e3f2fd
+        );
+}
+
+.hero-content{
+    max-width:850px;
+}
+
+.hero-icon{
+    font-size:75px;
+    margin-bottom:10px;
 }
 
 .hero h1{
-    font-size:45px;
+    font-size:48px;
+    color:#6a1b9a;
+    margin-bottom:12px;
+}
+
+.hero h2{
+    font-size:25px;
+    color:#3949ab;
     margin-bottom:15px;
 }
 
 .hero p{
-    font-size:20px;
-    line-height:1.8;
-    max-width:750px;
+    max-width:700px;
     margin:auto;
+
+    color:#555;
+    font-size:18px;
 }
 
 .hero-buttons{
     margin-top:25px;
+
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:12px;
 }
+
+
+/* =====================================
+   BUTTONS
+===================================== */
 
 .btn{
     display:inline-block;
+
     border:none;
+
     padding:12px 24px;
-    margin:7px;
-    background:#ffca28;
-    color:#222;
-    border-radius:25px;
-    cursor:pointer;
+
+    border-radius:30px;
+
+    background:#6a1b9a;
+    color:white;
+
     text-decoration:none;
+
+    cursor:pointer;
+
     font-size:15px;
-    font-weight:bold;
-}
 
-.btn:hover{
-    transform:translateY(-2px);
-}
-
-/* =========================
-SECTION
-========================= */
-
-section{
-    padding:55px 5%;
-}
-
-section h2{
-    text-align:center;
-    color:#7b1fa2;
-    margin-bottom:32px;
-    font-size:30px;
-}
-
-.section-intro{
-    text-align:center;
-    max-width:700px;
-    margin:-15px auto 30px;
-    color:#666;
-    line-height:1.7;
-}
-
-/* =========================
-CATEGORY CARDS
-========================= */
-
-.cards{
-    max-width:1150px;
-    margin:auto;
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
-    gap:22px;
-}
-
-.card{
-    background:white;
-    padding:27px 20px;
-    border-radius:20px;
-    text-align:center;
-    box-shadow:0 5px 20px rgba(0,0,0,.08);
     transition:.3s;
 }
 
-.card:hover{
-    transform:translateY(-7px);
-    box-shadow:0 10px 25px rgba(0,0,0,.13);
+.btn:hover{
+    background:#4a148c;
+    transform:translateY(-2px);
 }
 
-.card-icon{
+.btn-orange{
+    background:#ff8f00;
+}
+
+.btn-orange:hover{
+    background:#ef6c00;
+}
+
+
+/* =====================================
+   SECTION
+===================================== */
+
+section{
+    padding:65px 5%;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:38px;
+}
+
+.section-title .emoji{
     font-size:48px;
-    margin-bottom:12px;
 }
 
-.card h3{
-    color:#7b1fa2;
-    margin-bottom:10px;
-    font-size:21px;
-}
-
-.card p{
-    color:#666;
-    line-height:1.6;
-    font-size:14px;
-}
-
-/* =========================
-STORY SECTION
-========================= */
-
-.story-section{
-    background:#fff4f8;
-}
-
-.story-card{
-    background:white;
-    padding:25px;
-    border-radius:18px;
-    box-shadow:0 5px 18px rgba(0,0,0,.08);
-}
-
-.story-card h3{
-    color:#e91e63;
-    margin-bottom:10px;
-}
-
-.story-card p{
-    color:#555;
-    line-height:1.8;
-}
-
-/* =========================
-JOKES
-========================= */
-
-.jokes-section{
-    background:#fffde7;
-}
-
-.joke{
-    background:white;
-    padding:25px;
-    border-radius:18px;
-    border-left:6px solid #ffca28;
-    box-shadow:0 5px 15px rgba(0,0,0,.07);
-    line-height:1.8;
-}
-
-/* =========================
-NEWS
-========================= */
-
-.news-section{
-    background:#f3f7ff;
-}
-
-.news-card{
-    background:white;
-    padding:20px;
-    border-radius:16px;
-    box-shadow:0 5px 16px rgba(0,0,0,.07);
-}
-
-.news-card h3{
-    color:#1565c0;
-    margin-bottom:10px;
-}
-
-.news-card p{
-    color:#555;
-    line-height:1.7;
-}
-
-.news-date{
-    font-size:12px;
-    color:#888;
-    margin-top:10px;
-}
-
-/* =========================
-VIDEO
-========================= */
-
-.video-section{
-    background:#111827;
-    color:white;
-}
-
-.video-section h2{
-    color:#ffca28;
-}
-
-.video-card{
-    background:#1f2937;
-    border-radius:18px;
-    overflow:hidden;
-    box-shadow:0 5px 20px rgba(0,0,0,.3);
-}
-
-.video-placeholder{
-    height:210px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    background:linear-gradient(135deg,#7b1fa2,#e91e63);
-    font-size:65px;
-}
-
-.video-card-content{
-    padding:18px;
-}
-
-.video-card h3{
-    margin-bottom:8px;
-}
-
-.video-card p{
-    color:#ccc;
-    line-height:1.5;
-    font-size:14px;
-}
-
-/* =========================
-FACTS
-========================= */
-
-.fact{
-    background:white;
-    padding:25px;
-    border-radius:18px;
-    text-align:center;
-    box-shadow:0 5px 18px rgba(0,0,0,.08);
-}
-
-.fact-icon{
-    font-size:42px;
-}
-
-.fact p{
-    margin-top:12px;
-    line-height:1.7;
-}
-
-/* =========================
-EDUCATION
-========================= */
-
-.education{
-    background:#eaf3ff;
-}
-
-.education .card h3{
-    color:#1565c0;
-}
-
-/* =========================
-SEARCH RESULT
-========================= */
-
-#searchResults{
-    max-width:900px;
-    margin:20px auto;
-    display:none;
-}
-
-.search-result{
-    background:white;
-    padding:18px;
-    margin:10px 0;
-    border-radius:12px;
-    box-shadow:0 3px 12px rgba(0,0,0,.08);
-}
-
-/* =========================
-FOOTER
-========================= */
-
-footer{
-    background:#171717;
-    color:white;
-    text-align:center;
-    padding:35px 15px;
-}
-
-footer h3{
-    font-size:25px;
-}
-
-footer p{
-    margin-top:8px;
-    color:#ccc;
-}
-
-.footer-links{
-    margin:18px 0;
-}
-
-.footer-links a{
-    color:#ffca28;
-    text-decoration:none;
-    margin:0 8px;
-}
-
-/* =========================
-MOBILE
-========================= */
-
-@media(max-width:700px){
-
-    header{
-        position:relative;
-    }
-
-    .header-top{
-        flex-direction:column;
-        text-align:center;
-    }
-
-    .logo{
-        font-size:30px;
-    }
-
-    .search-box{
-        max-width:100%;
-    }
-
-    nav a{
-        font-size:14px;
-        margin:4px 5px;
-    }
-
-    .hero{
-        padding:55px 18px;
-    }
-
-    .hero h1{
-        font-size:32px;
-    }
-
-    .hero p{
-        font-size:17px;
-    }
-
-    section{
-        padding:42px 5%;
-    }
-
-    section h2{
-        font-size:26px;
-    }
-}
-/* =================================
-   KISSAFAN CONTENT DESIGN
-================================= */
-
-.kissa-section{
-    background:linear-gradient(135deg,#fff8e1,#f3e5f5);
-    padding:60px 6%;
-}
-
-.kissa-title{
-    text-align:center;
-    margin-bottom:35px;
-}
-
-.kissa-title span{
-    font-size:42px;
-}
-
-.kissa-title h2{
+.section-title h2{
     color:#6a1b9a;
     font-size:32px;
-    margin:8px 0;
+    margin:5px 0;
 }
 
-.kissa-title p{
+.section-title p{
     color:#666;
+}
+
+
+/* =====================================
+   SEARCH
+===================================== */
+
+.search-section{
+    background:white;
+    padding:30px 5%;
+}
+
+.search-box{
+    max-width:700px;
+    margin:auto;
+
+    display:flex;
+    gap:10px;
+}
+
+.search-box input{
+    flex:1;
+
+    padding:14px 18px;
+
+    border:2px solid #ddd;
+    border-radius:30px;
+
+    outline:none;
+
     font-size:16px;
 }
 
-.featured-kissa{
-    max-width:1050px;
-    margin:0 auto 40px;
-    padding:30px;
-    border-radius:24px;
+.search-box input:focus{
+    border-color:#6a1b9a;
+}
+
+
+/* =====================================
+   CATEGORY CARDS
+===================================== */
+
+.category-grid{
+    max-width:1150px;
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(220px,1fr)
+        );
+
+    gap:22px;
+}
+
+.category-card{
     background:white;
+
+    padding:30px 22px;
+
+    border-radius:22px;
+
+    text-align:center;
+
+    box-shadow:
+        0 6px 22px rgba(0,0,0,.08);
+
+    transition:.3s;
+
+    border:1px solid #eee;
+}
+
+.category-card:hover{
+    transform:translateY(-8px);
+
+    box-shadow:
+        0 14px 30px rgba(0,0,0,.13);
+}
+
+.category-icon{
+    font-size:55px;
+    margin-bottom:10px;
+}
+
+.category-card h3{
+    color:#6a1b9a;
+    font-size:21px;
+    margin-bottom:7px;
+}
+
+.category-card p{
+    color:#666;
+    font-size:14px;
+}
+
+
+/* =====================================
+   FEATURED CONTENT
+===================================== */
+
+.featured{
+    background:
+        linear-gradient(
+            135deg,
+            #fff8e1,
+            #fce4ec
+        );
+}
+
+.featured-box{
+    max-width:1050px;
+    margin:auto;
+
+    background:white;
+
+    border-radius:25px;
+
+    padding:32px;
+
     display:flex;
     align-items:center;
-    gap:28px;
-    box-shadow:0 8px 25px rgba(0,0,0,.12);
+
+    gap:30px;
+
+    box-shadow:
+        0 8px 28px rgba(0,0,0,.1);
 }
 
 .featured-icon{
-    font-size:80px;
-    min-width:120px;
+    min-width:130px;
     text-align:center;
+    font-size:85px;
 }
 
 .featured-content{
@@ -516,122 +535,403 @@ MOBILE
 
 .badge{
     display:inline-block;
+
+    padding:5px 13px;
+
+    border-radius:20px;
+
     background:#ff9800;
     color:white;
-    padding:6px 14px;
-    border-radius:20px;
+
     font-size:13px;
+
     margin-bottom:10px;
 }
 
 .featured-content h3{
-    font-size:27px;
     color:#6a1b9a;
-    margin-bottom:10px;
+    font-size:27px;
+    margin-bottom:8px;
 }
 
 .featured-content p{
     color:#555;
-    line-height:1.7;
 }
 
-.kissa-grid{
-    max-width:1100px;
+
+/* =====================================
+   CONTENT CARDS
+===================================== */
+
+.content-grid{
+    max-width:1150px;
     margin:auto;
+
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(260px,1fr)
+        );
+
     gap:22px;
 }
 
-.kissa-card{
+.content-card{
     background:white;
-    padding:28px 22px;
+
     border-radius:20px;
-    text-align:center;
-    box-shadow:0 6px 20px rgba(0,0,0,.09);
+
+    padding:25px;
+
+    box-shadow:
+        0 5px 18px rgba(0,0,0,.08);
+
     transition:.3s;
 }
 
-.kissa-card:hover{
-    transform:translateY(-8px);
-    box-shadow:0 12px 28px rgba(0,0,0,.15);
+.content-card:hover{
+    transform:translateY(-5px);
 }
 
-.kissa-emoji{
-    font-size:55px;
-    margin-bottom:10px;
+.content-card .icon{
+    font-size:45px;
 }
 
-.kissa-card span{
+.content-card h3{
+    color:#6a1b9a;
+    margin:8px 0;
+}
+
+.content-card p{
+    color:#666;
+    font-size:14px;
+}
+
+.content-card .btn{
+    margin-top:15px;
+}
+
+
+/* =====================================
+   CONTENT VIEWER
+===================================== */
+
+.content-viewer{
+    max-width:900px;
+    margin:35px auto 0;
+
+    background:white;
+
+    padding:30px;
+
+    border-radius:22px;
+
+    box-shadow:
+        0 7px 24px rgba(0,0,0,.1);
+}
+
+.content-viewer h3{
+    color:#6a1b9a;
+    margin-bottom:15px;
+}
+
+.story{
+    background:#fafafa;
+
+    border-left:
+        5px solid #8e24aa;
+
+    padding:18px;
+
+    margin:12px 0;
+
+    border-radius:8px;
+}
+
+
+/* =====================================
+   VIDEO
+===================================== */
+
+.video-section{
+    background:#eef4ff;
+}
+
+.video-grid{
+    max-width:1150px;
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(260px,1fr)
+        );
+
+    gap:22px;
+}
+
+.video-card{
+    background:white;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    box-shadow:
+        0 6px 20px rgba(0,0,0,.09);
+
+    transition:.3s;
+}
+
+.video-card:hover{
+    transform:translateY(-6px);
+}
+
+.video-thumb{
+    height:180px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #6a1b9a,
+            #3949ab
+        );
+
+    color:white;
+
+    font-size:65px;
+}
+
+.video-info{
+    padding:22px;
+}
+
+.video-info span{
     color:#888;
     font-size:13px;
 }
 
-.kissa-card h3{
-    margin:9px 0;
+.video-info h3{
     color:#6a1b9a;
-    font-size:21px;
+    margin:7px 0;
 }
 
-.kissa-card p{
+.video-info p{
     color:#666;
     font-size:14px;
-    line-height:1.6;
-    min-height:65px;
 }
 
-.kissa-card button,
-.kissa-btn{
-    border:none;
-    padding:11px 20px;
-    margin-top:15px;
-    border-radius:25px;
-    background:#6a1b9a;
-    color:white;
-    cursor:pointer;
-    font-size:14px;
+
+/* =====================================
+   EDUCATION
+===================================== */
+
+.education{
+    background:#f1f8e9;
 }
 
-.kissa-card button:hover,
-.kissa-btn:hover{
-    background:#4a148c;
-}
-
-.kissa-content-box{
-    max-width:900px;
-    margin:40px auto 0;
+.education-card{
     background:white;
-    padding:30px;
-    border-radius:22px;
-    box-shadow:0 7px 22px rgba(0,0,0,.1);
-}
 
-.content-welcome{
+    padding:25px;
+
+    border-radius:20px;
+
     text-align:center;
-    color:#666;
+
+    box-shadow:
+        0 5px 18px rgba(0,0,0,.08);
 }
 
-.content-welcome div{
-    font-size:55px;
+.education-card .icon{
+    font-size:50px;
 }
 
-.content-welcome h3{
-    color:#6a1b9a;
+.education-card h3{
+    color:#2e7d32;
+    margin:8px 0;
+}
+
+
+/* =====================================
+   QUIZ
+===================================== */
+
+.quiz-section{
+    background:white;
+}
+
+.quiz-box{
+    max-width:750px;
+    margin:auto;
+
+    background:#f8fbff;
+
+    padding:30px;
+
+    border-radius:22px;
+
+    box-shadow:
+        0 7px 24px rgba(0,0,0,.09);
+}
+
+.question{
+    font-size:20px;
+    font-weight:bold;
+    margin-bottom:20px;
+}
+
+.option{
+    width:100%;
+
+    text-align:left;
+
+    padding:13px;
+
+    margin:7px 0;
+
+    border:
+        1px solid #ddd;
+
+    background:white;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    font-size:16px;
+}
+
+.option:hover{
+    background:#ede7f6;
+}
+
+.result{
+    padding:22px;
+
+    background:#e8f5e9;
+
+    color:#1b5e20;
+
+    border-radius:15px;
+
+    text-align:center;
+
+    font-weight:bold;
+}
+
+
+/* =====================================
+   TEACHER
+===================================== */
+
+.teacher{
+    background:#e8eaf6;
+
+    text-align:center;
+}
+
+.teacher p{
+    max-width:750px;
+    margin:auto;
+
+    color:#555;
+}
+
+
+/* =====================================
+   FOOTER
+===================================== */
+
+footer{
+    background:#20243a;
+
+    color:white;
+
+    padding:40px 20px;
+
+    text-align:center;
+}
+
+footer h3{
     font-size:25px;
-    margin:10px 0;
 }
 
-@media(max-width:600px){
+footer p{
+    margin-top:6px;
 
-    .kissa-section{
-        padding:45px 5%;
+    font-size:14px;
+
+    opacity:.85;
+}
+
+
+/* =====================================
+   HIDDEN
+===================================== */
+
+.hidden{
+    display:none !important;
+}
+
+
+/* =====================================
+   MOBILE
+===================================== */
+
+@media(max-width:700px){
+
+    header{
+        position:relative;
     }
 
-    .kissa-title h2{
-        font-size:25px;
+    .header-inner{
+        flex-direction:column;
     }
 
-    .featured-kissa{
+    .logo{
+        font-size:27px;
+    }
+
+    nav a{
+        font-size:13px;
+        padding:6px 8px;
+    }
+
+    .hero{
+        min-height:460px;
+        padding:55px 18px;
+    }
+
+    .hero h1{
+        font-size:34px;
+    }
+
+    .hero h2{
+        font-size:21px;
+    }
+
+    .hero p{
+        font-size:16px;
+    }
+
+    section{
+        padding:50px 5%;
+    }
+
+    .section-title h2{
+        font-size:26px;
+    }
+
+    .featured-box{
         flex-direction:column;
         text-align:center;
         padding:25px 18px;
@@ -645,222 +945,401 @@ MOBILE
         font-size:22px;
     }
 
+    .search-box{
+        flex-direction:column;
+    }
+
+    .search-box .btn{
+        width:100%;
+    }
+
 }
+
+
+/* =====================================
+   END CSS
+===================================== */
+
 </style>
+
 </head>
+
 
 <body>
 
 
-<!-- =========================
-HEADER
-========================= -->
+<!-- =====================================
+     HEADER
+===================================== -->
 
 <header>
 
-<div class="header-top">
+    <div class="header-inner">
 
-<div>
-<div class="logo">🎉 किस्साफन</div>
+        <div class="logo">
 
-<div class="tagline">
-किस्से भी, हँसी भी, खबरें भी!
-</div>
-</div>
+            🎭 किस्साफन
 
+            <small>
+                किस्से • कहानियाँ • ठहाके • खबरें
+            </small>
 
-<div class="search-box">
-
-<input
-type="text"
-id="searchInput"
-placeholder="🔍 खोजें..."
-onkeyup="searchSite()">
-
-<button onclick="searchSite()">
-🔍
-</button>
-
-</div>
-
-</div>
+        </div>
 
 
-<nav>
+        <nav>
 
-<a href="#home">होम</a>
+            <a href="#home">🏠 होम</a>
 
-<a href="#stories">कहानियाँ</a>
+            <a href="#categories">📚 कैटेगरी</a>
 
-<a href="#jokes">चुटकुले</a>
+            <a href="#featured">⭐ आज का खास</a>
 
-<a href="#funny">ठहाके</a>
+            <a href="#videos">🎬 वीडियो</a>
 
-<a href="#news">ताज़ा खबरें</a>
+            <a href="#education">🎓 शिक्षा</a>
 
-<a href="#videos">वीडियो</a>
+            <a href="#quiz">🎯 क्विज</a>
 
-<a href="#facts">रोचक जानकारी</a>
+        </nav>
 
-<a href="#education">शिक्षा</a>
-
-</nav>
-
-</header>
-<!-- ================================
-     KISSAFAN CONTENT SECTION
-================================ -->
-
-<section class="kissa-section" id="kissa">
-
-    <div class="kissa-title">
-        <span>🔥</span>
-        <h2>किस्साफन पर आज क्या नया है?</h2>
-        <p>हँसिए, पढ़िए, जानिए और दुनिया की रोचक बातें खोजिए</p>
     </div>
 
-    <!-- FEATURED CONTENT -->
+</header>
 
-    <div class="featured-kissa">
+
+<!-- =====================================
+     HOME
+===================================== -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <div class="hero-icon">
+            🎭📖😂
+        </div>
+
+        <h1>
+            किस्साफन
+        </h1>
+
+        <h2>
+            जहाँ हर किस्सा चेहरे पर मुस्कान लाए
+        </h2>
+
+        <p>
+            मजेदार चुटकुले, दिलचस्प किस्से-कहानियाँ,
+            ठहाके, रहस्य, रोचक तथ्य, वीडियो और
+            ताज़ा जानकारी — सब एक ही जगह।
+        </p>
+
+
+        <div class="hero-buttons">
+
+            <a href="#categories"
+               class="btn">
+                🚀 अभी शुरू करें
+            </a>
+
+            <a href="#videos"
+               class="btn btn-orange">
+                🎬 वीडियो देखें
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================
+     SEARCH
+===================================== -->
+
+<section class="search-section">
+
+    <div class="search-box">
+
+        <input
+            type="search"
+            id="searchInput"
+            placeholder="🔍 कहानी, चुटकुला, रहस्य खोजें...">
+
+        <button
+            class="btn"
+            onclick="searchKissa()">
+
+            🔍 खोजें
+
+        </button>
+
+    </div>
+
+    <div id="searchResult"></div>
+
+</section>
+
+
+<!-- =====================================
+     CATEGORIES
+===================================== -->
+
+<section id="categories">
+
+    <div class="section-title">
+
+        <div class="emoji">
+            🌟
+        </div>
+
+        <h2>
+            किस्साफन की दुनिया
+        </h2>
+
+        <p>
+            अपनी पसंद की दुनिया चुनिए
+        </p>
+
+    </div>
+
+
+    <div class="category-grid">
+
+
+        <div class="category-card">
+
+            <div class="category-icon">
+                😂
+            </div>
+
+            <h3>
+                चुटकुले
+            </h3>
+
+            <p>
+                पढ़िए मजेदार चुटकुले और
+                हँसते-हँसते लोटपोट हो जाइए।
+            </p>
+
+            <button
+                class="btn"
+                onclick="showCategory('jokes')">
+
+                😂 पढ़ें
+
+            </button>
+
+        </div>
+
+
+        <div class="category-card">
+
+            <div class="category-icon">
+                📖
+            </div>
+
+            <h3>
+                किस्से-कहानियाँ
+            </h3>
+
+            <p>
+                दिलचस्प, मजेदार और सीख देने वाली
+                कहानियाँ पढ़िए।
+            </p>
+
+            <button
+                class="btn"
+                onclick="showCategory('stories')">
+
+                📖 पढ़ें
+
+            </button>
+
+        </div>
+
+
+        <div class="category-card">
+
+            <div class="category-icon">
+                🤣
+            </div>
+
+            <h3>
+                ठहाके
+            </h3>
+
+            <p>
+                ऐसे मजेदार किस्से जिन्हें पढ़कर
+                हँसी रोकना मुश्किल हो जाए।
+            </p>
+
+            <button
+                class="btn"
+                onclick="showCategory('laughs')">
+
+                🤣 ठहाका लगाएँ
+
+            </button>
+
+        </div>
+
+
+        <div class="category-card">
+
+            <div class="category-icon">
+                😱
+            </div>
+
+            <h3>
+                रहस्य
+            </h3>
+
+            <p>
+                रहस्यमयी घटनाएँ और रोमांचक
+                किस्से पढ़िए।
+            </p>
+
+            <button
+                class="btn"
+                onclick="showCategory('mystery')">
+
+                😱 रहस्य पढ़ें
+
+            </button>
+
+        </div>
+
+
+        <div class="category-card">
+
+            <div class="category-icon">
+                🧠
+            </div>
+
+            <h3>
+                रोचक तथ्य
+            </h3>
+
+            <p>
+                दुनिया के अनोखे और
+                हैरान करने वाले तथ्य।
+            </p>
+
+            <button
+                class="btn"
+                onclick="showCategory('facts')">
+
+                🧠 तथ्य देखें
+
+            </button>
+
+        </div>
+
+
+        <div class="category-card">
+
+            <div class="category-icon">
+                📰
+            </div>
+
+            <h3>
+                ताज़ा खबरें
+            </h3>
+
+            <p>
+                महत्वपूर्ण और उपयोगी
+                समाचारों के लिए अलग सेक्शन।
+            </p>
+
+            <button
+                class="btn"
+                onclick="showCategory('news')">
+
+                📰 खबरें देखें
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- CONTENT WILL OPEN HERE -->
+
+    <div
+        id="mainContent"
+        class="content-viewer">
+
+        <h3>
+            👋 किस्साफन में आपका स्वागत है!
+        </h3>
+
+        <p>
+            ऊपर से अपनी पसंद की कैटेगरी चुनिए।
+            यहाँ उसका शानदार कंटेंट दिखाई देगा।
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================
+     FEATURED
+===================================== -->
+
+<section
+    class="featured"
+    id="featured">
+
+    <div class="section-title">
+
+        <div class="emoji">
+            ⭐
+        </div>
+
+        <h2>
+            आज का खास कंटेंट
+        </h2>
+
+        <p>
+            आज का सबसे मजेदार किस्सा
+        </p>
+
+    </div>
+
+
+    <div class="featured-box">
 
         <div class="featured-icon">
             😂
         </div>
 
+
         <div class="featured-content">
 
-            <span class="badge">⭐ आज का खास कंटेंट</span>
+            <span class="badge">
+                🔥 आज का खास
+            </span>
 
-            <h3 id="featuredTitle">
+            <h3>
                 मास्टर जी का मजेदार सवाल
             </h3>
 
-            <p id="featuredText">
-                मास्टर जी ने बच्चे से ऐसा सवाल पूछा कि पूरी कक्षा हँसते-हँसते लोटपोट हो गई।
-            </p>
-
-           <button class="kissa-btn" onclick="showKissaContent('joke')">
-    पूरा पढ़ें →
-</button>
-
-        </div>
-
-    </div>
-
-
-    <!-- CATEGORY CARDS -->
-
-    <div class="kissa-grid">
-
-        <div class="kissa-card joke-card">
-
-            <div class="kissa-emoji">😂</div>
-
-            <span>चुटकुले</span>
-
-            <h3>आज का जोरदार चुटकुला</h3>
-
             <p>
-                छोटे-छोटे मजेदार चुटकुले जो चेहरे पर मुस्कान ला दें।
+                मास्टर जी ने बच्चे से ऐसा सवाल
+                पूछा कि पूरी कक्षा हँसते-हँसते
+                लोटपोट हो गई।
             </p>
 
-            <button onclick="showKissaContent('joke')">
-                😂 चुटकुला पढ़ें
-            </button>
+            <button
+                class="btn"
+                onclick="showFeatured()">
 
-        </div>
+                पूरा पढ़ें →
 
-
-        <div class="kissa-card story-card">
-
-            <div class="kissa-emoji">📖</div>
-
-            <span>किस्से-कहानियाँ</span>
-
-            <h3>आज की शानदार कहानी</h3>
-
-            <p>
-                रोचक कहानी, मजेदार घटनाएँ और अंत में शानदार सीख।
-            </p>
-
-            <button onclick="showKissaContent('story')">
-                📖 कहानी पढ़ें
-            </button>
-
-        </div>
-
-
-        <div class="kissa-card laugh-card">
-
-            <div class="kissa-emoji">🤣</div>
-
-            <span>ठहाके</span>
-
-            <h3>हँसी का फुल डोज</h3>
-
-            <p>
-                मजेदार संवाद और ऐसे किस्से जिन्हें पढ़कर हँसी रोकना मुश्किल हो।
-            </p>
-
-            <button onclick="showKissaContent('laugh')">
-                🤣 ठहाका लगाएँ
-            </button>
-
-        </div>
-
-
-        <div class="kissa-card mystery-card">
-
-            <div class="kissa-emoji">😱</div>
-
-            <span>रहस्यमयी किस्से</span>
-
-            <h3>क्या आपको रहस्य पसंद है?</h3>
-
-            <p>
-                रहस्य, रोमांच और ऐसे किस्से जिनका अंत आपको चौंका देगा।
-            </p>
-
-            <button onclick="showKissaContent('mystery')">
-                😱 रहस्य खोलें
-            </button>
-
-        </div>
-
-
-        <div class="kissa-card facts-card">
-
-            <div class="kissa-emoji">🧠</div>
-
-            <span>रोचक तथ्य</span>
-
-            <h3>क्या आप यह जानते हैं?</h3>
-
-            <p>
-                दुनिया, विज्ञान, प्रकृति और इंसानों से जुड़े हैरान करने वाले तथ्य।
-            </p>
-
-            <button onclick="showKissaContent('facts')">
-                🧠 तथ्य जानें
-            </button>
-
-        </div>
-
-
-        <div class="kissa-card news-card">
-
-            <div class="kissa-emoji">📰</div>
-
-            <span>ताज़ा खबरें</span>
-
-            <h3>आज की खास खबर</h3>
-
-            <p>
-                देश-दुनिया की महत्वपूर्ण और रोचक खबरों के लिए अलग सेक्शन।
-            </p>
-
-            <button onclick="showKissaContent('news')">
-                📰 खबरें देखें
             </button>
 
         </div>
@@ -868,1026 +1347,41 @@ onkeyup="searchSite()">
     </div>
 
 
-    <!-- CONTENT DISPLAY -->
-
-    <div id="kissaContentBox" class="kissa-content-box">
-
-        <div class="content-welcome">
-
-            <div>✨</div>
-
-            <h3>किस्साफन में आपका स्वागत है!</h3>
-
-            <p>
-                ऊपर किसी भी Category पर क्लिक करके
-                मजेदार और रोचक सामग्री पढ़ना शुरू करें।
-            </p>
-
-        </div>
-
+    <div
+        id="featuredContent"
+        class="content-viewer hidden">
     </div>
 
 </section>
 
-<!-- =========================
-HERO
-========================= -->
 
-<section class="hero" id="home">
-
-<h1>
-🌟 किस्साफन में आपका स्वागत है!
-</h1>
-
-<p>
-यहाँ मिलेंगे मजेदार किस्से-कहानियाँ,
-चुटकुले, ठहाके, ताज़ा खबरें,
-रोचक जानकारी और मनोरंजन से भरपूर वीडियो।
-</p>
-
-<div class="hero-buttons">
-
-<a href="#stories" class="btn">
-📖 कहानी पढ़ें
-</a>
-
-<a href="#videos" class="btn">
-🎬 वीडियो देखें
-</a>
-
-<a href="#jokes" class="btn">
-😂 चुटकुले पढ़ें
-</a>
-
-</div>
-
-</section>
-
-
-<!-- =========================
-CATEGORIES
-========================= -->
-
-<section>
-
-<h2>✨ किस्साफन की दुनिया</h2>
-
-<p class="section-intro">
-अपनी पसंद का सेक्शन चुनिए और मनोरंजन के साथ
-नई जानकारी हासिल कीजिए।
-</p>
-
-<div class="cards">
-
-<div class="card">
-<div class="card-icon">📖</div>
-<h3>किस्से-कहानियाँ</h3>
-<p>
-मजेदार, रोचक, प्रेरक और नैतिक कहानियाँ।
-</p>
-<a href="#stories" class="btn">पढ़ें</a>
-</div>
-
-
-<div class="card">
-<div class="card-icon">😂</div>
-<h3>चुटकुले</h3>
-<p>
-छोटे-बड़े सभी के लिए मजेदार चुटकुले।
-</p>
-<a href="#jokes" class="btn">हँसें</a>
-</div>
-
-
-<div class="card">
-<div class="card-icon">🤣</div>
-<h3>ठहाके</h3>
-<p>
-ऐसी मजेदार बातें जो चेहरे पर मुस्कान ला दें।
-</p>
-<a href="#funny" class="btn">देखें</a>
-</div>
-
-
-<div class="card">
-<div class="card-icon">📰</div>
-<h3>ताज़ा खबरें</h3>
-<p>
-देश-दुनिया की महत्वपूर्ण और रोचक खबरें।
-</p>
-<a href="#news" class="btn">पढ़ें</a>
-</div>
-
-
-<div class="card">
-<div class="card-icon">🎬</div>
-<h3>वीडियो</h3>
-<p>
-कहानियाँ, मनोरंजन और जानकारी से जुड़े वीडियो।
-</p>
-<a href="#videos" class="btn">देखें</a>
-</div>
-
-
-<div class="card">
-<div class="card-icon">🧠</div>
-<h3>रोचक जानकारी</h3>
-<p>
-दुनिया के अनोखे और ज्ञानवर्धक तथ्य।
-</p>
-<a href="#facts" class="btn">जानें</a>
-</div>
-
-</div>
-
-</section>
-
-
-<!-- =========================
-STORIES
-========================= -->
-
-<section class="story-section" id="stories">
-
-<h2>📖 आज की कहानियाँ</h2>
-
-<p class="section-intro">
-ऐसी कहानियाँ जिन्हें पढ़कर मनोरंजन भी होगा
-और कुछ नया सीखने को भी मिलेगा।
-</p>
-
-<div class="cards">
-
-<div class="story-card">
-
-<h3>🌳 ईमानदार लकड़हारा</h3>
-
-<p>
-एक गरीब लकड़हारा नदी के किनारे लकड़ी काटता था।
-एक दिन उसकी कुल्हाड़ी नदी में गिर गई।
-उसने लालच न करके सच्चाई का साथ दिया।
-अंत में उसकी ईमानदारी का उसे अच्छा फल मिला।
-</p>
-
-<a href="#" class="btn">
-पूरी कहानी
-</a>
-
-</div>
-
-
-<div class="story-card">
-
-<h3>🐒 बंदर की मजेदार चाल</h3>
-
-<p>
-एक बंदर रोज गाँव में आकर लोगों की चीजें
-उठा ले जाता था। एक दिन उसने ऐसी चीज उठा ली
-जिसके कारण पूरा गाँव हँसते-हँसते लोटपोट हो गया।
-</p>
-
-<a href="#" class="btn">
-पूरी कहानी
-</a>
-
-</div>
-
-
-<div class="story-card">
-
-<h3>🦁 शेर और चूहा</h3>
-
-<p>
-छोटे से चूहे ने एक दिन जंगल के राजा शेर की
-जान बचाई। इस कहानी से सीख मिलती है कि
-किसी को छोटा समझकर उसकी मदद को कम नहीं आँकना चाहिए।
-</p>
-
-<a href="#" class="btn">
-पूरी कहानी
-</a>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- =========================
-JOKES
-========================= -->
-
-<section class="jokes-section" id="jokes">
-
-<h2>😂 आज के मजेदार चुटकुले</h2>
-
-<div class="cards">
-
-<div class="joke">
-
-😂 शिक्षक: बताओ सबसे ज्यादा समझदार कौन होता है?
-
-<br><br>
-
-छात्र: जो परीक्षा में दूसरे की कॉपी देखकर
-भी अपना नाम सही लिख दे! 😄
-
-</div>
-
-
-<div class="joke">
-
-🤣 पिताजी: बेटा पढ़ाई कैसी चल रही है?
-
-<br><br>
-
-बेटा: बिल्कुल ट्रेन जैसी।
-
-<br>
-
-पिताजी: मतलब?
-
-<br>
-
-बेटा: रोज आती है और बिना रुके चली जाती है! 😂
-
-</div>
-
-
-<div class="joke">
-
-😄 डॉक्टर: आपको आराम की जरूरत है।
-
-<br><br>
-
-मरीज: डॉक्टर साहब, मोबाइल बंद कर दूँ?
-
-<br>
-
-डॉक्टर: नहीं, नौकरी बंद कर दो! 🤣
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- =========================
-FUNNY
-========================= -->
-
-<section id="funny">
-
-<h2>🤣 ठहाका कॉर्नर</h2>
-
-<p class="section-intro">
-कुछ ऐसी मजेदार बातें जिन्हें पढ़कर मुस्कुराना तय है।
-</p>
-
-<div class="cards">
-
-<div class="card">
-
-<div class="card-icon">🤣</div>
-
-<h3>आज का ठहाका</h3>
-
-<p>
-जब बच्चा कहे “पापा मुझे कुछ नहीं चाहिए”
-तो समझ जाइए कि अगली लाइन में
-“बस एक छोटी सी चीज है...” आने वाली है! 😂
-</p>
-
-</div>
-
-
-<div class="card">
-
-<div class="card-icon">😜</div>
-
-<h3>मजेदार बात</h3>
-
-<p>
-मोबाइल की बैटरी 1% हो तो इंसान
-चार्जर ऐसे खोजता है जैसे जीवन का
-सबसे बड़ा खजाना मिलना हो!
-</p>
-
-</div>
-
-
-<div class="card">
-
-<div class="card-icon">😆</div>
-
-<h3>देसी मजाक</h3>
-
-<p>
-माँ के सामने मोबाइल चलाना भी
-एक कला है और पकड़े न जाना
-उस कला की मास्टरी! 😄
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- =========================
-NEWS
-========================= -->
-
-<section class="news-section" id="news">
-
-<h2>📰 ताज़ा खबरें</h2>
-
-<p class="section-intro">
-महत्वपूर्ण समाचारों के लिए अलग सेक्शन।
-यहाँ आगे वास्तविक समाचार स्रोतों से सामग्री जोड़ी जा सकती है।
-</p>
-
-<div class="cards">
-
-<div class="news-card">
-
-<h3>🇮🇳 देश की खबरें</h3>
-
-<p>
-देश से जुड़ी महत्वपूर्ण खबरें और घटनाक्रम
-यहाँ प्रदर्शित किए जाएंगे।
-</p>
-
-<div class="news-date">
-अपडेट: जल्द उपलब्ध
-</div>
-
-</div>
-
-
-<div class="news-card">
-
-<h3>🌎 दुनिया की खबरें</h3>
-
-<p>
-दुनिया भर की प्रमुख घटनाओं और महत्वपूर्ण
-समाचारों का सेक्शन।
-</p>
-
-<div class="news-date">
-अपडेट: जल्द उपलब्ध
-</div>
-
-</div>
-
-
-<div class="news-card">
-
-<h3>🏏 खेल जगत</h3>
-
-<p>
-क्रिकेट, फुटबॉल और अन्य खेलों की
-महत्वपूर्ण खबरें।
-</p>
-
-<div class="news-date">
-अपडेट: जल्द उपलब्ध
-</div>
-
-</div>
-
-
-<div class="news-card">
-
-<h3>💻 टेक्नोलॉजी</h3>
-
-<p>
-नई तकनीक, मोबाइल, AI और इंटरनेट से
-जुड़ी खबरें।
-</p>
-
-<div class="news-date">
-अपडेट: जल्द उपलब्ध
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- =========================
-VIDEOS
-========================= -->
-
-<section class="video-section" id="videos">
-
-<h2>🎬 किस्साफन वीडियो</h2>
-
-<p class="section-intro" style="color:#ccc;">
-कहानियाँ, हास्य, जानकारी और मनोरंजन के वीडियो।
-</p>
-
-<div class="cards">
-
-<div class="video-card">
-
-<div class="video-placeholder">
-▶️
-</div>
-
-<div class="video-card-content">
-
-<h3>🎬 हमारा पहला वीडियो</h3>
-
-<p>
-यहाँ आपका YouTube वीडियो दिखाई देगा।
-</p>
-
-<a
-href="#"
-class="btn">
-वीडियो देखें
-</a>
-
-</div>
-
-</div>
-
-
-<div class="video-card">
-
-<div class="video-placeholder">
-😂
-</div>
-
-<div class="video-card-content">
-
-<h3>😂 मजेदार वीडियो</h3>
-
-<p>
-हँसी और मनोरंजन से भरपूर वीडियो।
-</p>
-
-<a href="#" class="btn">
-वीडियो देखें
-</a>
-
-</div>
-
-</div>
-
-
-<div class="video-card">
-
-<div class="video-placeholder">
-📖
-</div>
-
-<div class="video-card-content">
-
-<h3>📖 कहानी वीडियो</h3>
-
-<p>
-रोचक कहानी और ज्ञानवर्धक वीडियो।
-</p>
-
-<a href="#" class="btn">
-वीडियो देखें
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- =========================
-FACTS
-========================= -->
-
-<section id="facts">
-
-<h2>🧠 आज की रोचक जानकारी</h2>
-
-<div class="cards">
-
-<div class="fact">
-
-<div class="fact-icon">🌞</div>
-
-<h3>सूर्य</h3>
-
-<p>
-सूर्य हमारे सौरमंडल का केंद्र है।
-</p>
-
-</div>
-
-
-<div class="fact">
-
-<div class="fact-icon">🐝</div>
-
-<h3>मधुमक्खी</h3>
-
-<p>
-मधुमक्खियाँ फूलों से रस और पराग एकत्र करती हैं।
-</p>
-
-</div>
-
-
-<div class="fact">
-
-<div class="fact-icon">🌍</div>
-
-<h3>पृथ्वी</h3>
-
-<p>
-पृथ्वी हमारे सौरमंडल का एक ग्रह है।
-</p>
-
-</div>
-
-
-<div class="fact">
-
-<div class="fact-icon">🧠</div>
-
-<h3>दिमाग</h3>
-
-<p>
-मानव मस्तिष्क शरीर के सबसे महत्वपूर्ण अंगों में से एक है।
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- =========================
-EDUCATION
-========================= -->
-
-<section class="education" id="education">
-
-<h2>📚 शिक्षा कॉर्नर</h2>
-
-<p class="section-intro">
-किस्साफन पर बच्चों और शिक्षकों के लिए
-शैक्षिक सामग्री भी उपलब्ध रहेगी।
-</p>
-
-<div class="cards">
-
-<div class="card">
-
-<div class="card-icon">👦</div>
-
-<h3>कक्षा 1</h3>
-
-<p>
-हिन्दी, English, गणित और GK।
-</p>
-
-<button class="btn"
-onclick="educationMessage('कक्षा 1')">
-देखें
-</button>
-
-</div>
-
-
-<div class="card">
-
-<div class="card-icon">🧒</div>
-
-<h3>कक्षा 2</h3>
-
-<p>
-हिन्दी, English, गणित और GK।
-</p>
-
-<button class="btn"
-onclick="educationMessage('कक्षा 2')">
-देखें
-</button>
-
-</div>
-
-
-<div class="card">
-
-<div class="card-icon">📝</div>
-
-<h3>Worksheets</h3>
-
-<p>
-बच्चों के अभ्यास के लिए worksheets।
-</p>
-
-<button class="btn"
-onclick="educationMessage('Worksheets')">
-देखें
-</button>
-
-</div>
-
-
-<div class="card">
-
-<div class="card-icon">🎯</div>
-
-<h3>Online Test</h3>
-
-<p>
-MCQ आधारित ऑनलाइन अभ्यास परीक्षा।
-</p>
-
-<button class="btn"
-onclick="educationMessage('Online Test')">
-शुरू करें
-</button>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- =========================
-FOOTER
-========================= -->
-
-<footer>
-
-<h3>🎉 किस्साफन</h3>
-
-<p>
-किस्से भी, हँसी भी, खबरें भी!
-</p>
-
-<div class="footer-links">
-
-<a href="#home">होम</a>
-
-<a href="#stories">कहानियाँ</a>
-
-<a href="#jokes">चुटकुले</a>
-
-<a href="#videos">वीडियो</a>
-
-<a href="#news">खबरें</a>
-
-<a href="#education">शिक्षा</a>
-
-</div>
-
-<p>
-© 2026 किस्साफन | सभी अधिकार सुरक्षित
-</p>
-
-</footer>
-
-<script>
-/* =================================
-   KISSAFAN CONTENT SYSTEM
-================================= */
-
-function showKissaContent(type){
-
-    const box = document.getElementById("kissaContentBox");
-
-    let content = "";
-
-    if(type === "joke"){
-
-        content = `
-        <h3>😂 आज के मजेदार चुटकुले</h3>
-
-        <div class="lesson">
-        <strong>चुटकुला 1</strong><br><br>
-        मास्टर जी: बताओ, सबसे ज्यादा नींद कब आती है?<br>
-        बच्चा: जब मोबाइल की बैटरी 1% हो और चार्जर दूर हो! 😂
-        </div>
-
-        <div class="lesson">
-        <strong>चुटकुला 2</strong><br><br>
-        पत्नी: सुनो जी, मैं कैसी लग रही हूँ?<br>
-        पति: बहुत अच्छी।<br>
-        पत्नी: सच?<br>
-        पति: हाँ, बिल्कुल... सवाल पूछने से पहले जैसी लग रही थीं! 🤣
-        </div>
-
-        <div class="lesson">
-        <strong>चुटकुला 3</strong><br><br>
-        शिक्षक: बताओ, पानी कहाँ से आता है?<br>
-        बच्चा: नल से।<br>
-        शिक्षक: और नल में?<br>
-        बच्चा: पड़ोस वाले के घर से! 😂
-        </div>
-        `;
-
-    }
-
-
-    else if(type === "story"){
-
-        content = `
-        <h3>📖 आज की शानदार कहानी</h3>
-
-        <div class="lesson">
-
-        <strong>ईमानदार लकड़हारा</strong><br><br>
-
-        एक गरीब लकड़हारा जंगल में लकड़ी काटता था।
-        एक दिन उसकी कुल्हाड़ी नदी में गिर गई।
-        वह बहुत दुखी हुआ।
-
-        तभी नदी से एक देवदूत प्रकट हुआ और
-        उसने सोने की कुल्हाड़ी दिखाई।
-
-        लकड़हारे ने कहा,
-        "यह मेरी कुल्हाड़ी नहीं है।"
-
-        फिर चाँदी की कुल्हाड़ी दिखाई गई।
-        उसने उसे भी लेने से मना कर दिया।
-
-        अंत में उसकी लोहे की कुल्हाड़ी मिली।
-        लकड़हारे ने कहा,
-        "हाँ, यही मेरी कुल्हाड़ी है।"
-
-        उसकी ईमानदारी देखकर उसे तीनों कुल्हाड़ियाँ
-        पुरस्कार में दे दी गईं।
-
-        <br><br>
-
-        <strong>सीख:</strong>
-        ईमानदारी का फल हमेशा अच्छा होता है। ❤️
-
-        </div>
-        `;
-
-    }
-
-
-    else if(type === "laugh"){
-
-        content = `
-        <h3>🤣 ठहाकों का फुल डोज</h3>
-
-        <div class="lesson">
-        पप्पू डॉक्टर के पास गया।<br><br>
-
-        पप्पू: डॉक्टर साहब, मुझे भूलने की बीमारी है।<br>
-        डॉक्टर: कब से?<br>
-        पप्पू: कब से क्या? 😂
-        </div>
-
-        <div class="lesson">
-        दोस्त: तुम रोज सुबह अखबार क्यों पढ़ते हो?<br>
-        पप्पू: ताकि पता चले कि आज किसकी शादी है! 🤣
-        </div>
-        `;
-
-    }
-
-
-    else if(type === "mystery"){
-
-        content = `
-        <h3>😱 रहस्यमयी किस्सा</h3>
-
-        <div class="lesson">
-
-        <strong>आधी रात की दस्तक</strong><br><br>
-
-        रात के करीब बारह बजे रोहन अपने कमरे में अकेला था।
-        अचानक दरवाजे पर तीन बार दस्तक हुई।
-
-        ठक... ठक... ठक...
-
-        रोहन ने दरवाजा खोला।
-
-        बाहर कोई नहीं था।
-
-        वह वापस कमरे में आया।
-        कुछ देर बाद फिर वही आवाज आई।
-
-        ठक... ठक... ठक...
-
-        इस बार उसने दरवाजा नहीं खोला।
-
-        तभी उसके मोबाइल पर एक संदेश आया:
-
-        <br><br>
-
-        <strong>
-        "दरवाजा मत खोलना... मैं बाहर नहीं हूँ।"
-        </strong>
-
-        <br><br>
-
-        रोहन के हाथ-पाँव ठंडे पड़ गए। 😱
-
-        </div>
-        `;
-
-    }
-
-
-    else if(type === "facts"){
-
-        content = `
-        <h3>🧠 आज के रोचक तथ्य</h3>
-
-        <div class="lesson">
-        🌍 पृथ्वी सूर्य की परिक्रमा लगभग 365 दिनों में पूरी करती है।
-        </div>
-
-        <div class="lesson">
-        🐙 ऑक्टोपस के तीन दिल होते हैं।
-        </div>
-
-        <div class="lesson">
-        🦒 जिराफ की गर्दन बहुत लंबी होती है,
-        लेकिन उसकी गर्दन में भी मनुष्य की तरह सात कशेरुकाएँ होती हैं।
-        </div>
-
-        <div class="lesson">
-        🌙 चंद्रमा पृथ्वी का प्राकृतिक उपग्रह है।
-        </div>
-        `;
-
-    }
-
-
-    else if(type === "news"){
-
-        content = `
-        <h3>📰 ताज़ा खबरें</h3>
-
-        <div class="lesson">
-
-        <strong>किस्साफन न्यूज़ सेक्शन</strong><br><br>
-
-        यहाँ हम देश-दुनिया की महत्वपूर्ण,
-        उपयोगी और रोचक खबरों को अलग-अलग
-        श्रेणियों में दिखाएँगे।
-
-        <br><br>
-
-        🔴 देश<br>
-        🌍 दुनिया<br>
-        💻 टेक्नोलॉजी<br>
-        🏏 खेल<br>
-        🎬 मनोरंजन<br>
-        📚 शिक्षा
-
-        <br><br>
-
-        <strong>
-        अगला चरण: Live News System
-        </strong>
-
-        </div>
-        `;
-
-    }
-
-
-    box.innerHTML = content;
-
-    box.scrollIntoView({
-        behavior:"smooth",
-        block:"center"
-    });
-
-}
-/* =========================
-SEARCH
-========================= */
-
-function searchSite(){
-
-    const input =
-        document.getElementById("searchInput").value
-        .toLowerCase()
-        .trim();
-
-    if(!input){
-        return;
-    }
-
-    const sections = [
-        {
-            name:"कहानियाँ",
-            keywords:"कहानी किस्सा किस्से story",
-            id:"stories"
-        },
-        {
-            name:"चुटकुले",
-            keywords:"चुटकुला चुटकुले joke jokes हास्य",
-            id:"jokes"
-        },
-        {
-            name:"ठहाके",
-            keywords:"ठहाका मजाक funny हास्य",
-            id:"funny"
-        },
-        {
-            name:"ताज़ा खबरें",
-            keywords:"खबर खबरें समाचार news",
-            id:"news"
-        },
-        {
-            name:"वीडियो",
-            keywords:"वीडियो video videos",
-            id:"videos"
-        },
-        {
-            name:"रोचक जानकारी",
-            keywords:"रोचक तथ्य जानकारी facts",
-            id:"facts"
-        },
-        {
-            name:"शिक्षा",
-            keywords:"शिक्षा पढ़ाई class worksheet test",
-            id:"education"
-        }
-    ];
-
-    const result =
-        sections.find(function(item){
-
-            return item.name
-            .toLowerCase()
-            .includes(input)
-            ||
-            item.keywords.includes(input);
-
-        });
-
-    if(result){
-
-        document.getElementById(result.id)
-        .scrollIntoView({
-            behavior:"smooth"
-        });
-
-    }else{
-
-        alert(
-            "🔍 '" +
-            input +
-            "' के लिए अभी सामग्री नहीं मिली।"
-        );
-
-    }
-
-}
-
-
-/* =========================
-EDUCATION
-========================= */
-
-function educationMessage(name){
-
-    alert(
-        name +
-        " का पुराना शिक्षा सेक्शन अगले चरण में जोड़ा जाएगा।"
-    );
-
-}
-
-</script>
 <!-- =====================================
-     KISSAFAN VIDEO CORNER - STEP 17
+     VIDEOS
 ===================================== -->
 
-<section class="video-section" id="videos">
+<section
+    class="video-section"
+    id="videos">
 
-    <div class="video-title">
-        <div>🎬</div>
-        <h2>किस्साफन वीडियो कॉर्नर</h2>
+    <div class="section-title">
+
+        <div class="emoji">
+            🎬
+        </div>
+
+        <h2>
+            किस्साफन वीडियो कॉर्नर
+        </h2>
+
         <p>
-            मजेदार किस्से, कहानियाँ, चुटकुले और रोचक वीडियो
+            मजेदार वीडियो और कहानियाँ
         </p>
+
     </div>
 
+
     <div class="video-grid">
+
 
         <div class="video-card">
 
@@ -1896,22 +1390,27 @@ function educationMessage(name){
             </div>
 
             <div class="video-info">
-                <span>😂 मजेदार</span>
 
-                <h3>मास्टर जी का मजेदार सवाल</h3>
+                <span>
+                    😂 मजेदार
+                </span>
+
+                <h3>
+                    मास्टर जी का मजेदार सवाल
+                </h3>
 
                 <p>
-                    ऐसा मजेदार सवाल जिसका जवाब सुनकर
-                    पूरी कक्षा हँस पड़ी।
+                    हँसी से भरपूर मजेदार वीडियो।
                 </p>
 
                 <button
-                    class="video-btn"
-                    onclick="playKissaVideo('VIDEO_ID_1')">
+                    class="btn"
+                    onclick="playVideo('')">
 
-                    ▶️ वीडियो देखें
+                    ▶️ देखें
 
                 </button>
+
             </div>
 
         </div>
@@ -1925,19 +1424,23 @@ function educationMessage(name){
 
             <div class="video-info">
 
-                <span>📚 कहानी</span>
+                <span>
+                    📚 कहानी
+                </span>
 
-                <h3>ईमानदार बच्चे की कहानी</h3>
+                <h3>
+                    ईमानदार बच्चे की कहानी
+                </h3>
 
                 <p>
-                    बच्चों के लिए एक सुंदर और सीख देने वाली कहानी।
+                    बच्चों के लिए सुंदर सीख देने वाली कहानी।
                 </p>
 
                 <button
-                    class="video-btn"
-                    onclick="playKissaVideo('VIDEO_ID_2')">
+                    class="btn"
+                    onclick="playVideo('')">
 
-                    ▶️ वीडियो देखें
+                    ▶️ देखें
 
                 </button>
 
@@ -1954,19 +1457,23 @@ function educationMessage(name){
 
             <div class="video-info">
 
-                <span>🤣 ठहाके</span>
+                <span>
+                    🤣 ठहाके
+                </span>
 
-                <h3>आज का मजेदार चुटकुला</h3>
+                <h3>
+                    आज का मजेदार चुटकुला
+                </h3>
 
                 <p>
                     हँसी का ऐसा धमाका जो आपका दिन बना दे।
                 </p>
 
                 <button
-                    class="video-btn"
-                    onclick="playKissaVideo('VIDEO_ID_3')">
+                    class="btn"
+                    onclick="playVideo('')">
 
-                    ▶️ वीडियो देखें
+                    ▶️ देखें
 
                 </button>
 
@@ -1983,19 +1490,23 @@ function educationMessage(name){
 
             <div class="video-info">
 
-                <span>🧠 रोचक तथ्य</span>
+                <span>
+                    🧠 रोचक तथ्य
+                </span>
 
-                <h3>क्या आप यह रोचक तथ्य जानते हैं?</h3>
+                <h3>
+                    क्या आप यह तथ्य जानते हैं?
+                </h3>
 
                 <p>
-                    ज्ञान बढ़ाने वाले मजेदार और हैरान करने वाले तथ्य।
+                    ज्ञान बढ़ाने वाले रोचक तथ्य।
                 </p>
 
                 <button
-                    class="video-btn"
-                    onclick="playKissaVideo('VIDEO_ID_4')">
+                    class="btn"
+                    onclick="playVideo('')">
 
-                    ▶️ वीडियो देखें
+                    ▶️ देखें
 
                 </button>
 
@@ -2005,11 +1516,808 @@ function educationMessage(name){
 
     </div>
 
+
     <div
-        id="kissaVideoPlayer"
-        class="kissa-video-player hidden">
+        id="videoPlayer"
+        class="content-viewer hidden">
     </div>
 
 </section>
+
+
+<!-- =====================================
+     EDUCATION
+===================================== -->
+
+<section
+    class="education"
+    id="education">
+
+    <div class="section-title">
+
+        <div class="emoji">
+            🎓
+        </div>
+
+        <h2>
+            बच्चों की शिक्षा
+        </h2>
+
+        <p>
+            मनोरंजन के साथ ज्ञान भी
+        </p>
+
+    </div>
+
+
+    <div class="category-grid">
+
+
+        <div class="education-card">
+
+            <div class="icon">
+                📖
+            </div>
+
+            <h3>
+                कक्षा 1 हिन्दी
+            </h3>
+
+            <p>
+                स्वर, व्यंजन, मात्राएँ और
+                सरल शब्द।
+            </p>
+
+            <button
+                class="btn"
+                onclick="showEducation('hindi1')">
+
+                पढ़ें
+
+            </button>
+
+        </div>
+
+
+        <div class="education-card">
+
+            <div class="icon">
+                🔤
+            </div>
+
+            <h3>
+                Class 1 English
+            </h3>
+
+            <p>
+                Alphabet, Words और
+                Basic Grammar।
+            </p>
+
+            <button
+                class="btn"
+                onclick="showEducation('english1')">
+
+                Learn
+
+            </button>
+
+        </div>
+
+
+        <div class="education-card">
+
+            <div class="icon">
+                ➕
+            </div>
+
+            <h3>
+                कक्षा 1 गणित
+            </h3>
+
+            <p>
+                संख्या, जोड़ और घटाव।
+            </p>
+
+            <button
+                class="btn"
+                onclick="showEducation('math1')">
+
+                पढ़ें
+
+            </button>
+
+        </div>
+
+
+        <div class="education-card">
+
+            <div class="icon">
+                🌎
+            </div>
+
+            <h3>
+                कक्षा 1 GK
+            </h3>
+
+            <p>
+                बच्चों के लिए आसान सामान्य ज्ञान।
+            </p>
+
+            <button
+                class="btn"
+                onclick="showEducation('gk1')">
+
+                सीखें
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <div
+        id="educationContent"
+        class="content-viewer">
+
+        <h3>
+            🎓 शिक्षा अनुभाग
+        </h3>
+
+        <p>
+            कोई विषय चुनिए और पढ़ाई शुरू कीजिए।
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================
+     ONLINE QUIZ
+===================================== -->
+
+<section
+    class="quiz-section"
+    id="quiz">
+
+    <div class="section-title">
+
+        <div class="emoji">
+            🎯
+        </div>
+
+        <h2>
+            ऑनलाइन मजेदार क्विज
+        </h2>
+
+        <p>
+            ज्ञान भी बढ़ाएँ और अपना Score भी देखें।
+        </p>
+
+    </div>
+
+
+    <div class="quiz-box">
+
+        <div
+            id="quizArea">
+
+            <div
+                id="question"
+                class="question">
+
+                प्रश्न लोड हो रहा है...
+
+            </div>
+
+            <div id="options"></div>
+
+            <button
+                class="btn"
+                onclick="nextQuestion()">
+
+                अगला प्रश्न →
+
+            </button>
+
+        </div>
+
+
+        <div
+            id="quizResult"
+            class="result hidden">
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================
+     TEACHER
+===================================== -->
+
+<section
+    class="teacher"
+    id="teacher">
+
+    <div class="section-title">
+
+        <div class="emoji">
+            👨‍🏫
+        </div>
+
+        <h2>
+            शिक्षक कॉर्नर
+        </h2>
+
+        <p>
+            शिक्षकों के लिए उपयोगी सामग्री।
+        </p>
+
+    </div>
+
+
+    <p>
+        Lesson Plan, Worksheets,
+        प्रश्न-पत्र, PTM सामग्री,
+        शिक्षण गतिविधियाँ और अन्य
+        उपयोगी संसाधन यहाँ उपलब्ध होंगे।
+    </p>
+
+
+    <br>
+
+    <button
+        class="btn"
+        onclick="teacherMessage()">
+
+        📚 शिक्षक सामग्री
+
+    </button>
+
+</section>
+<!-- =====================================
+     KISSAFAN STEP 17
+     NEWS + STORIES + JOKES
+===================================== -->
+
+<section class="step17-section" id="latest">
+
+    <div class="step17-title">
+
+        <div class="big-icon">✨</div>
+
+        <h2>किस्साफन का खास संसार</h2>
+
+        <p>
+            ताज़ा खबरें, मजेदार किस्से, कहानियाँ और ठहाके —
+            सब एक ही जगह।
+        </p>
+
+    </div>
+
+
+    <!-- SEARCH -->
+
+    <div class="step17-search">
+
+        <input
+            type="text"
+            id="step17Search"
+            placeholder="🔍 खबर, कहानी या चुटकुला खोजें..."
+        >
+
+        <button
+            type="button"
+            onclick="searchStep17()">
+
+            🔍 खोजें
+
+        </button>
+
+    </div>
+
+
+    <!-- CATEGORY CARDS -->
+
+    <div class="step17-grid">
+
+        <!-- NEWS -->
+
+        <div class="step17-card">
+
+            <div class="step17-icon">📰</div>
+
+            <h3>ताज़ा खबरें</h3>
+
+            <p>
+                देश-दुनिया और आसपास की
+                महत्वपूर्ण खबरों का विशेष कोना।
+            </p>
+
+            <button
+                class="step17-btn"
+                type="button"
+                onclick="showStep17News()">
+
+                खबरें पढ़ें
+
+            </button>
+
+        </div>
+
+
+        <!-- STORIES -->
+
+        <div class="step17-card">
+
+            <div class="step17-icon">📖</div>
+
+            <h3>किस्से-कहानियाँ</h3>
+
+            <p>
+                बच्चों और परिवार के लिए
+                रोचक, मजेदार और सीख देने वाली कहानियाँ।
+            </p>
+
+            <button
+                class="step17-btn"
+                type="button"
+                onclick="showStep17Stories()">
+
+                कहानी पढ़ें
+
+            </button>
+
+        </div>
+
+
+        <!-- JOKES -->
+
+        <div class="step17-card">
+
+            <div class="step17-icon">🤣</div>
+
+            <h3>ठहाके</h3>
+
+            <p>
+                मजेदार सवाल-जवाब और
+                हँसी से भरपूर छोटे-छोटे ठहाके।
+            </p>
+
+            <button
+                class="step17-btn"
+                type="button"
+                onclick="showStep17Jokes()">
+
+                हँसिए
+
+            </button>
+
+        </div>
+
+
+        <!-- CHUTKULE -->
+
+        <div class="step17-card">
+
+            <div class="step17-icon">😄</div>
+
+            <h3>मजेदार चुटकुले</h3>
+
+            <p>
+                बच्चों और बड़ों के लिए
+                साफ-सुथरे और मजेदार चुटकुले।
+            </p>
+
+            <button
+                class="step17-btn"
+                type="button"
+                onclick="showStep17Chutkule()">
+
+                चुटकुले देखें
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- CONTENT -->
+
+    <div
+        class="step17-content"
+        id="step17Content">
+
+        <div class="step17-empty">
+
+            <div style="font-size:50px;">🌟</div>
+
+            <h3>किस्साफन में आपका स्वागत है!</h3>
+
+            <p>
+                ऊपर किसी भी श्रेणी पर क्लिक करके
+                शानदार सामग्री पढ़ना शुरू करें।
+            </p>
+
+        </div>
+
+    </div>
+
+<!-- =====================================
+     FOOTER
+===================================== -->
+
+<footer>
+
+    <h3>
+        🎭 किस्साफन
+    </h3>
+
+    <p>
+        किस्से • कहानियाँ • ठहाके • ज्ञान • खबरें
+    </p>
+
+    <p>
+        © 2026 किस्साफन | सभी अधिकार सुरक्षित
+    </p>
+
+</footer>
+
+
+<!-- =====================================
+     PART 2 + PART 3
+     JAVASCRIPT WILL BE ADDED HERE
+===================================== -->
+
+<script>
+
+/*
+   अभी यहाँ कुछ नहीं बदलना है।
+
+   PART 2 और PART 3 में
+   पूरा JavaScript इसी जगह आएगा।
+*/
+/* =====================================
+   KISSAFAN STEP 17 JAVASCRIPT
+===================================== */
+
+
+/* =========================
+   NEWS
+========================= */
+
+function showStep17News(){
+
+    document.getElementById("step17Content").innerHTML = `
+
+        <h2>📰 आज का खास खबर कोना</h2>
+
+        <div class="step17-item">
+
+            <h3>🇮🇳 देश-दुनिया की जानकारी</h3>
+
+            <p>
+                यहाँ महत्वपूर्ण और उपयोगी खबरों को
+                सरल भाषा में प्रस्तुत किया जाएगा।
+            </p>
+
+        </div>
+
+        <div class="step17-item">
+
+            <h3>🎓 शिक्षा जगत</h3>
+
+            <p>
+                विद्यार्थियों, शिक्षकों और शिक्षा से
+                जुड़ी उपयोगी जानकारियाँ यहाँ मिलेंगी।
+            </p>
+
+        </div>
+
+        <div class="step17-item">
+
+            <h3>💡 आज की जानकारी</h3>
+
+            <p>
+                रोज कुछ नया जानिए और अपने ज्ञान को
+                और बेहतर बनाइए।
+            </p>
+
+        </div>
+
+    `;
+
+    scrollToBox("step17Content");
+}
+
+
+/* =========================
+   STORIES
+========================= */
+
+function showStep17Stories(){
+
+    document.getElementById("step17Content").innerHTML = `
+
+        <h2>📖 आज की कहानी</h2>
+
+        <div class="step17-item">
+
+            <h3>🌳 ईमानदारी का फल</h3>
+
+            <p>
+                एक दिन मोहन को रास्ते में एक बटुआ मिला।
+                बटुए में पैसे और जरूरी कागज थे।
+                मोहन ने बटुआ अपने पास रखने के बजाय
+                उसके मालिक को खोजकर वापस कर दिया।
+            </p>
+
+            <p>
+                बटुआ पाकर मालिक बहुत खुश हुआ और
+                मोहन की ईमानदारी की प्रशंसा की।
+            </p>
+
+            <strong>
+                सीख — ईमानदारी हमेशा सबसे बड़ी दौलत है।
+            </strong>
+
+        </div>
+
+
+        <div class="step17-item">
+
+            <h3>🐦 चिड़िया और दाना</h3>
+
+            <p>
+                एक छोटी चिड़िया रोज मेहनत करके
+                अपने बच्चों के लिए दाना जुटाती थी।
+                वह कभी हार नहीं मानती थी।
+            </p>
+
+            <strong>
+                सीख — मेहनत करने वालों की कभी हार नहीं होती।
+            </strong>
+
+        </div>
+
+    `;
+
+    scrollToBox("step17Content");
+}
+
+
+/* =========================
+   JOKES
+========================= */
+
+function showStep17Jokes(){
+
+    document.getElementById("step17Content").innerHTML = `
+
+        <h2>🤣 आज के ठहाके</h2>
+
+        <div class="step17-item">
+
+            <h3>😂 मास्टर जी का सवाल</h3>
+
+            <p>
+                मास्टर जी — बताओ, सबसे ज्यादा
+                समझदार कौन होता है?
+            </p>
+
+            <p>
+                बच्चा — सर, जो आपकी बात समझ जाए!
+            </p>
+
+            <p>
+                मास्टर जी — और जो न समझे?
+            </p>
+
+            <p>
+                बच्चा — वह तो आपसे दोबारा पूछता है! 😄
+            </p>
+
+        </div>
+
+
+        <div class="step17-item">
+
+            <h3>😆 पापा का सवाल</h3>
+
+            <p>
+                पापा — बेटा पढ़ाई कैसी चल रही है?
+            </p>
+
+            <p>
+                बेटा — पापा, बिल्कुल मोबाइल की तरह।
+            </p>
+
+            <p>
+                पापा — मतलब?
+            </p>
+
+            <p>
+                बेटा — चार्जर लगाओ तो चलती है! 😂
+            </p>
+
+        </div>
+
+    `;
+
+    scrollToBox("step17Content");
+}
+
+
+/* =========================
+   CHUTKULE
+========================= */
+
+function showStep17Chutkule(){
+
+    document.getElementById("step17Content").innerHTML = `
+
+        <h2>😄 मजेदार चुटकुले</h2>
+
+        <div class="step17-item">
+
+            <h3>😂 चुटकुला नंबर 1</h3>
+
+            <p>
+                शिक्षक — बताओ पेड़ पर कितने पत्ते होते हैं?
+            </p>
+
+            <p>
+                बच्चा — सर, जितने पेड़ पर दिखाई देते हैं!
+            </p>
+
+        </div>
+
+
+        <div class="step17-item">
+
+            <h3>🤣 चुटकुला नंबर 2</h3>
+
+            <p>
+                दोस्त — तुम स्कूल क्यों नहीं गए?
+            </p>
+
+            <p>
+                बच्चा — रास्ते में बोर्ड लगा था,
+                “आगे स्कूल है, धीरे चलें।”
+                इसलिए मैं वापस आ गया! 😂
+            </p>
+
+        </div>
+
+
+        <div class="step17-item">
+
+            <h3>😄 चुटकुला नंबर 3</h3>
+
+            <p>
+                माँ — बेटा खाना खा लिया?
+            </p>
+
+            <p>
+                बेटा — नहीं माँ।
+            </p>
+
+            <p>
+                माँ — क्यों?
+            </p>
+
+            <p>
+                बेटा — प्लेट में अभी खाना आया ही नहीं था! 😄
+            </p>
+
+        </div>
+
+    `;
+
+    scrollToBox("step17Content");
+}
+
+
+/* =========================
+   SEARCH
+========================= */
+
+function searchStep17(){
+
+    const input =
+        document.getElementById("step17Search");
+
+    const searchText =
+        input.value.toLowerCase().trim();
+
+    if(searchText === ""){
+
+        alert("कृपया कुछ खोजें।");
+
+        return;
+    }
+
+
+    const content =
+        document.getElementById("step17Content");
+
+
+    if(
+        searchText.includes("खबर") ||
+        searchText.includes("news")
+    ){
+
+        showStep17News();
+
+        return;
+
+    }
+
+
+    if(
+        searchText.includes("कहानी") ||
+        searchText.includes("किस्सा") ||
+        searchText.includes("story")
+    ){
+
+        showStep17Stories();
+
+        return;
+
+    }
+
+
+    if(
+        searchText.includes("ठहाका") ||
+        searchText.includes("joke")
+    ){
+
+        showStep17Jokes();
+
+        return;
+
+    }
+
+
+    if(
+        searchText.includes("चुटकुला") ||
+        searchText.includes("चुटकुले")
+    ){
+
+        showStep17Chutkule();
+
+        return;
+
+    }
+
+
+    content.innerHTML = `
+
+        <div class="step17-empty">
+
+            <div style="font-size:50px;">🔍</div>
+
+            <h3>कुछ नहीं मिला</h3>
+
+            <p>
+                कृपया “खबर”, “कहानी”,
+                “ठहाका” या “चुटकुला”
+                खोजकर देखें।
+            </p>
+
+        </div>
+
+    `;
+
+    scrollToBox("step17Content");
+}
+</script>
+
+
 </body>
 </html>
