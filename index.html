@@ -557,204 +557,42 @@ GK सीखें
 </div>
 
 </div>
-<!-- CLASS 1 HINDI QUIZ -->
+```html
+<!-- CLASS 1 HINDI QUIZ - STEP 15 -->
 
 <div class="content-box">
 
-<h3>📝 हिन्दी अभ्यास टेस्ट</h3>
+    <h3>📝 हिन्दी अभ्यास टेस्ट</h3>
 
-<p>
-नीचे दिए गए प्रश्नों के सही उत्तर चुनिए।
-</p>
+    <p>
+        हर बार प्रश्न और विकल्पों का क्रम बदलेगा।
+    </p>
 
-<div class="lesson">
+    <div id="hindiQuizBox">
 
-<p><strong>1. 'अ' से कौन-सा शब्द बनता है?</strong></p>
+        <div class="lesson">
 
-<button class="option" onclick="answerHindi(this,true)">
-अनार
-</button>
+            <p id="hindiQuestion"></p>
 
-<button class="option" onclick="answerHindi(this,false)">
-कमल
-</button>
+            <div id="hindiOptions"></div>
 
-<button class="option" onclick="answerHindi(this,false)">
-गमला
-</button>
+        </div>
 
-</div>
+        <button
+            id="hindiNextBtn"
+            class="btn"
+            onclick="nextHindiQuestion()"
+            style="display:none;">
+            अगला प्रश्न →
+        </button>
 
+    </div>
 
-<div class="lesson">
 
-<p><strong>2. 'आ' से कौन-सा शब्द बनता है?</strong></p>
-
-<button class="option" onclick="answerHindi(this,true)">
-आम
-</button>
-
-<button class="option" onclick="answerHindi(this,false)">
-कमल
-</button>
-
-<button class="option" onclick="answerHindi(this,false)">
-घर
-</button>
-
-</div>
-
-
-<div class="lesson">
-
-<p><strong>3. 'क' से कौन-सा शब्द बनता है?</strong></p>
-
-<button class="option" onclick="answerHindi(this,true)">
-कमल
-</button>
-
-<button class="option" onclick="answerHindi(this,false)">
-आम
-</button>
-
-<button class="option" onclick="answerHindi(this,false)">
-घर
-</button>
-
-</div>
-
-
-<div class="lesson">
-
-<p><strong>4. 'राम घर जाता है।' में 'राम' क्या है?</strong></p>
-
-<button class="option" onclick="answerHindi(this,true)">
-नाम
-</button>
-
-<button class="option" onclick="answerHindi(this,false)">
-मात्रा
-</button>
-
-<button class="option" onclick="answerHindi(this,false)">
-अंक
-</button>
-
-</div>
-
-
-<div class="lesson">
-
-<p><strong>5. 'की' में कौन-सी मात्रा है?</strong></p>
-
-<button class="option" onclick="answerHindi(this,true)">
-ई की मात्रा
-</button>
-
-<button class="option" onclick="answerHindi(this,false)">
-आ की मात्रा
-</button>
-
-<button class="option" onclick="answerHindi(this,false)">
-उ की मात्रा
-</button>
-
-</div>
-
-
-<div class="lesson">
-
-<p><strong>6. इनमें से पशु कौन है?</strong></p>
-
-<button class="option" onclick="answerHindi(this,true)">
-गाय
-</button>
-
-<button class="option" onclick="answerHindi(this,false)">
-मोर
-</button>
-
-<button class="option" onclick="answerHindi(this,false)">
-पेड़
-</button>
-
-</div>
-
-
-<div class="lesson">
-
-<p><strong>7. इनमें से पक्षी कौन है?</strong></p>
-
-<button class="option" onclick="answerHindi(this,true)">
-मोर
-</button>
-
-<button class="option" onclick="answerHindi(this,false)">
-घोड़ा
-</button>
-
-<button class="option" onclick="answerHindi(this,false)">
-शेर
-</button>
-
-</div>
-
-
-<div class="lesson">
-
-<p><strong>8. इनमें से कौन-सा रंग है?</strong></p>
-
-<button class="option" onclick="answerHindi(this,true)">
-लाल
-</button>
-
-<button class="option" onclick="answerHindi(this,false)">
-कमल
-</button>
-
-<button class="option" onclick="answerHindi(this,false)">
-किताब
-</button>
-
-</div>
-
-
-<div class="lesson">
-
-<p><strong>9. 'कमल' में कितने अक्षर हैं?</strong></p>
-
-<button class="option" onclick="answerHindi(this,true)">
-3
-</button>
-
-<button class="option" onclick="answerHindi(this,false)">
-2
-</button>
-
-<button class="option" onclick="answerHindi(this,false)">
-4
-</button>
-
-</div>
-
-
-<div class="lesson">
-
-<p><strong>10. हमें हमेशा कैसा होना चाहिए?</strong></p>
-
-<button class="option" onclick="answerHindi(this,true)">
-ईमानदार
-</button>
-
-<button class="option" onclick="answerHindi(this,false)">
-आलसी
-</button>
-
-<button class="option" onclick="answerHindi(this,false)">
-झूठा
-</button>
-
-</div>
+    <div
+        id="hindiResult"
+        class="result hidden">
+    </div>
 
 </div>
   
