@@ -6,48 +6,6 @@
 
 <title>Gyanivo - ज्ञान से विकास की ओर</title>
 
-/* HINDI TEST RESULT CARD */
-
-.result-card{
-    background:white;
-    max-width:500px;
-    margin:30px auto;
-    padding:30px 20px;
-    border-radius:20px;
-    text-align:center;
-    box-shadow:0 8px 25px rgba(0,0,0,0.12);
-    border-top:6px solid #1565c0;
-}
-
-.result-card h2{
-    color:#1565c0;
-    margin-bottom:15px;
-    font-size:28px;
-}
-
-.result-score{
-    font-size:22px;
-    font-weight:bold;
-    margin:12px 0;
-}
-
-.result-message{
-    font-size:18px;
-    color:#555;
-    margin:15px 0;
-}
-
-.restart-btn{
-    display:inline-block;
-    margin-top:15px;
-    padding:12px 25px;
-    background:#1565c0;
-    color:white;
-    border:none;
-    border-radius:25px;
-    font-size:16px;
-    cursor:pointer;
-}
 <style>
 *{
 margin:0;
@@ -742,558 +700,64 @@ GK सीखें
 </div>
 
 
-<div class="lesson"></div>
-```html
-<!-- ================================
-     HINDI MCQ TEST - STEP 15
-================================ -->
+<div class="lesson">
 
-<div id="hindiQuiz">
+<p><strong>8. इनमें से कौन-सा रंग है?</strong></p>
 
-    <div class="hindi-header">
-        <h2>🇮🇳 हिन्दी MCQ टेस्ट</h2>
-        <div id="hindiProgress">प्रश्न 1 / 10</div>
-    </div>
+<button class="option" onclick="answerHindi(this,true)">
+लाल
+</button>
 
-    <div id="hindiQuestion"></div>
+<button class="option" onclick="answerHindi(this,false)">
+कमल
+</button>
 
-    <div id="hindiOptions"></div>
-
-    <button id="hindiNextBtn" onclick="nextHindiQuestion()" style="display:none;">
-        अगला प्रश्न ➜
-    </button>
+<button class="option" onclick="answerHindi(this,false)">
+किताब
+</button>
 
 </div>
 
 
-<!-- ================================
-     RESULT CARD
-================================ -->
+<div class="lesson">
 
-<div id="hindiResult" style="display:none;">
+<p><strong>9. 'कमल' में कितने अक्षर हैं?</strong></p>
 
-    <h2>🏆 हिन्दी टेस्ट Result</h2>
+<button class="option" onclick="answerHindi(this,true)">
+3
+</button>
 
-    <div id="hindiScore"></div>
+<button class="option" onclick="answerHindi(this,false)">
+2
+</button>
 
-    <div id="hindiResultMessage"></div>
-
-    <button onclick="restartHindiTest()">
-        🔄 फिर से हिन्दी टेस्ट दें
-    </button>
+<button class="option" onclick="answerHindi(this,false)">
+4
+</button>
 
 </div>
 
 
-<script>
+<div class="lesson">
 
-/* =================================
-   1. सभी 10 हिन्दी प्रश्न
-================================= */
+<p><strong>10. हमें हमेशा कैसा होना चाहिए?</strong></p>
 
-const hindiQuestions = [
+<button class="option" onclick="answerHindi(this,true)">
+ईमानदार
+</button>
 
-    {
-        question: "प्रश्न 1 यहाँ लिखें",
-        options: [
-            { text: "विकल्प A", correct: true },
-            { text: "विकल्प B", correct: false },
-            { text: "विकल्प C", correct: false }
-        ]
-    },
+<button class="option" onclick="answerHindi(this,false)">
+आलसी
+</button>
 
-    {
-        question: "प्रश्न 2 यहाँ लिखें",
-        options: [
-            { text: "विकल्प A", correct: false },
-            { text: "विकल्प B", correct: true },
-            { text: "विकल्प C", correct: false }
-        ]
-    },
+<button class="option" onclick="answerHindi(this,false)">
+झूठा
+</button>
 
-    {
-        question: "प्रश्न 3 यहाँ लिखें",
-        options: [
-            { text: "विकल्प A", correct: false },
-            { text: "विकल्प B", correct: false },
-            { text: "विकल्प C", correct: true }
-        ]
-    },
+</div>
 
-    {
-        question: "प्रश्न 4 यहाँ लिखें",
-        options: [
-            { text: "विकल्प A", correct: true },
-            { text: "विकल्प B", correct: false },
-            { text: "विकल्प C", correct: false }
-        ]
-    },
-
-    {
-        question: "प्रश्न 5 यहाँ लिखें",
-        options: [
-            { text: "विकल्प A", correct: false },
-            { text: "विकल्प B", correct: true },
-            { text: "विकल्प C", correct: false }
-        ]
-    },
-
-    {
-        question: "प्रश्न 6 यहाँ लिखें",
-        options: [
-            { text: "विकल्प A", correct: false },
-            { text: "विकल्प B", correct: false },
-            { text: "विकल्प C", correct: true }
-        ]
-    },
-
-    {
-        question: "प्रश्न 7 यहाँ लिखें",
-        options: [
-            { text: "विकल्प A", correct: true },
-            { text: "विकल्प B", correct: false },
-            { text: "विकल्प C", correct: false }
-        ]
-    },
-
-    {
-        question: "प्रश्न 8 यहाँ लिखें",
-        options: [
-            { text: "विकल्प A", correct: false },
-            { text: "विकल्प B", correct: true },
-            { text: "विकल्प C", correct: false }
-        ]
-    },
-
-    {
-        question: "प्रश्न 9 यहाँ लिखें",
-        options: [
-            { text: "विकल्प A", correct: false },
-            { text: "विकल्प B", correct: false },
-            { text: "विकल्प C", correct: true }
-        ]
-    },
-
-    {
-        question: "प्रश्न 10 यहाँ लिखें",
-        options: [
-            { text: "विकल्प A", correct: true },
-            { text: "विकल्प B", correct: false },
-            { text: "विकल्प C", correct: false }
-        ]
-    }
-
-];
-
-
-/* =================================
-   2. VARIABLES
-================================= */
-
-let hindiQuizQuestions = [];
-let hindiCurrentQuestion = 0;
-let hindiScore = 0;
-
-
-/* =================================
-   3. RANDOM SHUFFLE FUNCTION
-================================= */
-
-function shuffleHindi(array) {
-
-    const newArray = [...array];
-
-    for (let i = newArray.length - 1; i > 0; i--) {
-
-        const j = Math.floor(Math.random() * (i + 1));
-
-        [newArray[i], newArray[j]] =
-        [newArray[j], newArray[i]];
-    }
-
-    return newArray;
-}
-
-
-/* =================================
-   4. START TEST
-================================= */
-
-function startHindiTest() {
-
-    hindiCurrentQuestion = 0;
-    hindiScore = 0;
-
-    /*
-       Questions का नया random order
-    */
-    hindiQuizQuestions = shuffleHindi(hindiQuestions)
-        .map(question => {
-
-            return {
-                question: question.question,
-
-                /*
-                   Options का भी नया random order
-                */
-                options: shuffleHindi(question.options)
-            };
-
-        });
-
-
-    document.getElementById("hindiQuiz").style.display = "block";
-    document.getElementById("hindiResult").style.display = "none";
-
-    showHindiQuestion();
-}
-
-
-/* =================================
-   5. SHOW QUESTION
-================================= */
-
-function showHindiQuestion() {
-
-    const current =
-        hindiQuizQuestions[hindiCurrentQuestion];
-
-    document.getElementById("hindiProgress").innerText =
-        `प्रश्न ${hindiCurrentQuestion + 1} / ${hindiQuizQuestions.length}`;
-
-    document.getElementById("hindiQuestion").innerText =
-        current.question;
-
-
-    const optionsBox =
-        document.getElementById("hindiOptions");
-
-    optionsBox.innerHTML = "";
-
-
-    current.options.forEach((option, index) => {
-
-        const button = document.createElement("button");
-
-        button.className = "hindi-option";
-
-        button.innerText =
-            `${String.fromCharCode(65 + index)}. ${option.text}`;
-
-        /*
-           सही उत्तर की जानकारी button में सुरक्षित रहेगी
-        */
-        button.dataset.correct =
-            option.correct;
-
-        button.onclick = function () {
-
-            answerHindi(this);
-
-        };
-
-        optionsBox.appendChild(button);
-
-    });
-
-
-    document.getElementById("hindiNextBtn").style.display =
-        "none";
-}
-
-
-/* =================================
-   6. ANSWER CHECK
-================================= */
-
-function answerHindi(button) {
-
-    const allOptions =
-        document.querySelectorAll(".hindi-option");
-
-
-    /*
-       एक बार answer देने के बाद
-       सभी options बंद
-    */
-
-    allOptions.forEach(option => {
-
-        option.disabled = true;
-
-        if (option.dataset.correct === "true") {
-
-            option.classList.add("correct");
-
-        }
-
-    });
-
-
-    if (button.dataset.correct === "true") {
-
-        hindiScore++;
-
-        button.classList.add("correct");
-
-    } else {
-
-        button.classList.add("wrong");
-
-    }
-
-
-    /*
-       Next button दिखाई देगा
-    */
-
-    const nextButton =
-        document.getElementById("hindiNextBtn");
-
-    nextButton.style.display = "block";
-
-
-    if (hindiCurrentQuestion ===
-        hindiQuizQuestions.length - 1) {
-
-        nextButton.innerText = "🏆 Result देखें";
-
-    } else {
-
-        nextButton.innerText = "अगला प्रश्न ➜";
-
-    }
-
-}
-
-
-/* =================================
-   7. NEXT QUESTION
-================================= */
-
-function nextHindiQuestion() {
-
-    hindiCurrentQuestion++;
-
-
-    if (hindiCurrentQuestion >=
-        hindiQuizQuestions.length) {
-
-        showHindiResult();
-
-        return;
-
-    }
-
-
-    showHindiQuestion();
-
-}
-
-
-/* =================================
-   8. RESULT
-================================= */
-
-function showHindiResult() {
-
-    document.getElementById("hindiQuiz").style.display =
-        "none";
-
-    document.getElementById("hindiResult").style.display =
-        "block";
-
-
-    document.getElementById("hindiScore").innerHTML =
-
-        `<strong>आपका Score: ${hindiScore} / ${hindiQuizQuestions.length}</strong>`;
-
-
-    let message = "";
-
-
-    const percentage =
-        (hindiScore / hindiQuizQuestions.length) * 100;
-
-
-    if (percentage === 100) {
-
-        message = "🎉 शानदार! सभी उत्तर सही हैं।";
-
-    }
-
-    else if (percentage >= 70) {
-
-        message = "👏 बहुत बढ़िया! आपका प्रदर्शन अच्छा है।";
-
-    }
-
-    else if (percentage >= 40) {
-
-        message = "👍 अच्छा प्रयास! थोड़ी और practice करें।";
-
-    }
-
-    else {
-
-        message = "💪 अभ्यास करते रहें, अगली बार बेहतर होगा!";
-
-    }
-
-
-    document.getElementById("hindiResultMessage").innerText =
-        message;
-
-}
-
-
-/* =================================
-   9. RESTART TEST
-================================= */
-
-function restartHindiTest() {
-
-    startHindiTest();
-
-}
-
-
-/* =================================
-   10. TEST AUTOMATICALLY START
-================================= */
-
-startHindiTest();
-
-</script>
-
-
-<!-- ================================
-     BASIC CSS
-================================ -->
-
-<style>
-
-#hindiQuiz,
-#hindiResult {
-
-    max-width: 700px;
-    margin: 20px auto;
-    padding: 20px;
-    border-radius: 15px;
-    background: #ffffff;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.10);
-
-}
-
-.hindi-header {
-
-    text-align: center;
-    margin-bottom: 20px;
-
-}
-
-#hindiProgress {
-
-    font-size: 14px;
-    color: #666;
-    margin-top: 8px;
-
-}
-
-#hindiQuestion {
-
-    font-size: 21px;
-    font-weight: bold;
-    margin-bottom: 20px;
-
-}
-
-.hindi-option {
-
-    display: block;
-    width: 100%;
-    padding: 14px;
-    margin: 10px 0;
-
-    border: 1px solid #ddd;
-    border-radius: 10px;
-
-    background: #f8f8f8;
-
-    cursor: pointer;
-
-    text-align: left;
-
-    font-size: 16px;
-
-}
-
-.hindi-option:hover {
-
-    background: #eeeeee;
-
-}
-
-.hindi-option.correct {
-
-    background: #d4edda;
-    border-color: #28a745;
-
-}
-
-.hindi-option.wrong {
-
-    background: #f8d7da;
-    border-color: #dc3545;
-
-}
-
-.hindi-option:disabled {
-
-    cursor: not-allowed;
-
-}
-
-#hindiNextBtn,
-#hindiResult button {
-
-    padding: 12px 22px;
-
-    border: none;
-    border-radius: 10px;
-
-    cursor: pointer;
-
-    font-size: 16px;
-
-    margin-top: 15px;
-
-}
-
-#hindiResult {
-
-    text-align: center;
-
-}
-
-#hindiScore {
-
-    font-size: 24px;
-    margin: 20px 0;
-
-}
-
-#hindiResultMessage {
-
-    font-size: 18px;
-    margin-bottom: 15px;
-
-}
-
-</style>
-```
-
-    
+</div>
+  
 </section>
 
 
@@ -1561,33 +1025,6 @@ Lesson Plan
 
 <script>
 
-</section>
-
-<!-- HINDI TEST RESULT -->
-
-<div id="hindiResultCard" class="result-card" style="display:none;">
-
-    <h2>🎉 टेस्ट पूरा हुआ!</h2>
-
-    <div class="result-score" id="hindiResultScore">
-        सही उत्तर: 0 / 10
-    </div>
-
-    <div class="result-message" id="hindiResultMessage">
-        बहुत बढ़िया प्रयास!
-    </div>
-
-    <button class="restart-btn" onclick="location.reload()">
-        🔄 फिर से टेस्ट दें
-    </button>
-
-</div>
-
-
-<!-- FOOTER -->
-
-<footer>
-  
 /* =========================
 CLASS 1
 ========================= */
@@ -2127,31 +1564,13 @@ function showHindiResult(){
         return;
     }
 
-    document.getElementById("hindiResultCard").style.display = "block";
+    alert(
+        "🎉 हिन्दी टेस्ट पूरा हुआ!\n\n"+
+        "सही उत्तर: "+hindiScore+" / 10\n"+
+        "गलत उत्तर: "+(10-hindiScore)+"\n"+
+        "प्रतिशत: "+(hindiScore*10)+"%"
+    );
 
-    document.getElementById("hindiResultScore").innerHTML =
-        "सही उत्तर: " + hindiScore + " / 10<br>" +
-        "गलत उत्तर: " + (10 - hindiScore) + " / 10<br>" +
-        "प्रतिशत: " + (hindiScore * 10) + "%";
-
-    let message = "";
-
-    if(hindiScore >= 9){
-        message = "🏆 शानदार! आपकी तैयारी बहुत अच्छी है।";
-    }else if(hindiScore >= 7){
-        message = "👏 बहुत बढ़िया! थोड़ा और अभ्यास करें।";
-    }else if(hindiScore >= 5){
-        message = "👍 अच्छा प्रयास! और अभ्यास करें।";
-    }else{
-        message = "📚 दोबारा अभ्यास करके फिर टेस्ट दें।";
-    }
-
-    document.getElementById("hindiResultMessage").innerText = message;
-
-    document.getElementById("hindiResultCard")
-        .scrollIntoView({
-            behavior: "smooth",
-            block: "center"
-        });
 }
+  
 </script>
