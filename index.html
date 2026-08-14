@@ -1359,45 +1359,390 @@ loadQuestion();
 
 loadQuestion();
 
+/* =====================================
+   STEP 15 - RANDOM HINDI QUIZ
+===================================== */
+
+const hindiQuestions = [
+
+    {
+        question: "1. 'अ' से कौन-सा शब्द बनता है?",
+        options: [
+            { text: "अनार", correct: true },
+            { text: "कमल", correct: false },
+            { text: "गमला", correct: false }
+        ]
+    },
+
+    {
+        question: "2. 'आ' से कौन-सा शब्द बनता है?",
+        options: [
+            { text: "आम", correct: true },
+            { text: "कमल", correct: false },
+            { text: "घर", correct: false }
+        ]
+    },
+
+    {
+        question: "3. 'क' से कौन-सा शब्द बनता है?",
+        options: [
+            { text: "कमल", correct: true },
+            { text: "आम", correct: false },
+            { text: "घर", correct: false }
+        ]
+    },
+
+    {
+        question: "4. 'राम घर जाता है।' में 'राम' क्या है?",
+        options: [
+            { text: "नाम", correct: true },
+            { text: "मात्रा", correct: false },
+            { text: "अंक", correct: false }
+        ]
+    },
+
+    {
+        question: "5. 'की' में कौन-सी मात्रा है?",
+        options: [
+            { text: "ई की मात्रा", correct: true },
+            { text: "आ की मात्रा", correct: false },
+            { text: "उ की मात्रा", correct: false }
+        ]
+    },
+
+    {
+        question: "6. इनमें से पशु कौन है?",
+        options: [
+            { text: "गाय", correct: true },
+            { text: "मोर", correct: false },
+            { text: "पेड़", correct: false }
+        ]
+    },
+
+    {
+        question: "7. इनमें से पक्षी कौन है?",
+        options: [
+            { text: "मोर", correct: true },
+            { text: "घोड़ा", correct: false },
+            { text: "शेर", correct: false }
+        ]
+    },
+
+    {
+        question: "8. इनमें से कौन-सा रंग है?",
+        options: [
+            { text: "लाल", correct: true },
+            { text: "कमल", correct: false },
+            { text: "किताब", correct: false }
+        ]
+    },
+
+    {
+        question: "9. 'कमल' में कितने अक्षर हैं?",
+        options: [
+            { text: "3", correct: true },
+            { text: "2", correct: false },
+            { text: "4", correct: false }
+        ]
+    },
+
+    {
+        question: "10. हमें हमेशा कैसा होना चाहिए?",
+        options: [
+            { text: "ईमानदार", correct: true },
+            { text: "आलसी", correct: false },
+            { text: "झूठा", correct: false }
+        ]
+    }
+
+];
+
+
+/* =====================================
+   VARIABLES
+===================================== */
+
+let hindiQuizQuestions = [];
+let hindiCurrentQuestion = 0;
 let hindiScore = 0;
-let hindiAnswered = 0;
 
-function answerHindi(button, correct){
 
-    if(button.dataset.clicked === "yes"){
-        return;
+/* =====================================
+   SHUFFLE
+===================================== */
+
+function shuffleHindi(array) {
+
+    let arr = [...array];
+
+    for (let i = arr.length - 1; i > 0; i--) {
+
+        let j = Math.floor(Math.random() * (i + 1));
+
+        [arr[i], arr[j]] = [arr[j], arr[i]];
+
     }
 
-    button.dataset.clicked = "yes";
+    return arr;
+}
 
-    hindiAnswered++;
 
-    if(correct){
+/* =====================================
+   START TEST
+===================================== */
+
+function startHindiTest() {
+
+    hindiCurrentQuestion = 0;
+    hindiScore = 0;
+
+    hindiQuizQuestions =
+        shuffleHindi(hindiQuestions).map(function(q) {
+
+            return {
+                question: q.question,
+                options: shuffleHindi(q.options)
+            };
+
+        });
+
+    showHindiQuestion();
+}
+
+
+/* =====================================
+   SHOW QUESTION
+===================================== */
+
+function showHindiQuestion() {
+
+    const current =
+        hindiQuizQuestions[hindiCurrentQuestion];
+
+    document.getElementById("hindiQuestion").innerText =
+        current.question;
+
+    const optionsBox =
+        document.getElementById("hindiOptions");
+
+    optionsBox.innerHTML = "";
+
+    current.options.forEach(function(option) {
+
+        const button =
+            document.createElement("button");
+
+        button.className = "option";
+
+        button.type = "button";
+
+        button.innerText = option.text;
+
+        button.onclick = function() {
+
+            answerHindi(button, option.correct);
+
+        };
+
+        optionsBox.appendChild(button);
+
+    });
+
+    const nextButton =
+        document.getElementById("hindiNextBtn");
+
+    nextButton.style.display = "none";
+
+    nextButton.innerText = "अगला प्रश्न →";
+}
+
+
+/* =====================================
+   ANSWER
+===================================== */
+
+function answerHindi(button, correct) {
+
+    const buttons =
+        document.querySelectorAll(
+            "#hindiOptions .option"
+        );
+
+    /* एक प्रश्न का answer केवल एक बार */
+
+    buttons.forEach(function(btn) {
+
+        btn.disabled = true;
+
+    });
+
+
+    if (correct) {
+
         hindiScore++;
-    }
-
-    if(hindiAnswered === 10){
-        setTimeout(showHindiResult, 300);
-    }
-
-    if(correct){
 
         button.style.background = "#c8e6c9";
         button.style.color = "#1b5e20";
-        button.innerText = "✅ सही उत्तर";
 
-    }else{
+        button.innerText =
+            "✅ " + button.innerText;
+
+    } else {
 
         button.style.background = "#ffcdd2";
         button.style.color = "#b71c1c";
-        button.innerText = "❌ गलत उत्तर";
+
+        button.innerText =
+            "❌ " + button.innerText;
+
+
+        /* सही उत्तर दिखाएँ */
+
+        const current =
+            hindiQuizQuestions[hindiCurrentQuestion];
+
+        const rightAnswer =
+            current.options.find(function(option) {
+
+                return option.correct === true;
+
+            });
+
+
+        buttons.forEach(function(btn) {
+
+            if (btn.innerText === rightAnswer.text) {
+
+                btn.style.background = "#c8e6c9";
+                btn.style.color = "#1b5e20";
+
+            }
+
+        });
+
+    }
+
+
+    const nextButton =
+        document.getElementById("hindiNextBtn");
+
+    nextButton.style.display = "inline-block";
+
+
+    if (
+        hindiCurrentQuestion ===
+        hindiQuizQuestions.length - 1
+    ) {
+
+        nextButton.innerText =
+            "🏆 Result देखें";
+
+    } else {
+
+        nextButton.innerText =
+            "अगला प्रश्न →";
 
     }
 
 }
-  
-function showHindiResult(){
 
+
+/* =====================================
+   NEXT QUESTION
+===================================== */
+
+function nextHindiQuestion() {
+
+    hindiCurrentQuestion++;
+
+
+    if (
+        hindiCurrentQuestion >=
+        hindiQuizQuestions.length
+    ) {
+
+        showHindiResult();
+
+        return;
+
+    }
+
+
+    showHindiQuestion();
+
+}
+
+
+/* =====================================
+   RESULT
+===================================== */
+
+function showHindiResult() {
+
+    const quizBox =
+        document.getElementById("hindiQuizBox");
+
+    quizBox.innerHTML =
+
+        "<h3>🎉 हिन्दी टेस्ट पूरा हुआ!</h3>" +
+
+        "<p>सही उत्तर: <strong>" +
+        hindiScore +
+        " / 10</strong></p>" +
+
+        "<p>गलत उत्तर: <strong>" +
+        (10 - hindiScore) +
+        "</strong></p>" +
+
+        "<p>प्रतिशत: <strong>" +
+        (hindiScore * 10) +
+        "%</strong></p>" +
+
+        "<button class='btn' type='button' " +
+        "onclick='restartHindiTest()'>" +
+        "🔄 फिर से हिन्दी टेस्ट दें" +
+        "</button>";
+
+}
+
+
+/* =====================================
+   RESTART
+===================================== */
+
+function restartHindiTest() {
+
+    document.getElementById("hindiQuizBox").innerHTML =
+
+        '<div class="lesson">' +
+
+        '<p id="hindiQuestion"></p>' +
+
+        '<div id="hindiOptions"></div>' +
+
+        '</div>' +
+
+        '<button id="hindiNextBtn" ' +
+        'class="btn" ' +
+        'type="button" ' +
+        'onclick="nextHindiQuestion()" ' +
+        'style="display:none;">' +
+
+        'अगला प्रश्न →' +
+
+        '</button>';
+
+
+    startHindiTest();
+
+}
+
+
+/* =====================================
+   START
+===================================== */
+
+startHindiTest();
     if(hindiAnswered < 10){
         return;
     }
