@@ -893,10 +893,403 @@ document.getElementById("class1Content").innerHTML=`
 scrollToBox("class1Content");
 
 }
+let englishQuizQuestions = [];
+let englishCurrentQuestion = 0;
+let englishScore = 0;
 
 
+/* =====================================
+   ENGLISH SHUFFLE
+===================================== */
+
+function shuffleEnglish(array) {
+
+    let arr = [...array];
+
+    for (let i = arr.length - 1; i > 0; i--) {
+
+        let j = Math.floor(Math.random() * (i + 1));
+
+        [arr[i], arr[j]] = [arr[j], arr[i]];
+
+    }
+
+    return arr;
+}
+/* =====================================
+   START ENGLISH TEST
+===================================== */
+
+function startEnglishTest() {
+
+    englishCurrentQuestion = 0;
+    englishScore = 0;
+
+    englishQuizQuestions =
+        shuffleEnglish(englishQuestions).map(function(q) {
+
+            return {
+                question: q.question,
+                options: shuffleEnglish(q.options)
+            };
+
+        });
+
+    showEnglishQuestion();
+}
+  /* =====================================
+   START ENGLISH TEST
+===================================== */
+
+function startEnglishTest() {
+
+    englishCurrentQuestion = 0;
+    englishScore = 0;
+
+    englishQuizQuestions =
+        shuffleEnglish(englishQuestions).map(function(q) {
+
+            return {
+                question: q.question,
+                options: shuffleEnglish(q.options)
+            };
+
+        });
+
+    showEnglishQuestion();
+}
+
+  /* =====================================
+   SHOW ENGLISH QUESTION
+===================================== */
+
+function showEnglishQuestion() {
+/* =====================================
+   ENGLISH ANSWER
+===================================== */
+
+function answerEnglish(button, correct) {
+
+    const buttons =
+        document.querySelectorAll(
+            "#englishOptions .option"
+        );
+
+    buttons.forEach(function(btn) {
+        btn.disabled = true;
+    });
+
+    if (correct) {
+
+        englishScore++;
+
+        button.style.background = "#c8e6c9";
+        button.style.color = "#1b5e20";
+
+        button.innerText =
+            "✅ " + button.innerText;
+
+    } else {
+
+        button.style.background = "#ffcdd2";
+        button.style.color = "#b71c1c";
+
+        button.innerText =
+            "❌ " + button.innerText;
+
+        const current =
+            englishQuizQuestions[englishCurrentQuestion];
+
+        const rightAnswer =
+            current.options.find(function(option) {
+                return option.correct === true;
+            });
+
+        buttons.forEach(function(btn) {
+
+            if (btn.innerText === rightAnswer.text) {
+
+                btn.style.background = "#c8e6c9";
+                btn.style.color = "#1b5e20";
+
+            }
+
+        });
+
+    }
+
+}
+    const current =
+        englishQuizQuestions[englishCurrentQuestion];
+
+    document.getElementById("englishQuestion").innerText =
+        current.question;
+
+    const optionsBox =
+        document.getElementById("englishOptions");
+
+    optionsBox.innerHTML = "";
+
+    current.options.forEach(function(option) {
+
+        const button =
+            document.createElement("button");
+
+        button.className = "option";
+
+        button.type = "button";
+
+        button.innerText = option.text;
+
+        button.onclick = function() {
+
+            answerEnglish(button, option.correct);
+
+        };
+
+        optionsBox.appendChild(button);
+
+    });
+
+}
+  /* =====================================
+   NEXT ENGLISH QUESTION
+===================================== */
+
+function nextEnglishQuestion() {
+
+    englishCurrentQuestion++;
+
+    if (
+        englishCurrentQuestion >=
+        englishQuizQuestions.length
+    ) {
+
+        showEnglishResult();
+
+        return;
+
+    }
+
+    showEnglishQuestion();
+}
+  /* =====================================
+   RESTART ENGLISH TEST
+===================================== */
+
+function restartEnglishTest() {
+
+    document.getElementById("englishQuizBox").innerHTML =
+
+        '<div class="lesson">' +
+
+        '<p id="englishQuestion"></p>' +
+
+        '<div id="englishOptions"></div>' +
+
+        '</div>' +
+
+        '<button id="englishNextBtn" ' +
+        'class="btn" ' +
+        'type="button" ' +
+        'onclick="nextEnglishQuestion()" ' +
+        'style="display:none;">' +
+
+        'Next Question →' +
+
+        '</button>';
+
+    startEnglishTest();
+
+}
 function showEnglish1(){
+/* =====================================
+   CLASS 1 ENGLISH QUESTION BANK
+===================================== */
 
+const englishQuestions = [
+
+    {
+        question: "What is the first letter of the English alphabet?",
+        options: [
+            { text: "A", correct: true },
+            { text: "B", correct: false },
+            { text: "C", correct: false }
+        ]
+    },
+
+    {
+        question: "Which one is a fruit?",
+        options: [
+            { text: "Apple", correct: true },
+            { text: "Book", correct: false },
+            { text: "Pen", correct: false }
+        ]
+    },
+
+    {
+        question: "What is the opposite of Big?",
+        options: [
+            { text: "Small", correct: true },
+            { text: "Tall", correct: false },
+            { text: "Long", correct: false }
+        ]
+    },
+
+    {
+        question: "How many eyes do we have?",
+        options: [
+            { text: "Two", correct: true },
+            { text: "One", correct: false },
+            { text: "Three", correct: false }
+        ]
+    },
+
+    {
+        question: "Which one is a colour?",
+        options: [
+            { text: "Red", correct: true },
+            { text: "Dog", correct: false },
+            { text: "Book", correct: false }
+        ]
+    },
+
+    {
+        question: "Complete the sentence: This is a ____.",
+        options: [
+            { text: "book", correct: true },
+            { text: "books", correct: false },
+            { text: "bookses", correct: false }
+        ]
+    },
+
+    {
+        question: "Which one is an animal?",
+        options: [
+            { text: "Dog", correct: true },
+            { text: "Table", correct: false },
+            { text: "Pencil", correct: false }
+        ]
+    },
+
+    {
+        question: "What is the plural of Cat?",
+        options: [
+            { text: "Cats", correct: true },
+            { text: "Cates", correct: false },
+            { text: "Cat", correct: false }
+        ]
+    },
+
+    {
+        question: "Which word starts with B?",
+        options: [
+            { text: "Ball", correct: true },
+            { text: "Apple", correct: false },
+            { text: "Cat", correct: false }
+        ]
+    },
+
+    {
+        question: "What is the opposite of Hot?",
+        options: [
+            { text: "Cold", correct: true },
+            { text: "Warm", correct: false },
+            { text: "Big", correct: false }
+        ]
+    },
+
+    {
+        question: "Which one is a body part?",
+        options: [
+            { text: "Hand", correct: true },
+            { text: "Chair", correct: false },
+            { text: "Table", correct: false }
+        ]
+    },
+
+    {
+        question: "How many days are there in a week?",
+        options: [
+            { text: "Seven", correct: true },
+            { text: "Five", correct: false },
+            { text: "Ten", correct: false }
+        ]
+    },
+
+    {
+        question: "Which word is a colour?",
+        options: [
+            { text: "Blue", correct: true },
+            { text: "Boy", correct: false },
+            { text: "Bag", correct: false }
+        ]
+    },
+
+    {
+        question: "Complete: I am a ____.",
+        options: [
+            { text: "student", correct: true },
+            { text: "students", correct: false },
+            { text: "studentes", correct: false }
+        ]
+    },
+
+    {
+        question: "Which one can fly?",
+        options: [
+            { text: "Bird", correct: true },
+            { text: "Cow", correct: false },
+            { text: "Dog", correct: false }
+        ]
+    },
+
+    {
+        question: "What comes after C?",
+        options: [
+            { text: "D", correct: true },
+            { text: "B", correct: false },
+            { text: "E", correct: false }
+        ]
+    },
+
+    {
+        question: "Which one is used for writing?",
+        options: [
+            { text: "Pencil", correct: true },
+            { text: "Ball", correct: false },
+            { text: "Apple", correct: false }
+        ]
+    },
+
+    {
+        question: "What is the opposite of Up?",
+        options: [
+            { text: "Down", correct: true },
+            { text: "Near", correct: false },
+            { text: "Big", correct: false }
+        ]
+    },
+
+    {
+        question: "Which one is a vegetable?",
+        options: [
+            { text: "Potato", correct: true },
+            { text: "Mango", correct: false },
+            { text: "Apple", correct: false }
+        ]
+    },
+
+    {
+        question: "Complete: The sun is ____.",
+        options: [
+            { text: "hot", correct: true },
+            { text: "cold", correct: false },
+            { text: "wet", correct: false }
+        ]
+    }
+
+];
 document.getElementById("class1Content").innerHTML=`
 
 <h3>🔤 Class 1 — English</h3>
@@ -916,12 +1309,78 @@ Apple, Ball, Cat, Dog
 Red, Blue, Green, Yellow
 </div>
 
+<h3>📝 English Practice Test</h3>
+
+<p>
+Every time the questions and options will be shuffled.
+</p>
+
+<div id="englishQuizBox">
+
+    <div class="lesson">
+
+        <p id="englishQuestion"></p>
+
+        <div id="englishOptions"></div>
+
+    </div>
+
+    <button
+        id="englishNextBtn"
+        class="btn"
+        type="button"
+        onclick="nextEnglishQuestion()"
+        style="display:none;">
+        Next Question →
+    </button>
+
+</div>
+
+<button
+    class="btn"
+    type="button"
+    onclick="startEnglishTest()">
+    ▶️ Start English Test
+</button>
 `;
 
 scrollToBox("class1Content");
 
 }
+/* =====================================
+   ENGLISH RESULT
+===================================== */
 
+function showEnglishResult() {
+
+    const quizBox =
+        document.getElementById("englishQuizBox");
+
+    quizBox.innerHTML =
+
+        "<h3>🎉 English Test Complete!</h3>" +
+
+        "<p>Correct Answers: <strong>" +
+        englishScore +
+        " / " + englishQuizQuestions.length +
+        "</strong></p>" +
+
+        "<p>Wrong Answers: <strong>" +
+        (englishQuizQuestions.length - englishScore) +
+        "</strong></p>" +
+
+        "<p>Percentage: <strong>" +
+        Math.round(
+            (englishScore / englishQuizQuestions.length) * 100
+        ) +
+        "%</strong></p>" +
+
+        "<button class='btn' type='button' " +
+        "onclick='restartEnglishTest()'>" +
+        "🔄 Take English Test Again" +
+        "</button>";
+
+}
 
 function showMath1(){
 
