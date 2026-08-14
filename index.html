@@ -8,7 +8,201 @@
 
 <meta name="description"
 content="किस्साफन पर पढ़िए मजेदार कहानियाँ, चुटकुले, ठहाके, ताजा खबरें, रोचक जानकारी और वीडियो।">
+/* =================================
+   KISSAFAN CONTENT DESIGN
+================================= */
 
+.kissa-section{
+    background:linear-gradient(135deg,#fff8e1,#f3e5f5);
+    padding:60px 6%;
+}
+
+.kissa-title{
+    text-align:center;
+    margin-bottom:35px;
+}
+
+.kissa-title span{
+    font-size:42px;
+}
+
+.kissa-title h2{
+    color:#6a1b9a;
+    font-size:32px;
+    margin:8px 0;
+}
+
+.kissa-title p{
+    color:#666;
+    font-size:16px;
+}
+
+
+/* FEATURED */
+
+.featured-kissa{
+    max-width:1050px;
+    margin:0 auto 40px;
+    padding:30px;
+    border-radius:24px;
+    background:white;
+    display:flex;
+    align-items:center;
+    gap:28px;
+    box-shadow:0 8px 25px rgba(0,0,0,.12);
+}
+
+.featured-icon{
+    font-size:80px;
+    min-width:120px;
+    text-align:center;
+}
+
+.featured-content{
+    flex:1;
+}
+
+.badge{
+    display:inline-block;
+    background:#ff9800;
+    color:white;
+    padding:6px 14px;
+    border-radius:20px;
+    font-size:13px;
+    margin-bottom:10px;
+}
+
+.featured-content h3{
+    font-size:27px;
+    color:#6a1b9a;
+    margin-bottom:10px;
+}
+
+.featured-content p{
+    color:#555;
+    line-height:1.7;
+}
+
+
+/* CATEGORY GRID */
+
+.kissa-grid{
+    max-width:1100px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:22px;
+}
+
+.kissa-card{
+    background:white;
+    padding:28px 22px;
+    border-radius:20px;
+    text-align:center;
+    box-shadow:0 6px 20px rgba(0,0,0,.09);
+    transition:.3s;
+}
+
+.kissa-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 12px 28px rgba(0,0,0,.15);
+}
+
+.kissa-emoji{
+    font-size:55px;
+    margin-bottom:10px;
+}
+
+.kissa-card span{
+    color:#888;
+    font-size:13px;
+}
+
+.kissa-card h3{
+    margin:9px 0;
+    color:#6a1b9a;
+    font-size:21px;
+}
+
+.kissa-card p{
+    color:#666;
+    font-size:14px;
+    line-height:1.6;
+    min-height:65px;
+}
+
+.kissa-card button,
+.kissa-btn{
+    border:none;
+    padding:11px 20px;
+    margin-top:15px;
+    border-radius:25px;
+    background:#6a1b9a;
+    color:white;
+    cursor:pointer;
+    font-size:14px;
+}
+
+.kissa-card button:hover,
+.kissa-btn:hover{
+    background:#4a148c;
+}
+
+
+/* CONTENT BOX */
+
+.kissa-content-box{
+    max-width:900px;
+    margin:40px auto 0;
+    background:white;
+    padding:30px;
+    border-radius:22px;
+    box-shadow:0 7px 22px rgba(0,0,0,.1);
+}
+
+.content-welcome{
+    text-align:center;
+    color:#666;
+}
+
+.content-welcome div{
+    font-size:55px;
+}
+
+.content-welcome h3{
+    color:#6a1b9a;
+    font-size:25px;
+    margin:10px 0;
+}
+
+
+/* MOBILE */
+
+@media(max-width:600px){
+
+    .kissa-section{
+        padding:45px 5%;
+    }
+
+    .kissa-title h2{
+        font-size:25px;
+    }
+
+    .featured-kissa{
+        flex-direction:column;
+        text-align:center;
+        padding:25px 18px;
+    }
+
+    .featured-icon{
+        font-size:65px;
+    }
+
+    .featured-content h3{
+        font-size:22px;
+    }
+
+}
 <style>
 
 *{
@@ -525,7 +719,187 @@ onkeyup="searchSite()">
 </nav>
 
 </header>
+<!-- ================================
+     KISSAFAN CONTENT SECTION
+================================ -->
 
+<section class="kissa-section" id="kissa">
+
+    <div class="kissa-title">
+        <span>🔥</span>
+        <h2>किस्साफन पर आज क्या नया है?</h2>
+        <p>हँसिए, पढ़िए, जानिए और दुनिया की रोचक बातें खोजिए</p>
+    </div>
+
+    <!-- FEATURED CONTENT -->
+
+    <div class="featured-kissa">
+
+        <div class="featured-icon">
+            😂
+        </div>
+
+        <div class="featured-content">
+
+            <span class="badge">⭐ आज का खास कंटेंट</span>
+
+            <h3 id="featuredTitle">
+                मास्टर जी का मजेदार सवाल
+            </h3>
+
+            <p id="featuredText">
+                मास्टर जी ने बच्चे से ऐसा सवाल पूछा कि पूरी कक्षा हँसते-हँसते लोटपोट हो गई।
+            </p>
+
+            <button class="kissa-btn" onclick="openFeatured()">
+                पूरा पढ़ें →
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- CATEGORY CARDS -->
+
+    <div class="kissa-grid">
+
+        <div class="kissa-card joke-card">
+
+            <div class="kissa-emoji">😂</div>
+
+            <span>चुटकुले</span>
+
+            <h3>आज का जोरदार चुटकुला</h3>
+
+            <p>
+                छोटे-छोटे मजेदार चुटकुले जो चेहरे पर मुस्कान ला दें।
+            </p>
+
+            <button onclick="showKissaContent('joke')">
+                😂 चुटकुला पढ़ें
+            </button>
+
+        </div>
+
+
+        <div class="kissa-card story-card">
+
+            <div class="kissa-emoji">📖</div>
+
+            <span>किस्से-कहानियाँ</span>
+
+            <h3>आज की शानदार कहानी</h3>
+
+            <p>
+                रोचक कहानी, मजेदार घटनाएँ और अंत में शानदार सीख।
+            </p>
+
+            <button onclick="showKissaContent('story')">
+                📖 कहानी पढ़ें
+            </button>
+
+        </div>
+
+
+        <div class="kissa-card laugh-card">
+
+            <div class="kissa-emoji">🤣</div>
+
+            <span>ठहाके</span>
+
+            <h3>हँसी का फुल डोज</h3>
+
+            <p>
+                मजेदार संवाद और ऐसे किस्से जिन्हें पढ़कर हँसी रोकना मुश्किल हो।
+            </p>
+
+            <button onclick="showKissaContent('laugh')">
+                🤣 ठहाका लगाएँ
+            </button>
+
+        </div>
+
+
+        <div class="kissa-card mystery-card">
+
+            <div class="kissa-emoji">😱</div>
+
+            <span>रहस्यमयी किस्से</span>
+
+            <h3>क्या आपको रहस्य पसंद है?</h3>
+
+            <p>
+                रहस्य, रोमांच और ऐसे किस्से जिनका अंत आपको चौंका देगा।
+            </p>
+
+            <button onclick="showKissaContent('mystery')">
+                😱 रहस्य खोलें
+            </button>
+
+        </div>
+
+
+        <div class="kissa-card facts-card">
+
+            <div class="kissa-emoji">🧠</div>
+
+            <span>रोचक तथ्य</span>
+
+            <h3>क्या आप यह जानते हैं?</h3>
+
+            <p>
+                दुनिया, विज्ञान, प्रकृति और इंसानों से जुड़े हैरान करने वाले तथ्य।
+            </p>
+
+            <button onclick="showKissaContent('facts')">
+                🧠 तथ्य जानें
+            </button>
+
+        </div>
+
+
+        <div class="kissa-card news-card">
+
+            <div class="kissa-emoji">📰</div>
+
+            <span>ताज़ा खबरें</span>
+
+            <h3>आज की खास खबर</h3>
+
+            <p>
+                देश-दुनिया की महत्वपूर्ण और रोचक खबरों के लिए अलग सेक्शन।
+            </p>
+
+            <button onclick="showKissaContent('news')">
+                📰 खबरें देखें
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- CONTENT DISPLAY -->
+
+    <div id="kissaContentBox" class="kissa-content-box">
+
+        <div class="content-welcome">
+
+            <div>✨</div>
+
+            <h3>किस्साफन में आपका स्वागत है!</h3>
+
+            <p>
+                ऊपर किसी भी Category पर क्लिक करके
+                मजेदार और रोचक सामग्री पढ़ना शुरू करें।
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
 
 <!-- =========================
 HERO
@@ -1197,8 +1571,220 @@ FOOTER
 </p>
 
 </footer>
+/* =================================
+   KISSAFAN CONTENT SYSTEM
+================================= */
+
+function showKissaContent(type){
+
+    const box = document.getElementById("kissaContentBox");
+
+    let content = "";
+
+    if(type === "joke"){
+
+        content = `
+        <h3>😂 आज के मजेदार चुटकुले</h3>
+
+        <div class="lesson">
+        <strong>चुटकुला 1</strong><br><br>
+        मास्टर जी: बताओ, सबसे ज्यादा नींद कब आती है?<br>
+        बच्चा: जब मोबाइल की बैटरी 1% हो और चार्जर दूर हो! 😂
+        </div>
+
+        <div class="lesson">
+        <strong>चुटकुला 2</strong><br><br>
+        पत्नी: सुनो जी, मैं कैसी लग रही हूँ?<br>
+        पति: बहुत अच्छी।<br>
+        पत्नी: सच?<br>
+        पति: हाँ, बिल्कुल... सवाल पूछने से पहले जैसी लग रही थीं! 🤣
+        </div>
+
+        <div class="lesson">
+        <strong>चुटकुला 3</strong><br><br>
+        शिक्षक: बताओ, पानी कहाँ से आता है?<br>
+        बच्चा: नल से।<br>
+        शिक्षक: और नल में?<br>
+        बच्चा: पड़ोस वाले के घर से! 😂
+        </div>
+        `;
+
+    }
 
 
+    else if(type === "story"){
+
+        content = `
+        <h3>📖 आज की शानदार कहानी</h3>
+
+        <div class="lesson">
+
+        <strong>ईमानदार लकड़हारा</strong><br><br>
+
+        एक गरीब लकड़हारा जंगल में लकड़ी काटता था।
+        एक दिन उसकी कुल्हाड़ी नदी में गिर गई।
+        वह बहुत दुखी हुआ।
+
+        तभी नदी से एक देवदूत प्रकट हुआ और
+        उसने सोने की कुल्हाड़ी दिखाई।
+
+        लकड़हारे ने कहा,
+        "यह मेरी कुल्हाड़ी नहीं है।"
+
+        फिर चाँदी की कुल्हाड़ी दिखाई गई।
+        उसने उसे भी लेने से मना कर दिया।
+
+        अंत में उसकी लोहे की कुल्हाड़ी मिली।
+        लकड़हारे ने कहा,
+        "हाँ, यही मेरी कुल्हाड़ी है।"
+
+        उसकी ईमानदारी देखकर उसे तीनों कुल्हाड़ियाँ
+        पुरस्कार में दे दी गईं।
+
+        <br><br>
+
+        <strong>सीख:</strong>
+        ईमानदारी का फल हमेशा अच्छा होता है। ❤️
+
+        </div>
+        `;
+
+    }
+
+
+    else if(type === "laugh"){
+
+        content = `
+        <h3>🤣 ठहाकों का फुल डोज</h3>
+
+        <div class="lesson">
+        पप्पू डॉक्टर के पास गया।<br><br>
+
+        पप्पू: डॉक्टर साहब, मुझे भूलने की बीमारी है।<br>
+        डॉक्टर: कब से?<br>
+        पप्पू: कब से क्या? 😂
+        </div>
+
+        <div class="lesson">
+        दोस्त: तुम रोज सुबह अखबार क्यों पढ़ते हो?<br>
+        पप्पू: ताकि पता चले कि आज किसकी शादी है! 🤣
+        </div>
+        `;
+
+    }
+
+
+    else if(type === "mystery"){
+
+        content = `
+        <h3>😱 रहस्यमयी किस्सा</h3>
+
+        <div class="lesson">
+
+        <strong>आधी रात की दस्तक</strong><br><br>
+
+        रात के करीब बारह बजे रोहन अपने कमरे में अकेला था।
+        अचानक दरवाजे पर तीन बार दस्तक हुई।
+
+        ठक... ठक... ठक...
+
+        रोहन ने दरवाजा खोला।
+
+        बाहर कोई नहीं था।
+
+        वह वापस कमरे में आया।
+        कुछ देर बाद फिर वही आवाज आई।
+
+        ठक... ठक... ठक...
+
+        इस बार उसने दरवाजा नहीं खोला।
+
+        तभी उसके मोबाइल पर एक संदेश आया:
+
+        <br><br>
+
+        <strong>
+        "दरवाजा मत खोलना... मैं बाहर नहीं हूँ।"
+        </strong>
+
+        <br><br>
+
+        रोहन के हाथ-पाँव ठंडे पड़ गए। 😱
+
+        </div>
+        `;
+
+    }
+
+
+    else if(type === "facts"){
+
+        content = `
+        <h3>🧠 आज के रोचक तथ्य</h3>
+
+        <div class="lesson">
+        🌍 पृथ्वी सूर्य की परिक्रमा लगभग 365 दिनों में पूरी करती है।
+        </div>
+
+        <div class="lesson">
+        🐙 ऑक्टोपस के तीन दिल होते हैं।
+        </div>
+
+        <div class="lesson">
+        🦒 जिराफ की गर्दन बहुत लंबी होती है,
+        लेकिन उसकी गर्दन में भी मनुष्य की तरह सात कशेरुकाएँ होती हैं।
+        </div>
+
+        <div class="lesson">
+        🌙 चंद्रमा पृथ्वी का प्राकृतिक उपग्रह है।
+        </div>
+        `;
+
+    }
+
+
+    else if(type === "news"){
+
+        content = `
+        <h3>📰 ताज़ा खबरें</h3>
+
+        <div class="lesson">
+
+        <strong>किस्साफन न्यूज़ सेक्शन</strong><br><br>
+
+        यहाँ हम देश-दुनिया की महत्वपूर्ण,
+        उपयोगी और रोचक खबरों को अलग-अलग
+        श्रेणियों में दिखाएँगे।
+
+        <br><br>
+
+        🔴 देश<br>
+        🌍 दुनिया<br>
+        💻 टेक्नोलॉजी<br>
+        🏏 खेल<br>
+        🎬 मनोरंजन<br>
+        📚 शिक्षा
+
+        <br><br>
+
+        <strong>
+        अगला चरण: Live News System
+        </strong>
+
+        </div>
+        `;
+
+    }
+
+
+    box.innerHTML = content;
+
+    box.scrollIntoView({
+        behavior:"smooth",
+        block:"center"
+    });
+
+}
 <script>
 
 /* =========================
